@@ -13,6 +13,7 @@ import {
 } from "./ui/resizable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { render } from "storyblok-rich-text-react-renderer";
+import { CheckCheckIcon } from "lucide-react";
 
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
@@ -115,7 +116,7 @@ const ComponentViewer: React.FC<ComponentViewerProps> = ({
                 >
                   {copied ? (
                     <>
-                      {/* <CheckCheckIcon className='mr-2 h-4 w-4' /> */}
+                      <CheckCheckIcon className='mr-2 h-4 w-4' />
                       Copied
                     </>
                   ) : (

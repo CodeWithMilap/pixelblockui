@@ -25,6 +25,7 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-live": "^4.1.6",
     "react-resizable-panels": "^2.0.19",
     "react-syntax-highlighter": "^15.5.0",
     "storyblok-rich-text-react-renderer": "^2.9.2",
