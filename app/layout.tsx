@@ -63,7 +63,5 @@ export async function fetchData() {
   let sbParams: ISbStoriesParams = { version: "draft" };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/config`, sbParams, {
-    cache: "no-store",
-  });
+  return storyblokApi.get(`cdn/stories/config`, sbParams);
 }

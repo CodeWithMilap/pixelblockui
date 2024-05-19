@@ -3,7 +3,7 @@ import Container from "./Container";
 import { BlocksIcon } from "./Icons";
 import Button from "./Button";
 
-const HeroSection = () => {
+const HeroSection = ({ blok }: any) => {
   return (
     <section className="w-full py-14 lg:py-28">
       <Container>
