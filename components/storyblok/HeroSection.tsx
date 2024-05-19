@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./Container";
-import { BlocksIcon } from "./Icons";
-import Button from "./Button";
+import Container from "../Container";
+import { BlocksIcon } from "../Icons";
+import AppButton from "../AppButton";
 
 const HeroSection = ({ blok }: any) => {
   return (
@@ -20,12 +20,12 @@ const HeroSection = ({ blok }: any) => {
               </p>
             </div>
             <div className="flex max-w-sm flex-col gap-4 min-[400px]:flex-row">
-              <Button
+              <AppButton
                 variant="primary"
                 href="/components"
                 label="View Components"
               />
-              <Button label="Pricing" variant="outline" className="" />
+              <AppButton label="Pricing" variant="outline" className="" />
             </div>
           </div>
           <div className=" hidden justify-end lg:flex">

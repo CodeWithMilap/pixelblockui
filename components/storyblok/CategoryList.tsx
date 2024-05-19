@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "./Container";
+import Container from "../Container";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
 const CategoryList = ({ blok }: any) => {

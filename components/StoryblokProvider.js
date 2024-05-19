@@ -3,19 +3,19 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
 /** Import your components */
-import Page from "./Page";
-import Teaser from "./Teaser";
-import Feature from "./Feature";
-import Grid from "./Grid";
-import HeroSection from "./HeroSection";
+import Page from "./storyblok/Page";
+import Teaser from "./storyblok/Teaser";
+import Feature from "./storyblok/Feature";
+import Grid from "./storyblok/Grid";
+import HeroSection from "./storyblok/HeroSection";
 import MenuLink from "@/components/Header/MenuLink";
-import CategoryList from "./CategoryList";
-import CategoryListItem from "./CategoryListItem";
-import PageHeader from "./PageHeader";
-import ComponentViewerList from "./ComponentViewerList";
-import ContentBlock from "./ContentBlock";
-import CodeHighlighter from "./CodeHighlighter";
-import Table from "./Table";
+import CategoryList from "./storyblok/CategoryList";
+import CategoryListItem from "./storyblok/CategoryListItem";
+import PageHeader from "./storyblok/PageHeader";
+import ComponentViewerList from "./storyblok/ComponentViewerList";
+import ContentBlock from "./storyblok/ContentBlock";
+import CodeHighlighter from "./storyblok/CodeHighlighter";
+import Table from "./storyblok/Table";
 
 const components = {
   feature: Feature,

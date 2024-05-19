@@ -1,5 +1,5 @@
 import React from "react";
-import ComponentViewer from "./ComponentViewer";
+import ComponentViewer from "../ComponentViewer";
 
 const ComponentViewerList = ({ blok }: any) => {
   return (

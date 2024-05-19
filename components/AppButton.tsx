@@ -14,7 +14,7 @@ interface ButtonProps {
   className?: string; // Change from customClass to className
 }
 
-const Button: React.FC<ButtonProps> = ({
+const AppButton: React.FC<ButtonProps> = ({
   label,
   size = "medium",
   variant = "primary",
@@ -64,4 +64,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default AppButton;

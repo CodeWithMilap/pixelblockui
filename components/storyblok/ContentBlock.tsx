@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "storyblok-rich-text-react-renderer";
-import Container from "./Container";
+import Container from "../Container";
 import { StoryblokComponent } from "@storyblok/react/rsc";
 
 
