@@ -2,7 +2,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import { DarkIcon, LightIcon } from "./Icons";
-import AppButton from "./AppButton";
+import Button from "./PixelBlock/Button";
 
 const DarkLightModeSwitch: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -12,8 +12,7 @@ const DarkLightModeSwitch: React.FC = () => {
   };
 
   return (
-    <AppButton
-      label=""
+    <Button
       variant="link"
       onClick={() => toggleTheme()}
       icon={theme === "dark" ? <DarkIcon /> : <LightIcon />}
