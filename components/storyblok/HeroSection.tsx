@@ -83,7 +83,6 @@ const HeroSection = ({ blok }: any) => {
                       id="name"
                       name="name"
                       placeholder="Name"
-                      color="primary"
                       radius="md"
                       label="Name:"
                     />
@@ -91,23 +90,19 @@ const HeroSection = ({ blok }: any) => {
                       id="email"
                       name="email"
                       placeholder="Email"
-                      color="secondary"
                       radius="md"
                       label="Email:"
                       type="email"
                     />
                     <InputField
-                      id="password"
-                      name="password"
-                      placeholder="Password"
-                      color="danger"
+                      id="message"
+                      name="message"
+                      placeholder="message"
                       radius="md"
-                      label="Password:"
-                      type="password"
+                      label="Message:"
+                      type="textarea"
                     />
-                    <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md">
-                      Submit
-                    </button>
+                    <Button color="primary">Submit</Button>
                   </form>
                 </div>
               </div>
