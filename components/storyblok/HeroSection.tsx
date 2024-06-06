@@ -5,6 +5,7 @@ import AppButton from "../AppButton";
 import Button from "../PixelBlock/Button";
 import InputField from "../PixelBlock/InputField";
 import { redirect } from 'next/navigation'
+import Link from "next/link";
 
 const HeroSection = ({ blok }: any) => {
 
@@ -28,8 +29,8 @@ const HeroSection = ({ blok }: any) => {
                 <Button
                   size="lg"
                   color="primary"
-                  onClick={() => redirect('/components')}
-                >View Components</Button>
+                > <Link href="/components">View Components</Link>
+                </Button>
 
                 <Button variant="outline" color="primary" size="lg"
                 >Pricing</Button>

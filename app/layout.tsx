@@ -10,6 +10,7 @@ import {
 import StoryblokProvider from "../components/StoryblokProvider";
 import Header from "@/components/Header/Header";
 import { ThemeProvider } from "next-themes";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const arimo = Arimo({
@@ -52,6 +53,7 @@ export default async function RootLayout({
           <ThemeProvider attribute="class">
             <Header blok={data?.story?.content} />
             {children}
+            <Footer />
           </ThemeProvider>
         </body>
       </html>

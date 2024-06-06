@@ -18,7 +18,7 @@ const Navbar = ({ blok }: any) => {
         <Container>
           <div className="relative items-center  justify-center md:flex md:h-20 md:justify-between">
             {/* Your logo */}
-            <div className="flex h-16 w-full justify-between">
+            <div className="flex h-16  justify-between">
               <Link
                 className="flex items-center gap-2  text-black dark:text-zinc-200"
                 href="/"
@@ -71,7 +71,7 @@ const Navbar = ({ blok }: any) => {
               </div>
             </div>
             <div
-              className={`${isMobileMenuOpen ? "block" : "hidden "} w-full flex-1 border-t md:flex md:border-t-0`}
+              className={`${isMobileMenuOpen ? "block" : "hidden "}  border-t md:flex md:border-t-0`}
             >
               <div className="flex flex-col gap-4 py-5 md:flex-row md:gap-8">
                 {/* Your menu items */}

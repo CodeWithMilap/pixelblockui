@@ -16,6 +16,8 @@ import ComponentViewerList from "./storyblok/ComponentViewerList";
 import ContentBlock from "./storyblok/ContentBlock";
 import CodeHighlighter from "./storyblok/CodeHighlighter";
 import Table from "./storyblok/Table";
+import ContactForm from "./storyblok/ContactForm";
+import ContactSection from "./storyblok/ContactSection";
 
 const components = {
   feature: Feature,
@@ -30,7 +32,9 @@ const components = {
   component_viewer: ComponentViewerList,
   content_block: ContentBlock,
   CodeHighlighter: CodeHighlighter,
-  Table: Table
+  Table: Table,
+  ContactSection: ContactSection,
+  ContactForm : ContactForm
 };
 
 /** 2. Initialize it as usual */
