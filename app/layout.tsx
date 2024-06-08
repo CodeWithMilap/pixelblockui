@@ -48,7 +48,7 @@ export default async function RootLayout({
     <StoryblokProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${inter.className} ${arimo.className}  text-zinc-800 dark:bg-zinc-900 dark:text-zinc-400`}
+          className={`${inter.className} ${arimo.className}  text-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 flex flex-col min-h-screen`}
         >
           <ThemeProvider attribute="class">
             <Header blok={data?.story?.content} />

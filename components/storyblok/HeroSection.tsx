@@ -13,9 +13,9 @@ const HeroSection = ({ blok }: any) => {
     <>
       <section className="w-full py-14 lg:py-28">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_400px]">
             <div className="flex flex-col justify-center space-y-8">
-              <div className="space-y-4">
+              <div className="space-y-4 max-w-xl">
                 <h1 className="text-3xl font-bold tracking-tighter dark:text-zinc-50 sm:text-5xl xl:text-6xl/none">
                   <span className="text-pxPrimary">PixelBlockUI</span> Beautifully
                   Designed UI Components.
@@ -25,14 +25,13 @@ const HeroSection = ({ blok }: any) => {
                   your apps. Accessible. Customizable. Open Source.
                 </p>
               </div>
-              <div className="flex max-w-sm flex-col gap-4 min-[400px]:flex-row">
+              <div className="grid grid-cols-2 md:grid-cols-2 max-w-sm gap-4 ">
                 <Button
-                  size="lg"
                   color="primary"
                 > <Link href="/components">View Components</Link>
                 </Button>
 
-                <Button variant="outline" color="primary" size="lg"
+                <Button variant="outline" color="primary"
                 >Pricing</Button>
 
               </div>
@@ -43,9 +42,9 @@ const HeroSection = ({ blok }: any) => {
           </div>
         </Container>
       </section>
-      <section className="w-full bg-pxBackground py-24 dark:bg-zinc-900 md:py-24">
+      <section className="w-full bg-pxBackground py-14 dark:bg-zinc-900 md:py-28">
         <Container>
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-14">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter dark:text-zinc-50 sm:text-5xl">
                 Explore Our Components
@@ -56,14 +55,14 @@ const HeroSection = ({ blok }: any) => {
             </div>
           </div>
 
-          <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-            <div className="bg-white rounded-lg border text-card-foreground shadow-sm h-full w-full">
+          <div className="mx-auto grid max-w-5xl items-center gap-6  lg:grid-cols-2 ">
+            <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 text-card-foreground shadow-sm h-full w-full">
               <div className="flex flex-col space-y-1.5 p-6">
                 <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Buttons</h2>
                 <p className="text-sm text-muted-foreground">Highly customizable buttons with a variety of styles and sizes.</p>
               </div>
               <div className="p-6">
-                <div className="flex  gap-2">
+                <div className="grid lg:grid-cols-4 grid-cols-2 gap-3">
                   <Button color="primary">Primary</Button>
                   <Button variant="outline" color="primary" >Outline</Button>
                   <Button variant="ghost" color="primary" >Ghost</Button>
@@ -72,13 +71,13 @@ const HeroSection = ({ blok }: any) => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg border text-card-foreground shadow-sm h-full w-full">
+            <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 text-card-foreground shadow-sm h-full w-full">
               <div className="flex flex-col space-y-1.5 p-6">
                 <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Forms</h2>
                 <p className="text-sm text-muted-foreground">Intuitive and accessible form components, including inputs, textareas, and checkboxes.</p>
               </div>
               <div className="p-6">
-                <div className="flex  gap-2">
+                <div className="flex  gap-2 flex-wrap">
                   <form className="space-y-4">
                     <InputField
                       id="name"

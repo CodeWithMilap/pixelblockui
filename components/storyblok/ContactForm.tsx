@@ -28,7 +28,7 @@ const ContactForm = () => {
                 label="Message:"
                 type="textarea"
             />
-            <Button color="primary">Submit</Button>
+            <Button color="primary">Send</Button>
         </form>
     )
 }
