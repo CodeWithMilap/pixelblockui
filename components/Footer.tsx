@@ -8,7 +8,7 @@ const Footer = () => {
             <Container>
                 <div className='flex justify-center'>
                     <div>
-                        © 2024 PixelBlockUi. All Rights Reserved.
+                        © 2024 PixelBlockUI. All Rights Reserved.
                     </div>
                 </div>
             </Container>
