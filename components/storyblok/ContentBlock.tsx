@@ -8,7 +8,7 @@ import { StoryblokComponent } from "@storyblok/react/rsc";
 const ContentBlock = ({ blok }: any) => {
   return (
     <Container>
-      <div className="prose max-w-none lg:prose-xl dark:prose-strong:text-zinc-50 dark:prose-code:text-pxPrimary dark:text-zinc-200 dark:prose-headings:text-zinc-50">
+      <div className="prose mx-auto lg:prose-xl lg:prose-p:mt-0 lg:prose-pre:mt-2 py-10 prose-th:text-left dark:prose-strong:text-zinc-50 dark:prose-code:text-pxPrimary dark:text-zinc-200 dark:prose-headings:text-zinc-50 prose-h3:mt-0">
         {render(blok.content, {
           defaultBlokResolver: (name, props) => {
             const blok = { ...props, component: name };
