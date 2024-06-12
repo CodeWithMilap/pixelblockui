@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 
 type Color = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
 
-type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'link' | 'shadow' | 'slideBottom';
+type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'link' | 'shadow';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 

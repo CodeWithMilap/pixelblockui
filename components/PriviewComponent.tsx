@@ -7,6 +7,7 @@ import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { render } from "storyblok-rich-text-react-renderer";
+import { CodeIcon, EyeIcon } from './Icons';
 
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
@@ -25,15 +26,17 @@ const Priview = ({ blok }: any) => {
         <section className='py-5'>
             <h3 className='!text-2xl mb-5 !font-bold'>{blok?.title}</h3>
             <LiveProvider code={code} scope={scope}>
-                <Tabs defaultValue="preview" className="">
+                <Tabs defaultValue="preview" className="" variant="solid">
                     {/* Tabs List */}
                     <TabsList className="flex gap-5">
                         {/* Tab 1 */}
                         <TabsTrigger value="preview" className="">
+                            <EyeIcon className="mr-2 h-4 w-4" />
                             Preview
                         </TabsTrigger>
                         {/* Tab 2 */}
                         <TabsTrigger value="code" className="">
+                            <CodeIcon className="mr-2 h-4 w-4" />
                             Code
                         </TabsTrigger>
                     </TabsList>
