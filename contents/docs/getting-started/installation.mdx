@@ -1,0 +1,117 @@
+# PixelBlockUI Installation Guide
+
+Welcome to the PixelBlockUI installation guide! This comprehensive guide will walk you through installing `pixelblock-cli`, a CLI tool designed to streamline the integration of PixelBlockUI components into your React or Next.js projects.
+
+## Prerequisites
+
+Before installing `pixelblock-cli`, ensure your development environment meets the following prerequisites:
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) (usually comes with Node.js installation)
+
+## Installation Methods
+
+### Global Installation
+
+Installing `pixelblock-cli` globally allows you to access it from any directory on your system. To install globally, run:
+
+```bash
+npm install -g pixelblock-cli
+```
+
+After installation, verify the installation by checking the version:
+
+```bash
+pixelblock-cli --version
+```
+
+### Local Installation
+
+For project-specific usage, install `pixelblock-cli` locally within your project directory:
+
+```bash
+npm install pixelblock-cli
+```
+
+After installation, you can run `pixelblock-cli` using npm scripts:
+
+```json
+"scripts": {
+  "pixelblock": "pixelblock-cli"
+}
+```
+
+Run the CLI using:
+
+```bash
+npm run pixelblock add <component>
+```
+
+### Running with npx
+
+If you prefer not to install `pixelblock-cli`, you can use `npx` to run it directly:
+
+```bash
+npx pixelblock-cli add <component>
+```
+
+Replace `<component>` with the name of the PixelBlockUI component you want to install.
+
+## Adding PixelBlockUI Components
+
+Once `pixelblock-cli` is installed, you can easily add PixelBlockUI components to your project:
+
+```bash
+pixelblock-cli add <component>
+```
+
+This command installs the specified `<component>` into your project’s `components/PixelBlock` directory. It also manages dependencies required for each component, such as `clsx` and `tailwind-merge`.
+
+## Managing TailwindCSS
+
+PixelBlockUI components rely on TailwindCSS for styling. If you haven’t already set up TailwindCSS in your project, follow these steps:
+
+### Installing TailwindCSS
+
+Install TailwindCSS using npm:
+
+```bash
+npm install tailwindcss
+```
+
+Initialize TailwindCSS by creating a configuration file:
+
+```bash
+npx tailwindcss init
+```
+
+### Configuring TailwindCSS
+
+Ensure your project uses TailwindCSS by including it in your CSS:
+
+```css
+/* src/styles/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Import this CSS file into your project’s main entry file (e.g., `src/index.js` or `src/index.tsx`):
+
+```javascript
+import './styles/tailwind.css';
+```
+
+## Verification
+
+Verify that PixelBlockUI and TailwindCSS are correctly set up by adding a component and checking for successful installation and styling.
+
+```bash
+pixelblock-cli add Button
+```
+
+Check the `components/PixelBlock` directory for the added Button component and ensure TailwindCSS styles are applied as expected.
+
+## Next Steps
+
+You are now ready to integrate and customize PixelBlockUI components into your React or Next.js projects. For detailed usage instructions and component documentation, refer to the [PixelBlockUI Documentation](./docs).

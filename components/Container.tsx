@@ -13,7 +13,7 @@ const Container: React.FC<ContainerProps> = ({
 }) => {
   // Define the default CSS classes for the container.
   // Users can provide a custom class via the 'className' prop.
-  const containerClasses = `mx-auto max-w-screen-2xl  px-6 lg:px-20 ${
+  const containerClasses = `mx-auto max-w-screen-2xl  px-6 lg:px-20 w-full ${
     className || ""
   }`;
 

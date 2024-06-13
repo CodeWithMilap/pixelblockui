@@ -1,0 +1,92 @@
+---
+title: Button Component Documentation
+date: 2024-06-12
+---
+
+
+The `Button` component is a highly customizable UI element designed for React applications. It offers a wide range of styles, sizes, and colors, making it adaptable to various design requirements.
+
+## Features
+
+- **Variants**: Solid, outline, ghost, link, shadow.
+- **Sizes**: Small (sm), medium (md), and large (lg).
+- **Colors**: Default, primary, secondary, success, warning, and danger.
+- **Radius**: Full, large (lg), medium (md), small (sm), and none.
+- **Icon Support**: Ability to include icons alongside text.
+- **Accessibility**: Focus management and pointer events for disabled state.
+
+## Installation
+
+If you haven't already added the `Button` component to your project, follow these steps:
+
+1. Ensure you have Node.js installed.
+2. Run the following command in your project directory:
+
+
+This command copies the `Button.tsx` file into your project's `components/PixelBlock` directory.
+
+## Importing
+
+To use the `Button` component in your project, import it as follows:
+
+
+## Props
+
+### Required Props
+
+- **`children`**: The content displayed inside the button, usually text but can also include icons or other elements.
+
+### Optional Props
+
+- **`color`**: Defines the button's color theme. Options include `'default'`, `'primary'`, `'secondary'`, `'success'`, `'warning'`, and `'danger'`. Default is `'default'`.
+- **`variant`**: Specifies the button's style variant. Options are `'solid'`, `'outline'`, `'ghost'`, `'link'`, `'shadow'`, and `'slideBottom'`. Default is `'solid'`.
+- **`size`**: Determines the button's size. Options are `'sm'`, `'md'`, and `'lg'`. Default is `'md'`.
+- **`radius`**: Sets the button's corner radius. Options are `'full'`, `'lg'`, `'md'`, `'sm'`, and `'none'`. Default is `'md'`.
+- **`onClick`**: A function to execute when the button is clicked.
+- **`icon`**: An optional React node to render as an icon inside the button.
+- **`...props`**: Additional props will be passed down to the underlying `button` HTML element.
+
+## Usage Examples
+
+### Basic Button
+
+A simple button with a click event handler.
+
+
+### Button with Icon
+
+Displaying an icon alongside text within the button.
+
+
+### Outline Variant
+
+Using the outline variant for a button.
+
+
+### Custom Size and Radius
+
+Specifying a custom size and corner radius for the button.
+
+
+### Ghost Variant
+
+Example of a ghost button, useful for subtle actions.
+
+
+### Link Variant
+
+Creating a button that looks like a hyperlink.
+
+
+### Shadow Variant
+
+Adding a shadow effect to emphasize the button.
+
+
+## Contributing
+
+Contributions are welcome Feel free to submit pull requests or open issues for bugs, enhancements, or documentation improvements.
+
+## License
+
+MIT © Milap Dave
