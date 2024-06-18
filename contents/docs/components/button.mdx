@@ -1,92 +1,301 @@
 ---
-title: Button Component Documentation
-date: 2024-06-12
+title: Button
+component: true
+description: Displays a button or a component that looks like a button.
 ---
 
-
-The `Button` component is a highly customizable UI element designed for React applications. It offers a wide range of styles, sizes, and colors, making it adaptable to various design requirements.
-
-## Features
-
-- **Variants**: Solid, outline, ghost, link, shadow.
-- **Sizes**: Small (sm), medium (md), and large (lg).
-- **Colors**: Default, primary, secondary, success, warning, and danger.
-- **Radius**: Full, large (lg), medium (md), small (sm), and none.
-- **Icon Support**: Ability to include icons alongside text.
-- **Accessibility**: Focus management and pointer events for disabled state.
+The Button component provides a highly customizable button for React applications. It supports various styles, variants, and animations to suit different design needs.
 
 ## Installation
 
-If you haven't already added the `Button` component to your project, follow these steps:
+You can install the Button component using the PixelBlock CLI tool.
 
-1. Ensure you have Node.js installed.
-2. Run the following command in your project directory:
+### Using npm:
 
+```bash
+npm install -g @pixelblock-cli
+```
 
-This command copies the `Button.tsx` file into your project's `components/PixelBlock` directory.
+### Using yarn:
 
-## Importing
+```bash
+yarn global add @pixelblock-cli
+```
 
-To use the `Button` component in your project, import it as follows:
+Alternatively, you can use it directly with npx without installing it globally:
 
+```bash
+npx @pixelblock-cli Button
+```
+
+## Install the Button Component
+
+To install the Button component using the PixelBlock CLI tool, run the following command in your project directory:
+
+```bash
+npx @pixelblock-cli Button
+```
+
+This will copy the `Button.tsx` file from the PixelBlock templates to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── Button.tsx
+└── ...
+```
+
+## Usage
+
+After installing the Button component, you can use it in your React application.
+
+### Basic Example
+
+Here's a basic example of how to use the Button component in a React application:
+
+```jsx
+import React from "react";
+import Button from "./components/PixelBlock/Button";
+
+const App = () => (
+  <div>
+    <Button color="primary" size="md" radius="md">
+      Primary
+    </Button>
+  </div>
+);
+
+export default App;
+```
+
+## Variants
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 ">
+          <Button color="primary" size="md" radius="md">
+            Solid
+          </Button>
+          <Button variant="outline" color="primary" size="md" radius="md">
+            Outline
+          </Button>
+          <Button variant="ghost" color="primary" size="md" radius="md">
+            Ghost
+          </Button>
+          <Button variant="link" color="primary" size="md" radius="md">
+            Link
+          </Button>
+          <Button variant="shadow" color="primary" size="md" radius="md">
+            Shadow
+          </Button>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    <Button variant="solid" color="primary">
+      Solid
+    </Button>
+    <Button variant="outline" color="primary">
+      Outline
+    </Button>
+    <Button variant="ghost" color="primary">
+      Ghost
+    </Button>
+    <Button variant="link" color="primary">
+      Link
+    </Button>
+    <Button variant="shadow" color="primary">
+      Shadow
+    </Button>
+    ```
+  </TabsContent>
+</Tabs>
+
+## Colors
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 ">
+          <Button color="primary">Primary</Button>
+          <Button color="secondary">Secondary</Button>
+          <Button color="success">Success</Button>
+          <Button color="warning">Warning</Button>
+          <Button color="danger">Danger</Button>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+        <Button color="primary">Primary</Button>
+        <Button color="secondary">Secondary</Button>
+        <Button color="success">Success</Button>
+        <Button color="warning">Warning</Button>
+        <Button color="danger">Danger</Button>
+      ```
+  </TabsContent>
+</Tabs>
+
+## Outline
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 ">
+          <Button variant="outline" color="default">
+            Default
+          </Button>
+          <Button variant="outline" color="primary">
+            Primary
+          </Button>
+          <Button variant="outline" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="outline" color="success">
+            Success
+          </Button>
+          <Button variant="outline" color="warning">
+            Warning
+          </Button>
+          <Button variant="outline" color="danger">
+            Danger
+          </Button>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+      <Button variant="outline" color="default">Default</Button>
+      <Button variant="outline" color="primary">Primary</Button>
+      <Button variant="outline" color="secondary">Secondary</Button>
+      <Button variant="outline" color="success">Success</Button>
+      <Button variant="outline" color="warning">Warning</Button>
+      <Button variant="outline" color="danger">Danger</Button>
+      ```
+  </TabsContent>
+</Tabs>
+
+## Size
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 ">
+          <Button size="sm" color="primary">
+            Small Button
+          </Button>
+          <Button size="md" color="primary">
+            Medium Button
+          </Button>
+          <Button size="lg" color="primary">
+            Large Button
+          </Button>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+      <Button size="sm" color="primary">Small Button</Button>
+      <Button size="md" color="primary">Medium Button</Button>
+      <Button size="lg" color="primary">Large Button</Button>
+      ```
+  </TabsContent>
+</Tabs>
+
+## Radius
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 ">
+          <Button radius="full" color="primary">
+            Full Radius
+          </Button>
+          <Button radius="lg" color="primary">
+            Large Radius
+          </Button>
+          <Button radius="md" color="primary">
+            Medium Radius
+          </Button>
+          <Button radius="sm" color="primary">
+            Small Radius
+          </Button>
+          <Button radius="none" color="primary">
+            No Radius
+          </Button>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+      <Button radius="full" color="primary">Full Radius</Button>
+      <Button radius="lg" color="primary">Large Radius</Button>
+      <Button radius="md" color="primary">Medium Radius</Button>
+      <Button radius="sm" color="primary">Small Radius</Button>
+      <Button radius="none" color="primary">No Radius</Button>
+      ```
+  </TabsContent>
+</Tabs>
 
 ## Props
 
-### Required Props
-
-- **`children`**: The content displayed inside the button, usually text but can also include icons or other elements.
-
-### Optional Props
-
-- **`color`**: Defines the button's color theme. Options include `'default'`, `'primary'`, `'secondary'`, `'success'`, `'warning'`, and `'danger'`. Default is `'default'`.
-- **`variant`**: Specifies the button's style variant. Options are `'solid'`, `'outline'`, `'ghost'`, `'link'`, `'shadow'`, and `'slideBottom'`. Default is `'solid'`.
-- **`size`**: Determines the button's size. Options are `'sm'`, `'md'`, and `'lg'`. Default is `'md'`.
-- **`radius`**: Sets the button's corner radius. Options are `'full'`, `'lg'`, `'md'`, `'sm'`, and `'none'`. Default is `'md'`.
-- **`onClick`**: A function to execute when the button is clicked.
-- **`icon`**: An optional React node to render as an icon inside the button.
-- **`...props`**: Additional props will be passed down to the underlying `button` HTML element.
-
-## Usage Examples
-
-### Basic Button
-
-A simple button with a click event handler.
-
-
-### Button with Icon
-
-Displaying an icon alongside text within the button.
-
-
-### Outline Variant
-
-Using the outline variant for a button.
-
-
-### Custom Size and Radius
-
-Specifying a custom size and corner radius for the button.
-
-
-### Ghost Variant
-
-Example of a ghost button, useful for subtle actions.
-
-
-### Link Variant
-
-Creating a button that looks like a hyperlink.
-
-
-### Shadow Variant
-
-Adding a shadow effect to emphasize the button.
-
-
-## Contributing
-
-Contributions are welcome Feel free to submit pull requests or open issues for bugs, enhancements, or documentation improvements.
-
-## License
-
-MIT © Milap Dave
+| Prop    | Type      | Default | Description                                                                                 |
+| ------- | --------- | ------- | ------------------------------------------------------------------------------------------- |
+| variant | string    | solid   | Defines the style variant ('solid', 'outline', 'ghost', 'link', 'shadow')                   |
+| size    | string    | md      | Defines the size of the button ('sm', 'md', 'lg')                                           |
+| color   | string    | primary | Defines the color theme ('default', 'primary', 'secondary', 'success', 'warning', 'danger') |
+| radius  | string    | md      | Defines the border radius ('full', 'lg', 'md', 'sm', 'none')                                |
+| icon    | ReactNode |         | An optional icon element to display inside the button                                       |
+| onClick | function  |         | A callback function triggered on button click                                               |
