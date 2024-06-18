@@ -18,7 +18,7 @@ import CodeHighlighter from "./storyblok/CodeHighlighter";
 import Table from "./storyblok/Table";
 import ContactForm from "./storyblok/ContactForm";
 import ContactSection from "./storyblok/ContactSection";
-import PriviewComponent from "./PriviewComponent"
+import PriviewComponent from "./storyblok/PriviewComponent"
 const components = {
   feature: Feature,
   grid: Grid,
