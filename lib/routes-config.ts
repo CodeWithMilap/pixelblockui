@@ -42,7 +42,6 @@ export const ROUTES = [
       {
         title: "Accordian",
         href: "/accordian",
-        disabled: true,
       },
       {
         title: "Alert Dialog",
