@@ -10,6 +10,8 @@ import { FLATTEND_ROUTES } from "./routes-config";
 
 // custom components imports
 import Button from "@/components/PixelBlock/Button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CodeIcon, EyeIcon } from "@/components/Icons";
 
 
 type MdxFrontmatter = {
@@ -19,7 +21,13 @@ type MdxFrontmatter = {
 
 // add custom components
 const components = {
-  Button
+  Button,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  EyeIcon,
+  CodeIcon,
 };
 
 function getContentPath(slug: string) {
@@ -30,7 +38,7 @@ export async function getMarkdownForSlug(slug: string) {
   try {
     const contentPath = getContentPath(slug);
     const rawMdx = await fs.readFile(contentPath, "utf-8");
-    return await compileMDX<MdxFrontmatter>({
+    const { content, frontmatter } = await compileMDX<MdxFrontmatter>({
       source: rawMdx,
       options: {
         parseFrontmatter: true,
@@ -46,8 +54,10 @@ export async function getMarkdownForSlug(slug: string) {
       },
       components,
     });
+    return { content, frontmatter };
   } catch (err) {
     console.log(err);
+    return null;
   }
 }
 
