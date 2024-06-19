@@ -3,8 +3,6 @@ import { render } from "storyblok-rich-text-react-renderer";
 import Container from "../Container";
 import { StoryblokComponent } from "@storyblok/react/rsc";
 
-
-
 const ContentBlock = ({ blok }: any) => {
   return (
     <Container>
@@ -13,7 +11,7 @@ const ContentBlock = ({ blok }: any) => {
           defaultBlokResolver: (name, props) => {
             const blok = { ...props, component: name };
             return <StoryblokComponent blok={blok} key={props._uid} />;
-          }
+          },
         })}
       </div>
     </Container>

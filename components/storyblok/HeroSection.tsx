@@ -4,11 +4,10 @@ import { BlocksIcon } from "../Icons";
 import AppButton from "../AppButton";
 import Button from "../PixelBlock/Button";
 import InputField from "../PixelBlock/InputField";
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation";
 import Link from "next/link";
 
 const HeroSection = ({ blok }: any) => {
-
   return (
     <>
       <section className="w-full py-14 lg:py-28">
@@ -17,23 +16,23 @@ const HeroSection = ({ blok }: any) => {
             <div className="flex flex-col justify-center space-y-8">
               <div className="space-y-4 max-w-xl">
                 <h1 className="text-3xl font-bold tracking-tighter dark:text-zinc-50 sm:text-5xl xl:text-6xl/none">
-                  <span className="text-pxPrimary">PixelBlockUI</span> Beautifully
-                  Designed UI Components.
+                  <span className="text-pxPrimary">PixelBlockUI</span>{" "}
+                  Beautifully Designed UI Components.
                 </h1>
                 <p className="max-w-[600px]  md:text-xl">
-                  Beautifully designed components that you can copy and paste into
-                  your apps. Accessible. Customizable. Open Source.
+                  Beautifully designed components that you can copy and paste
+                  into your apps. Accessible. Customizable. Open Source.
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-2 max-w-sm gap-4 ">
-                <Button
-                  color="primary"
-                > <Link href="/components">View Components</Link>
+                <Button color="primary">
+                  {" "}
+                  <Link href="/components">View Components</Link>
                 </Button>
 
-                <Button variant="outline" color="primary"
-                >Pricing</Button>
-
+                <Button variant="outline" color="primary">
+                  Pricing
+                </Button>
               </div>
             </div>
             <div className=" hidden justify-end lg:flex">
@@ -50,7 +49,8 @@ const HeroSection = ({ blok }: any) => {
                 Explore Our Components
               </h2>
               <p className="max-w-[800px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-                Browse through our comprehensive list of UI components and find the perfect ones to build your next project.
+                Browse through our comprehensive list of UI components and find
+                the perfect ones to build your next project.
               </p>
             </div>
           </div>
@@ -58,23 +58,39 @@ const HeroSection = ({ blok }: any) => {
           <div className="mx-auto grid max-w-5xl items-center gap-6  lg:grid-cols-2 ">
             <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 text-card-foreground shadow-sm h-full w-full">
               <div className="flex flex-col space-y-1.5 p-6">
-                <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Buttons</h2>
-                <p className="text-sm text-muted-foreground">Highly customizable buttons with a variety of styles and sizes.</p>
+                <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                  Buttons
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  Highly customizable buttons with a variety of styles and
+                  sizes.
+                </p>
               </div>
               <div className="p-6">
                 <div className="grid lg:grid-cols-4 grid-cols-2 gap-3">
                   <Button color="primary">Primary</Button>
-                  <Button variant="outline" color="primary" >Outline</Button>
-                  <Button variant="ghost" color="primary" >Ghost</Button>
-                  <Button variant="link" color="primary" >Link</Button>
+                  <Button variant="outline" color="primary">
+                    Outline
+                  </Button>
+                  <Button variant="ghost" color="primary">
+                    Ghost
+                  </Button>
+                  <Button variant="link" color="primary">
+                    Link
+                  </Button>
                 </div>
               </div>
             </div>
 
             <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 text-card-foreground shadow-sm h-full w-full">
               <div className="flex flex-col space-y-1.5 p-6">
-                <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Forms</h2>
-                <p className="text-sm text-muted-foreground">Intuitive and accessible form components, including inputs, textareas, and checkboxes.</p>
+                <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
+                  Forms
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  Intuitive and accessible form components, including inputs,
+                  textareas, and checkboxes.
+                </p>
               </div>
               <div className="p-6">
                 <div className="flex  gap-2 flex-wrap">

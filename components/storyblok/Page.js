@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 

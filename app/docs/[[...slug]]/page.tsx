@@ -27,7 +27,7 @@ export function generateStaticParams() {
   return FLATTEND_ROUTES.filter((item) => item.disabled != true).map(
     (item) => ({
       slug: item.href.split("/"),
-    })
+    }),
   );
 }
 

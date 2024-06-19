@@ -13,7 +13,6 @@ import Button from "@/components/PixelBlock/Button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeIcon, EyeIcon } from "@/components/Icons";
 
-
 type MdxFrontmatter = {
   title: string;
   description: string;

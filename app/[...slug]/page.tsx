@@ -9,7 +9,6 @@ const isDev = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === "draft";
 export const revalidate = isDev ? 0 : 3600;
 
 async function fetchData(slug: string) {
-
   const { isEnabled: isDraft } = draftMode();
   const sbParams: ISbStoriesParams = {
     resolve_links: "url",
@@ -37,11 +36,5 @@ type Props = {
 export default async function Home({ params }: Props) {
   const slug = params?.slug ? params.slug.join("/") : "home";
   const { data } = await fetchData(slug);
-  return (
-    <>
-      {data.story &&
-        <StoryblokStory story={data?.story} />
-      }
-    </>
-  );
+  return <>{data.story && <StoryblokStory story={data?.story} />}</>;
 }

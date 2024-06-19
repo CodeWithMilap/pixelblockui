@@ -116,7 +116,7 @@ const ComponentViewer: React.FC<ComponentViewerProps> = ({
                 >
                   {copied ? (
                     <>
-                      <CheckCheckIcon className='mr-2 h-4 w-4' />
+                      <CheckCheckIcon className="mr-2 h-4 w-4" />
                       Copied
                     </>
                   ) : (

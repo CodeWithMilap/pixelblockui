@@ -18,7 +18,7 @@ import CodeHighlighter from "./storyblok/CodeHighlighter";
 import Table from "./storyblok/Table";
 import ContactForm from "./storyblok/ContactForm";
 import ContactSection from "./storyblok/ContactSection";
-import PriviewComponent from "./storyblok/PriviewComponent"
+import PriviewComponent from "./storyblok/PriviewComponent";
 const components = {
   feature: Feature,
   grid: Grid,
@@ -33,9 +33,9 @@ const components = {
   content_block: ContentBlock,
   CodeHighlighter: CodeHighlighter,
   Table: Table,
-  PriviewComponent : PriviewComponent,
+  PriviewComponent: PriviewComponent,
   ContactSection: ContactSection,
-  ContactForm : ContactForm
+  ContactForm: ContactForm,
 };
 
 /** 2. Initialize it as usual */

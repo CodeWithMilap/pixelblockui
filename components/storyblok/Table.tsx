@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Table = ({ blok }: any) => {
   if (!blok || !blok.body.thead || !blok.body.tbody) {
@@ -10,7 +10,9 @@ const Table = ({ blok }: any) => {
       <thead>
         <tr>
           {blok.body.thead.map((header: any) => (
-            <th className='text-left' key={header._uid}>{header.value}</th>
+            <th className="text-left" key={header._uid}>
+              {header.value}
+            </th>
           ))}
         </tr>
       </thead>
