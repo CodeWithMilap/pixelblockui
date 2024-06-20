@@ -8,9 +8,9 @@ export default function DocsLayout({
 }>) {
   return (
     <Container>
-      <div className="flex items-start gap-14">
+      <div className="flex items-start gap-12">
         <Leftbar />
-        <div className="flex-[4]">{children}</div>{" "}
+        <>{children}</>{" "}
       </div>
     </Container>
   );
