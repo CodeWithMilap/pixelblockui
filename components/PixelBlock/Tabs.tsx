@@ -5,7 +5,7 @@ function Tabs({ defaultValue, className, variant, children, radius }: any) {
 
   return (
     <div className={className}>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-2">
         {React.Children.map(children, (child) => {
           if (child.type === TabsList) {
             return React.cloneElement(child, {
