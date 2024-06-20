@@ -13,7 +13,7 @@ import { AlignLeftIcon } from "lucide-react";
 
 export function Leftbar() {
   return (
-    <aside className="md:flex hidden flex-[0.9] min-w-[230px] sticky top-16 flex-col h-[92.75vh] overflow-y-auto">
+    <aside className="md:flex hidden flex-[0.9] xl:min-w-[230px] min-w-[180px] sticky top-16 flex-col h-[92.75vh] overflow-y-auto">
       <ScrollArea className="py-4">
         {ROUTES.map(({ href, items, title }) => {
           return (
