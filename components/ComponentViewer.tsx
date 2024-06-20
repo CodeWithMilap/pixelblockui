@@ -37,7 +37,7 @@ const ComponentViewer: React.FC<ComponentViewerProps> = ({
   const customStyle = {
     borderRadius: "8px",
     backgroundColor: "#1e293b",
-    padding: "20px",
+    padding: "20px", 
     zoom: "1.3",
   };
 
