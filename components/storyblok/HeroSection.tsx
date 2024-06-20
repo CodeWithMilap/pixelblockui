@@ -25,14 +25,14 @@ const HeroSection = ({ blok }: any) => {
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-2 max-w-sm gap-4 ">
-                <Button color="primary">
+                <Button color="primary" size="lg">
                   {" "}
-                  <Link href="/components">View Components</Link>
+                  <Link href="/components">Get Started</Link>
                 </Button>
 
-                <Button variant="outline" color="primary">
+                {/* <Button variant="outline" color="primary">
                   Pricing
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div className=" hidden justify-end lg:flex">
