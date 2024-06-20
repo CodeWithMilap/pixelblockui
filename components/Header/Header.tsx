@@ -73,7 +73,7 @@ const Navbar = ({ blok }: any) => {
             <div
               className={`${isMobileMenuOpen ? "block" : "hidden "}  border-t md:flex md:border-t-0`}
             >
-              <div className="flex flex-col gap-4 py-5 md:flex-row md:gap-8">
+              <div className="flex flex-col gap-4 py-5 md:flex-row">
                 {/* Your menu items */}
                 {blok?.header_menu?.map((nestedBlok: any) => (
                   <StoryblokComponent
