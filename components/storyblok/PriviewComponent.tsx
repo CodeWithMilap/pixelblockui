@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 import Button from "../PixelBlock/Button";
 import InputField from "../PixelBlock/InputField";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../PixelBlock/Tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { render } from "storyblok-rich-text-react-renderer";
 import { CodeIcon, CopyIcon, EyeIcon } from "../Icons";
-import Hero1 from "../PixelBlock/Hero1";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "../ui/resizable";
 import { CheckCheckIcon } from "lucide-react";
 
@@ -21,7 +20,14 @@ const Priview = ({ blok }: any) => {
     padding: "20px",
     zoom: "1.3",
   };
-  const scope = { Button, InputField, Hero1 };
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+  
+  const scope = { Button, InputField };
   const [copied, setCopied] = useState(false);
 
   const code = blok?.code;
@@ -43,38 +49,24 @@ const Priview = ({ blok }: any) => {
 
   return (
     <section className="py-5">
-      <h3 className="!text-2xl mb-5 !font-bold">{blok?.title}</h3>
-      <Tabs defaultValue="preview" className="" variant="solid">
+      <Tabs defaultValue="preview" className="" >
         {/* Tabs List */}
-        <TabsList className="flex justify-end gap-5 pr-5">
-          {/* Tab 1 */}
-          <TabsTrigger value="preview" className="">
-            <EyeIcon className="mr-2 h-4 w-4" />
-            Preview
-          </TabsTrigger>
-          {/* Tab 2 */}
-          <TabsTrigger value="code" className="">
-            <CodeIcon className="mr-2 h-4 w-4" />
-            Code
-          </TabsTrigger>
-         
-        </TabsList>
-        {/* <Button
-            variant={"outline"}
-            onClick={copyCodeToClipboard}
-          >
-            {copied ? (
-              <>
-                <CheckCheckIcon className="mr-2 h-4 w-4" />
-                Copied
-              </>
-            ) : (
-              <>
-                <CopyIcon className="mr-2 h-4 w-4" />
-                Copy
-              </>
-            )}
-          </Button> */}
+        <div className="flex justify-between items-center pr-5">
+          <h3 className="!text-2xl !m-0 !font-bold">{blok?.title}</h3>
+          <TabsList className="">
+            {/* Tab 1 */}
+            <TabsTrigger value="preview" className="">
+              <EyeIcon className="mr-2 h-4 w-4" />
+              Preview
+            </TabsTrigger>
+            {/* Tab 2 */}
+            <TabsTrigger value="code" className="">
+              <CodeIcon className="mr-2 h-4 w-4" />
+              Code
+            </TabsTrigger>
+
+          </TabsList>
+        </div>
 
         {/* Tabs Content */}
         {/* Content for Tab 1 */}
@@ -88,6 +80,7 @@ const Priview = ({ blok }: any) => {
                 defaultSize={100}
                 className="rounded-lg border border-zinc-400  dark:border-zinc-600 "
               >
+                <LiveError />
                 <LivePreview />
 
               </ResizablePanel>
@@ -100,15 +93,34 @@ const Priview = ({ blok }: any) => {
         {/* Content for Tab 2 */}
         <TabsContent value="code">
           {/* <LiveEditor /> */}
-          {/* <LiveError /> */}
           <div className=" pr-5">
-            <SyntaxHighlighter
-              customStyle={customStyle}
-              language="javascript"
-              style={vscDarkPlus}
-            >
-              {render(blok?.priview_code)}
-            </SyntaxHighlighter>
+            <div className="relative">
+              <div className="absolute top-0 right-0">
+                <Button
+                  variant="ghost"
+                  className="text-white"
+                  onClick={copyCodeToClipboard}
+                >
+                  {copied ? (
+                    <>
+                      <CheckCheckIcon className="mr-2 h-4 w-4" />
+                    </>
+                  ) : (
+                    <>
+                      <CopyIcon className="mr-2 h-4 w-4" />
+                    </>
+                  )}
+                </Button>
+              </div>
+              <SyntaxHighlighter
+                customStyle={customStyle}
+                language="javascript"
+                style={vscDarkPlus}
+              >
+
+                {render(blok?.priview_code)}
+              </SyntaxHighlighter>
+            </div>
           </div>
         </TabsContent>
       </Tabs>
