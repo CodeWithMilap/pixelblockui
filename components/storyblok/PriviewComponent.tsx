@@ -11,7 +11,7 @@ import { CodeIcon, CopyIcon, EyeIcon } from "../Icons";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "../ui/resizable";
 import { CheckCheckIcon } from "lucide-react";
 import Link from "next/link";
-import Hero1 from '../Heor1'
+import Hero1 from '../PixelBlock/Blocks/Heor1'
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 const Priview = ({ blok }: any) => {
