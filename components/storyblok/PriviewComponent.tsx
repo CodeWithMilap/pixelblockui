@@ -10,7 +10,8 @@ import { render } from "storyblok-rich-text-react-renderer";
 import { CodeIcon, CopyIcon, EyeIcon } from "../Icons";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "../ui/resizable";
 import { CheckCheckIcon } from "lucide-react";
-
+import Link from "next/link";
+import Hero1 from '../Heor1'
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 const Priview = ({ blok }: any) => {
@@ -26,8 +27,8 @@ const Priview = ({ blok }: any) => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  
-  const scope = { Button, InputField };
+
+  const scope = { Button, InputField, Link, toggleMobileMenu, isMobileMenuOpen, setIsMobileMenuOpen, Hero1 };
   const [copied, setCopied] = useState(false);
 
   const code = blok?.code;
