@@ -45,10 +45,9 @@ const ComponentViewer: React.FC<ComponentViewerProps> = ({
     const resizeIframe = () => {
       if (iframeRef.current) {
         try {
-          // Added try-catch to handle cross-origin errors
           const contentHeight =
             iframeRef.current.contentWindow?.document?.body?.scrollHeight || 0;
-          if (contentHeight !== iframeHeight) {
+          if (contentHeight!== iframeHeight) {
             setIframeHeight(contentHeight);
           }
         } catch (error) {
@@ -64,7 +63,7 @@ const ComponentViewer: React.FC<ComponentViewerProps> = ({
     return () => {
       window.removeEventListener("resize", resizeIframe);
     };
-  }, [iframeHeight]);
+  }, []);
 
   const copyCodeToClipboard = () => {
     navigator.clipboard
