@@ -41,7 +41,7 @@ export default async function DocsPage({
 
   if (!res) notFound();
   return (
-    <div className="flex items-start gap-12 ">
+    <div className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="w-full py-10 ">
         <DocsBreadcrumb paths={slug} />
         <div className="prose prose-zinc dark:prose-invert prose-code:font-code  prose-pre:bg-zinc-900 prose-headings:scroll-m-20 w-full max-w-none">
