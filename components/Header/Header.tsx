@@ -82,7 +82,9 @@ const Navbar = ({ blok }: any) => {
                     key={nestedBlok._uid}
                   />
                 ))}
+                <div className="hidden md:flex">
                 <DarkLightModeSwitch />
+                </div>
               </div>
             </div>
           </div>
