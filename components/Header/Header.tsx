@@ -8,6 +8,7 @@ import { StoryblokComponent } from "@storyblok/react";
 
 const Navbar = ({ blok }: any) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -73,13 +74,14 @@ const Navbar = ({ blok }: any) => {
             <div
               className={`${isMobileMenuOpen ? "block" : "hidden "}  border-t md:flex md:border-t-0`}
             >
-              <div className="flex flex-col gap-4 py-5 md:flex-row">
+              <div className="flex flex-col gap-4 py-5 md:flex-row md:items-center">
                 {/* Your menu items */}
                 {blok?.header_menu?.map((nestedBlok: any) => (
                   <StoryblokComponent
                     className=""
                     blok={nestedBlok}
                     key={nestedBlok._uid}
+                    toggleMobileMenu={toggleMobileMenu}
                   />
                 ))}
                 <div className="hidden md:flex">
