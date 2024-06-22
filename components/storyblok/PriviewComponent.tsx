@@ -16,9 +16,10 @@ SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 const Priview = ({ blok }: any) => {
   const customStyle = {
-    borderRadius: "8px",
+    borderRadius: "0.2rem",
     backgroundColor: "#1e293b",
     padding: "20px",
+    margin: '0px',
     zoom: "1.3",
   };
 
@@ -52,7 +53,7 @@ const Priview = ({ blok }: any) => {
     <section className="py-5">
       <Tabs defaultValue="preview" className="" >
         {/* Tabs List */}
-        <div className="flex justify-between items-center pr-5">
+        <div className="flex justify-between items-center ">
           <h3 className="!text-2xl !m-0 !font-bold">{blok?.title}</h3>
           <TabsList className="">
             {/* Tab 1 */}
@@ -72,56 +73,54 @@ const Priview = ({ blok }: any) => {
         {/* Tabs Content */}
         {/* Content for Tab 1 */}
         <TabsContent value="preview">
-          <LiveProvider code={code} scope={scope}>
-            <ResizablePanelGroup
+          <div className="border dark:border-white/10 rounded-lg overflow-hidden">
+            <LiveProvider code={code} scope={scope}>
+              {/* <ResizablePanelGroup
               className="h-full w-full "
               direction="horizontal"
             >
               <ResizablePanel
                 defaultSize={100}
                 className="rounded-lg border border-zinc-400  dark:border-zinc-600 "
-              >
-                <LiveError />
-                <LivePreview />
+              > */}
+              <LiveError />
+              <LivePreview />
 
-              </ResizablePanel>
+              {/* </ResizablePanel>
               <ResizableHandle withHandle className="" />
               <ResizablePanel defaultSize={0} />
-            </ResizablePanelGroup>
-          </LiveProvider>
+            </ResizablePanelGroup> */}
+            </LiveProvider>
+          </div>
         </TabsContent>
 
         {/* Content for Tab 2 */}
         <TabsContent value="code">
           {/* <LiveEditor /> */}
-          <div className=" pr-5">
-            <div className="relative">
-              <div className="absolute top-0 right-0">
-                <Button
-                  variant="ghost"
-                  className="text-white"
-                  onClick={copyCodeToClipboard}
-                >
-                  {copied ? (
-                    <>
-                      <CheckCheckIcon className="mr-2 h-4 w-4" />
-                    </>
-                  ) : (
-                    <>
-                      <CopyIcon className="mr-2 h-4 w-4" />
-                    </>
-                  )}
-                </Button>
-              </div>
-              <SyntaxHighlighter
-                customStyle={customStyle}
-                language="javascript"
-                style={vscDarkPlus}
-              >
+          <div className="relative ">
+            <Button
+              variant="ghost"
+              className="text-white absolute top-4 right-4"
+              onClick={copyCodeToClipboard}
+            >
+              {copied ? (
+                <>
+                  <CheckCheckIcon className="mr-2 h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  <CopyIcon className="mr-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
+            <SyntaxHighlighter
+              customStyle={customStyle}
+              language="javascript"
+              style={vscDarkPlus}
+            >
 
-                {render(blok?.priview_code)}
-              </SyntaxHighlighter>
-            </div>
+              {render(blok?.priview_code)}
+            </SyntaxHighlighter>
           </div>
         </TabsContent>
       </Tabs>

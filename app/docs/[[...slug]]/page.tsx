@@ -41,10 +41,10 @@ export default async function DocsPage({
 
   if (!res) notFound();
   return (
-    <div className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-      <div className="w-full py-10 ">
+    <div className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_200px]">
+      <div className="w-full py-10 mx-auto min-w-0">
         <DocsBreadcrumb paths={slug} />
-        <div className="prose prose-zinc dark:prose-invert prose-code:font-code  prose-pre:bg-zinc-900 prose-headings:scroll-m-20 w-full max-w-none">
+        <div className="prose  dark:prose-invert prose-code:font-code  prose-pre:bg-[#1e293b] prose-headings:scroll-m-20 w-full max-w-none">
           <h1 className="break-all">{res.frontmatter.title}</h1>
           <p className="-mt-5 text-muted-foreground text-lg mb-2">
             {res.frontmatter.description}

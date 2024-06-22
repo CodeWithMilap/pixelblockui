@@ -12,7 +12,7 @@ export default async function Toc({ path }: { path: string }) {
         <ScrollArea>
           <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
             <div className="space-y-2">
-              <h3 className="font-semibold text-lg text-black capitalize">On this page</h3>
+              <h3 className="font-semibold text-lg text-black dark:text-white capitalize">On this page</h3>
               <div className="flex flex-col gap-2.5 text-sm dark:text-neutral-300/85 text-neutral-800 ml-0.5">
                 {tocs.map((toc) => {
                   const slug = sluggify(toc.text);

@@ -12,7 +12,7 @@ const Banner1 = () => {
 
   return (
     <div>
-      <nav className='border-b border-zinc-900/5 bg-white/90 backdrop-blur dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-200'>
+      <nav className='border-b-1 sticky top-0 z-50 w-full shadow-sm border-b border-zinc-900/5 bg-white/90 backdrop-blur dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-200'>
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
           <div className='relative flex items-center justify-between h-16 md:h-20'>
             {/* Logo */}

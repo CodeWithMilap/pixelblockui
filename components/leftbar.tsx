@@ -18,7 +18,7 @@ export function Leftbar() {
         {ROUTES.map(({ href, items, title }) => {
           return (
             <div className="flex flex-col gap-3 mt-5" key={href}>
-              <h4 className="font-semibold text-lg text-black">{title}</h4>
+              <h4 className="font-semibold text-lg text-black dark:text-white">{title}</h4>
               <div className="flex flex-col gap-3 text-sm dark:text-neutral-300/85 text-neutral-800 ml-0.5">
                 {items.map((subItem) => {
                   const key = `/docs/${href}${subItem.href}`;
