@@ -93,11 +93,11 @@ export const ROUTES = [
       //   href: "/hover-card",
       //   disabled: true,
       // },
-      // {
-      //   title: "Input",
-      //   href: "/input",
-      //   disabled: true,
-      // },
+      {
+        title: "Input",
+        href: "/input",
+        // disabled: true,
+      },
       // {
       //   title: "Input OTP",
       //   href: "/input-otp",

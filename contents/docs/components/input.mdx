@@ -1,0 +1,121 @@
+---
+title: InputField Component
+description: Detailed documentation for the InputField component in the PixelBlockUI library.
+---
+
+The `InputField` component is a versatile and customizable input component designed to work seamlessly with Tailwind CSS. It supports various input types, colors, and border radius configurations.
+
+## Props
+
+The `InputField` component accepts the following props:
+
+| Prop    | Type                                                                                     | Default    | Description                                |
+|---------|------------------------------------------------------------------------------------------|------------|--------------------------------------------|
+| `color` | `"default" \| "primary" \| "secondary" \| "success" \| "warning" \| "danger"`             | `"default"`| Specifies the color theme of the input field. |
+| `radius`| `"full" \| "lg" \| "md" \| "sm" \| "none"`                                                | `"md"`     | Defines the border radius of the input field. |
+| `label` | `string`                                                                                  | `undefined`| A label for the input field. When provided, it appears above the input. |
+| `type`  | `"input" \| "textarea" \| "number" \| "password" \| "email"`                             | `"input"`  | Specifies the type of the input field.     |
+| `props` | `Omit<React.InputHTMLAttributes<HTMLInputElement \| HTMLTextAreaElement>, "size">`       | `undefined`| Additional props passed down to the input or textarea element. |
+
+## Usage
+
+### Basic Usage
+
+```jsx
+import React from 'react';
+import InputField from './InputField';
+
+const App = () => (
+  <div className="p-4">
+    <InputField label="Default Input" placeholder="Type something..." />
+  </div>
+);
+
+export default App;
+```
+
+### Custom Colors
+
+You can specify different colors using the `color` prop:
+
+```jsx
+import React from 'react';
+import InputField from './InputField';
+
+const App = () => (
+  <div className="p-4 space-y-4">
+    <InputField color="primary" label="Primary Input" placeholder="Primary color" />
+    <InputField color="secondary" label="Secondary Input" placeholder="Secondary color" />
+    <InputField color="success" label="Success Input" placeholder="Success color" />
+    <InputField color="warning" label="Warning Input" placeholder="Warning color" />
+    <InputField color="danger" label="Danger Input" placeholder="Danger color" />
+  </div>
+);
+
+export default App;
+```
+
+### Border Radius
+
+The `radius` prop allows customization of the input field's border radius:
+
+```jsx
+import React from 'react';
+import InputField from './InputField';
+
+const App = () => (
+  <div className="p-4 space-y-4">
+    <InputField radius="full" label="Full Radius" placeholder="Full radius" />
+    <InputField radius="lg" label="Large Radius" placeholder="Large radius" />
+    <InputField radius="md" label="Medium Radius" placeholder="Medium radius" />
+    <InputField radius="sm" label="Small Radius" placeholder="Small radius" />
+    <InputField radius="none" label="No Radius" placeholder="No radius" />
+  </div>
+);
+
+export default App;
+```
+
+### Textarea
+
+Use the `type` prop to render a `textarea` instead of an `input`:
+
+```jsx
+import React from 'react';
+import InputField from './InputField';
+
+const App = () => (
+  <div className="p-4">
+    <InputField type="textarea" label="Textarea" placeholder="Type something..." />
+  </div>
+);
+
+export default App;
+```
+
+## Custom Styling
+
+The `InputField` component uses the `cn` utility function to combine class names and apply Tailwind CSS classes. You can customize the styles further by passing additional class names through the `className` prop:
+
+```jsx
+import React from 'react';
+import InputField from './InputField';
+
+const App = () => (
+  <div className="p-4">
+    <InputField
+      label="Custom Styled Input"
+      placeholder="Custom styles"
+      className="text-blue-500 bg-gray-100 border-2 border-blue-500"
+    />
+  </div>
+);
+
+export default App;
+```
+
+## Conclusion
+
+The `InputField` component is a flexible and highly customizable component that fits well in any React or Next.js project using Tailwind CSS. Use the props provided to tailor the component to your specific needs and integrate it seamlessly into your application.
+
+For more information and detailed usage instructions, refer to the [PixelBlockUI Documentation](./docs).
