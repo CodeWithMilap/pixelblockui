@@ -12,6 +12,7 @@ import { FLATTEND_ROUTES } from "./routes-config";
 import Button from "@/components/PixelBlock/Button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeIcon, EyeIcon } from "@/components/Icons";
+import InputField from "@/components/PixelBlock/InputField";
 
 type MdxFrontmatter = {
   title: string;
@@ -27,6 +28,7 @@ const components = {
   TabsContent,
   EyeIcon,
   CodeIcon,
+  InputField
 };
 
 function getContentPath(slug: string) {

@@ -35,7 +35,7 @@ const InputField: React.FC<InputFieldProps> = ({
   ...props
 }) => {
   let inputClassName =
-    "w-full py-2 px-4 border bg-transparent rounded-md transition-colors duration-200 focus:outline-none focus:ring-0 focus:ring-offset-1 resize-none";
+    "w-full py-2 px-4 border bg-transparent rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 resize-none";
 
   // Handle color prop
   switch (color) {
@@ -61,7 +61,7 @@ const InputField: React.FC<InputFieldProps> = ({
       break;
     default:
       inputClassName +=
-        " border-gray-400 dark:border-white/10 focus:border-gray-400 focus:ring-gray-300/10";
+        " border-gray-400 dark:border-white/10 focus:border-gray-400 focus:ring-gray-800";
       break;
   }
 
@@ -93,7 +93,7 @@ const InputField: React.FC<InputFieldProps> = ({
       {label && (
         <label
           htmlFor={props.id}
-          className="text-gray-900 dark:text-zinc-100 text-sm pointer-events-none transition-all duration-200 ease-in-out pb-1 inline-block"
+          className="text-gray-900 dark:text-zinc-100 text-sm pointer-events-none transition-all duration-200 ease-in-out pb-1 block"
         >
           {label}
         </label>
