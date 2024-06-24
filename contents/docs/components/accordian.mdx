@@ -1,16 +1,117 @@
 ---
-title: Accordian
-description: A vertically stacked set of interactive headings that each reveal a section of content.
+title: Accordion
+description: Detailed documentation for the Accordion and AccordionItem components in the PixelBlockUI library.
 ---
 
-## Accordian Intro
+The `Accordion` component provides a flexible and interactive way to display collapsible content sections. It consists of the `Accordion` container and `AccordionItem` elements.
 
-An accordion, in the context of web development or user interface design, is a graphical control element that allows users to expand and collapse sections of content. It typically consists of a list of headers or titles, each associated with a content panel that can be expanded or collapsed independently.
+## Props
 
-When a header is clicked or activated, its associated content panel expands to reveal its contents, and when another header is clicked, the previously expanded panel collapses and the new one expands.
+### Accordion Props
 
-This interaction pattern is often used to organize and present large amounts of content in a compact and structured way, allowing users to focus on specific sections of interest while hiding the rest. Accordions are commonly used in websites for FAQs (Frequently Asked Questions), product descriptions, or any content where a hierarchical structure is beneficial.
+The `Accordion` component itself doesn't take any specific props other than the standard `children` prop to nest `AccordionItem` components.
 
-## Custom Component
+| Prop      | Type        | Description                        |
+|-----------|-------------|------------------------------------|
+| `children`| `ReactNode` | Nested `AccordionItem` components. |
 
-Here a table component from shadcn ui is used.
+### AccordionItem Props
+
+The `AccordionItem` component accepts the following props:
+
+| Prop       | Type        | Description                                     |
+|------------|-------------|-------------------------------------------------|
+| `title`    | `string`    | The title of the accordion item.                |
+| `children` | `ReactNode` | The content to be displayed within the item.    |
+
+## Usage
+
+### Basic Usage
+
+```jsx
+import React from 'react';
+import { Accordion, AccordionItem } from './Accordion';
+
+const App = () => (
+  <div className="p-4">
+    <Accordion>
+      <AccordionItem title="Accordion Item 1">
+        Content for accordion item 1 goes here.
+      </AccordionItem>
+      <AccordionItem title="Accordion Item 2">
+        Content for accordion item 2 goes here.
+      </AccordionItem>
+      <AccordionItem title="Accordion Item 3">
+        Content for accordion item 3 goes here.
+      </AccordionItem>
+    </Accordion>
+  </div>
+);
+
+export default App;
+```
+
+### Custom Styling
+
+The `AccordionItem` component uses Tailwind CSS for styling. You can customize the appearance further by adding additional classes or modifying existing ones.
+
+#### Example with Custom Styles
+
+```jsx
+import React from 'react';
+import { Accordion, AccordionItem } from './Accordion';
+
+const App = () => (
+  <div className="p-4">
+    <Accordion>
+      <AccordionItem title="Custom Styled Item 1">
+        <p className="text-blue-500">This is a custom styled content for item 1.</p>
+      </AccordionItem>
+      <AccordionItem title="Custom Styled Item 2">
+        <p className="text-red-500">This is a custom styled content for item 2.</p>
+      </AccordionItem>
+    </Accordion>
+  </div>
+);
+
+export default App;
+```
+
+## Detailed Example
+
+### Interactive Accordion with Dynamic Content
+
+You can also create an interactive accordion with dynamic content and state management.
+
+```jsx
+import React, { useState } from 'react';
+import { Accordion, AccordionItem } from './Accordion';
+
+const App = () => {
+  const [items, setItems] = useState([
+    { title: 'Item 1', content: 'Dynamic content for item 1' },
+    { title: 'Item 2', content: 'Dynamic content for item 2' },
+    { title: 'Item 3', content: 'Dynamic content for item 3' },
+  ]);
+
+  return (
+    <div className="p-4">
+      <Accordion>
+        {items.map((item, index) => (
+          <AccordionItem key={index} title={item.title}>
+            {item.content}
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Conclusion
+
+The `Accordion` and `AccordionItem` components offer a simple and effective way to display collapsible sections of content. By utilizing Tailwind CSS, these components are easy to style and integrate into your React or Next.js projects.
+
+For more information and detailed usage instructions, refer to the [PixelBlockUI Documentation](/docs/getting-started/installation).

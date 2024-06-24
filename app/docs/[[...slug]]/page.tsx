@@ -44,7 +44,7 @@ export default async function DocsPage({
     <div className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_200px]">
       <div className="w-full py-10 mx-auto min-w-0">
         <DocsBreadcrumb paths={slug} />
-        <div className="prose  dark:prose-invert prose-code:font-code  prose-pre:bg-[#1e293b] prose-headings:scroll-m-20 w-full max-w-none">
+        <div className="prose prose-th:text-left dark:prose-invert prose-code:font-code  prose-pre:bg-[#1e293b] prose-headings:scroll-m-20 w-full max-w-none">
           <h1 className="break-all">{res.frontmatter.title}</h1>
           <p className="-mt-5 text-muted-foreground text-lg mb-2">
             {res.frontmatter.description}
