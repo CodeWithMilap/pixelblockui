@@ -32,9 +32,6 @@ export const metadata: Metadata = {
     "PixelBlockUI - Next.js and Tailwind CSS UI Components for Stunning Web Designs",
   description:
     "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects. From customizable buttons to responsive forms, PixelBlockUI provides the tools you need to create stunning web designs effortlessly.",
-  icons: {
-    icon: "/favicon.png", // /public path
-  },
 };
 
 export default async function RootLayout({
