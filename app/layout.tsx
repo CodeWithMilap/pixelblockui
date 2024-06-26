@@ -28,11 +28,41 @@ storyblokInit({
 });
 
 export const metadata: Metadata = {
-  title:
-    "PixelBlockUI - Next.js and Tailwind CSS UI Components for Stunning Web Designs",
-  description:
-    "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects. From customizable buttons to responsive forms, PixelBlockUI provides the tools you need to create stunning web designs effortlessly.",
+  title: "PixelBlockUI - Next.js and Tailwind CSS UI Components for Stunning Web Designs",
+  description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects. From customizable buttons to responsive forms, PixelBlockUI provides the tools you need to create stunning web designs effortlessly.",
+  icons: {
+    icon: "/favicon.ico", // /public path
+  },
+  openGraph: {
+    title: "PixelBlockUI - Next.js and Tailwind CSS UI Components",
+    description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects.",
+    url: "https://pixelblockui.com/", // Replace with your actual URL
+    type: "website",
+    images: [
+      {
+        url: "/android-chrome-512x512.png", // Replace with your actual image path
+        width: 1200,
+        height: 630,
+        alt: "PixelBlockUI",
+      },
+    ],
+    siteName: "PixelBlockUI",
+  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   site: "@yourtwitterhandle", // Replace with your Twitter handle
+  //   creator: "@yourtwitterhandle", // Replace with your Twitter handle
+  //   title: "PixelBlockUI - Next.js and Tailwind CSS UI Components",
+  //   description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects.",
+  //   images: [
+  //     {
+  //       url: "/twitter-image.png", // Replace with your actual image path
+  //       alt: "PixelBlockUI",
+  //     },
+  //   ],
+  // },
 };
+
 
 export default async function RootLayout({
   children,
