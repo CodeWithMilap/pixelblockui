@@ -27,7 +27,7 @@ const HeroSection = ({ blok }: any) => {
               <div className="grid grid-cols-2 md:grid-cols-2 max-w-sm gap-4 ">
                 <Button color="primary" size="lg">
                   {" "}
-                  <Link href="/components">Get Started</Link>
+                  <Link href="/docs/getting-started/introduction">Get Started</Link>
                 </Button>
 
                 {/* <Button variant="outline" color="primary">
