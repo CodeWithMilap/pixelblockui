@@ -28,8 +28,8 @@ storyblokInit({
 });
 
 export const metadata: Metadata = {
-  title: "PixelBlockUI - Next.js and Tailwind CSS UI Components for Stunning Web Designs",
-  description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects. From customizable buttons to responsive forms, PixelBlockUI provides the tools you need to create stunning web designs effortlessly.",
+  title: "PixelBlockUI - Next.js & Tailwind CSS UI Components",
+  description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects.",
   icons: {
     icon: "/favicon.ico", // /public path
   },
