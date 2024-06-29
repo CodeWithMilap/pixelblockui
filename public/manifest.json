@@ -4,7 +4,7 @@
     "description": "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects.",
     "icons": [
       {
-        "src": "/logo.png",
+        "src": "/FaviconIcon.png",
         "sizes": "64x64 32x32 24x24 16x16",
         "type": "image/x-icon"
       },
