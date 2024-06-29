@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: "PixelBlockUI - Next.js & Tailwind CSS UI Components.",
   description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects.",
   icons: {
-    icon: "/favicon.ico", // /public path
+    icon: "/logo.png", // /public path
   },
   openGraph: {
     title: "PixelBlockUI - Next.js and Tailwind CSS UI Components.",
