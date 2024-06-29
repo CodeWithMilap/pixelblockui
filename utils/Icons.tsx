@@ -1,5 +1,47 @@
 import React from 'react';
 
+const AnimatedSvg = ({className}:any) => (
+  <svg id="eRhHU98XLBM1"  className={className} viewBox="0 0 24 24" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+    <style>
+      {`
+        #eRhHU98XLBM2_to {
+          animation: eRhHU98XLBM2_to__to 3000ms linear 1 normal forwards;
+        }
+        @keyframes eRhHU98XLBM2_to__to {
+          0% { transform: translate(10.5px,13.5px); }
+          100% { transform: translate(17.5px,6.5px); }
+        }
+        #eRhHU98XLBM2_tr {
+          animation: eRhHU98XLBM2_tr__tr 3000ms linear 1 normal forwards;
+        }
+        @keyframes eRhHU98XLBM2_tr__tr {
+          0% { transform: rotate(0deg); }
+          33.333333% { transform: rotate(45deg); }
+          66.666667% { transform: rotate(90deg); }
+          100% { transform: rotate(180deg); }
+        }
+        #eRhHU98XLBM2_ts {
+          animation: eRhHU98XLBM2_ts__ts 3000ms linear 1 normal forwards;
+        }
+        @keyframes eRhHU98XLBM2_ts__ts {
+          0% { transform: scale(0,0); }
+          100% { transform: scale(1,1); }
+        }
+      `}
+    </style>
+    <g id="eRhHU98XLBM2_to" transform="translate(10.5,13.5)">
+      <g id="eRhHU98XLBM2_tr" transform="rotate(0)">
+        <g id="eRhHU98XLBM2_ts" transform="scale(0,0)">
+          <rect style={{ isolation: 'isolate' }} width="7" height="7" rx="1" ry="1" transform="translate(-3.5,-3.5)" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+      </g>
+    </g>
+    <path d="M10,21v-13c0-.552285-.447715-1-1-1h-5c-.552285,0-1,.447715-1,1v12c0,.552285.447715,1,1,1h12c.552285,0,1-.447715,1-1v-5c0-.552285-.447715-1-1-1h-13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export default AnimatedSvg;
+
 export function IconProfile() {
   return (
     <svg
@@ -39,27 +81,27 @@ export function IconComponent() {
 }
 
 
-export function LoadingIcon () {
+export function LoadingIcon() {
   return (
     <svg
-    className="animate-spin h-5 w-5 text-current"
-    fill="none"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle
-      className="opacity-25"
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="currentColor"
-      strokeWidth="4"
-    />
-    <path
-      className="opacity-75"
-      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-      fill="currentColor"
-    />
-  </svg>
+      className="animate-spin h-5 w-5 text-current"
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <path
+        className="opacity-75"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        fill="currentColor"
+      />
+    </svg>
   );
 }

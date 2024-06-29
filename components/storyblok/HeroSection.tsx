@@ -5,6 +5,7 @@ import Button from "../PixelBlock/Button";
 import InputField from "../PixelBlock/InputField";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import AnimatedSvg from "@/utils/Icons";
 
 const HeroSection = ({ blok }: any) => {
   return (
@@ -35,7 +36,7 @@ const HeroSection = ({ blok }: any) => {
               </div>
             </div>
             <div className=" hidden justify-end lg:flex">
-              <BlocksIcon className="h-full w-full max-w-lg dark:text-zinc-50" />
+              <AnimatedSvg className="dark:text-zinc-50" />
             </div>
           </div>
         </Container>
