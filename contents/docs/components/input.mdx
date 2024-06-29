@@ -219,53 +219,6 @@ Use the `type` prop to render a `textarea` instead of an `input`:
 </Tabs>
 
 
-## Custom Styling
-
-The `InputField` component uses the `cn` utility function to combine class names and apply Tailwind CSS classes. You can customize the styles further by passing additional class names through the `className` prop:
-
-<Tabs defaultValue="preview">
-  <TabsList className="">
-    <TabsTrigger value="preview">
-      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
-    </TabsTrigger>
-    <TabsTrigger value="code">
-      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
-    </TabsTrigger>
-  </TabsList>
-  <TabsContent value="preview">
-    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
-      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto">
-        <div className="p-4">
-          <InputField
-            label="Custom Styled Input"
-            placeholder="Custom styles"
-            className="text-blue-500 bg-gray-100 border-2 border-blue-500"
-          />
-        </div>
-      </div>
-    </div>
-  </TabsContent>
-  <TabsContent value="code">
-    ```jsx
-    import React from "react";
-    import InputField from "./InputField";
-
-    const App = () => (
-      <div className="p-4">
-        <InputField
-          label="Custom Styled Input"
-          placeholder="Custom styles"
-          className="text-blue-500 bg-gray-100 border-2 border-blue-500 "
-        />
-      </div>
-    );
-
-    export default App;
-    ```
-  </TabsContent>
-</Tabs>
-
-
 ## Props
 
 The `InputField` component accepts the following props:
