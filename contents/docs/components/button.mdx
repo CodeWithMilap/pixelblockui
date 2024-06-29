@@ -287,6 +287,96 @@ export default App;
   </TabsContent>
 </Tabs>
 
+### Buttons with Icon and Text
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 flex-wrap">
+          <Button color="primary" icon={<IconComponent />}>With Icon</Button>
+          <Button variant="outline" color="secondary" icon={<IconComponent />}>Outline Icon</Button>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import { IconComponent } from 'your-icon-library';
+
+    <Button color="primary" icon={<IconComponent />}>With Icon</Button>
+    <Button variant="outline" color="secondary" icon={<IconComponent />}>Outline Icon</Button>
+    ```
+  </TabsContent>
+</Tabs>
+
+### Buttons with Only Icon
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 flex-wrap">
+          <Button color="primary" icon={<IconComponent />} />
+          <Button variant="outline" color="secondary" icon={<IconComponent />} />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import { IconComponent } from 'your-icon-library';
+
+    <Button color="primary" icon={<IconComponent />} />
+    <Button variant="outline" color="secondary" icon={<IconComponent />} />
+    ```
+  </TabsContent>
+</Tabs>
+
+
+### Buttons with Loading
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="flex gap-6 flex-wrap">
+          <Button color="primary" icon={<LoadingIcon />} >Loading</Button>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+      <Button color="primary" icon={<LoadingIcon />} >Loading</Button>
+    ```
+  </TabsContent>
+</Tabs>
+
 ## Props
 
 | Prop    | Type      | Default | Description                                                                                 |
