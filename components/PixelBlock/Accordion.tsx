@@ -33,5 +33,5 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ title, children })
 };
 
 export const Accordion: React.FC<AccordionProps> = ({ children }) => {
-  return <div className="mx-auto mt-8 grid gap-6">{children}</div>;
+  return <div className="mx-auto grid gap-6">{children}</div>;
 };

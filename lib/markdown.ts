@@ -14,6 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CodeIcon, EyeIcon } from "@/components/Icons";
 import InputField from "@/components/PixelBlock/InputField";
 import { Accordion, AccordionItem } from "@/components/PixelBlock/Accordion";
+import Preview from "@/components/Preview";
 
 type MdxFrontmatter = {
   title: string;
@@ -31,7 +32,8 @@ const components = {
   CodeIcon,
   InputField,
   Accordion,
-  AccordionItem
+  AccordionItem,
+  Preview
 };
 
 function getContentPath(slug: string) {

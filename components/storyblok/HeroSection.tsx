@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "../Container";
 import { BlocksIcon } from "../Icons";
-import AppButton from "../AppButton";
 import Button from "../PixelBlock/Button";
 import InputField from "../PixelBlock/InputField";
 import { redirect } from "next/navigation";

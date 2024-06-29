@@ -28,87 +28,115 @@ The `AccordionItem` component accepts the following props:
 
 ### Basic Usage
 
-```jsx
-import React from 'react';
-import { Accordion, AccordionItem } from './Accordion';
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Accordion>
+            <AccordionItem title="Accordion Item 1">
+              Content for accordion item 1 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 2">
+              Content for accordion item 2 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 3">
+              Content for accordion item 3 goes here.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+      import React from 'react';
+      import { Accordion, AccordionItem } from './Accordion';
 
-const App = () => (
-  <div className="p-4">
-    <Accordion>
-      <AccordionItem title="Accordion Item 1">
-        Content for accordion item 1 goes here.
-      </AccordionItem>
-      <AccordionItem title="Accordion Item 2">
-        Content for accordion item 2 goes here.
-      </AccordionItem>
-      <AccordionItem title="Accordion Item 3">
-        Content for accordion item 3 goes here.
-      </AccordionItem>
-    </Accordion>
-  </div>
-);
+      const App = () => (
+        <div className="p-4">
+          <Accordion>
+            <AccordionItem title="Accordion Item 1">
+              Content for accordion item 1 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 2">
+              Content for accordion item 2 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 3">
+              Content for accordion item 3 goes here.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      );
 
-export default App;
-```
-
-### Custom Styling
-
-The `AccordionItem` component uses Tailwind CSS for styling. You can customize the appearance further by adding additional classes or modifying existing ones.
-
-#### Example with Custom Styles
-
-```jsx
-import React from 'react';
-import { Accordion, AccordionItem } from './Accordion';
-
-const App = () => (
-  <div className="p-4">
-    <Accordion>
-      <AccordionItem title="Custom Styled Item 1">
-        <p className="text-blue-500">This is a custom styled content for item 1.</p>
-      </AccordionItem>
-      <AccordionItem title="Custom Styled Item 2">
-        <p className="text-red-500">This is a custom styled content for item 2.</p>
-      </AccordionItem>
-    </Accordion>
-  </div>
-);
-
-export default App;
-```
+      export default App;
+      ```
+  </TabsContent>
+</Tabs>
 
 ## Detailed Example
 
 ### Interactive Accordion with Dynamic Content
 
 You can also create an interactive accordion with dynamic content and state management.
-
-```jsx
-import React, { useState } from 'react';
-import { Accordion, AccordionItem } from './Accordion';
-
-const App = () => {
-  const [items, setItems] = useState([
-    { title: 'Item 1', content: 'Dynamic content for item 1' },
-    { title: 'Item 2', content: 'Dynamic content for item 2' },
-    { title: 'Item 3', content: 'Dynamic content for item 3' },
-  ]);
-
-  return (
-    <div className="p-4">
-      <Accordion>
-        {items.map((item, index) => (
-          <AccordionItem key={index} title={item.title}>
-            {item.content}
-          </AccordionItem>
-        ))}
-      </Accordion>
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center [&>*]:m-0"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center [&>*]:m-0"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Preview
+            name="accordion-dynamic"
+          />
+        </div>
+      </div>
     </div>
-  );
-};
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+        import React, { useState } from 'react';
+        import { Accordion, AccordionItem } from './Accordion';
 
-export default App;
-```
+        const App = () => {
+          const [items, setItems] = useState([
+            { title: 'Item 1', content: 'Dynamic content for item 1' },
+            { title: 'Item 2', content: 'Dynamic content for item 2' },
+            { title: 'Item 3', content: 'Dynamic content for item 3' },
+          ]);
+
+          return (
+            <div className="p-4">
+              <Accordion>
+                {items.map((item, index) => (
+                  <AccordionItem key={index} title={item.title}>
+                    {item.content}
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          );
+        };
+
+        export default App;
+        ```
+  </TabsContent>
+</Tabs>
+
 
 ## Conclusion
 
