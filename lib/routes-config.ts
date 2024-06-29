@@ -78,11 +78,11 @@ export const ROUTES = [
       //   href: "/dialog",
       //   disabled: true,
       // },
-      // {
-      //   title: "Dropdown Menu",
-      //   href: "/dropdown-menu",
-      //   disabled: true,
-      // },
+      {
+        title: "Dropdown",
+        href: "/dropdown",
+        disabled: false,
+      },
       // {
       //   title: "Form",
       //   href: "/form",

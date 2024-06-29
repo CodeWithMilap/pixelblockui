@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState } from "react";
 import Container from "../Container";
 import { BlocksIcon } from "../Icons";
 import Button from "../PixelBlock/Button";
@@ -6,8 +7,10 @@ import InputField from "../PixelBlock/InputField";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import AnimatedSvg from "@/utils/Icons";
+import Dropdown from "../PixelBlock/Dropdown";
 
 const HeroSection = ({ blok }: any) => {
+ 
   return (
     <>
       <section className="w-full py-14 lg:py-28">
@@ -81,7 +84,7 @@ const HeroSection = ({ blok }: any) => {
                 </div>
               </div>
             </div>
-
+           
             <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 text-card-foreground shadow-sm h-full w-full">
               <div className="flex flex-col space-y-1.5 p-6">
                 <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">

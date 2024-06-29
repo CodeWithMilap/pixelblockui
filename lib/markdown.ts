@@ -16,6 +16,7 @@ import InputField from "@/components/PixelBlock/InputField";
 import { Accordion, AccordionItem } from "@/components/PixelBlock/Accordion";
 import Preview from "@/components/Preview";
 import { IconComponent, IconProfile, LoadingIcon } from "@/utils/Icons";
+import Dropdown from "@/components/PixelBlock/Dropdown";
 
 type MdxFrontmatter = {
   title: string;
@@ -37,7 +38,8 @@ const components = {
   Preview,
   IconComponent,
   LoadingIcon,
-  IconProfile
+  IconProfile,
+  Dropdown
 };
 
 function getContentPath(slug: string) {

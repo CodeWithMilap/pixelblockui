@@ -3,3 +3,4 @@ export { default as AccordionDynamic  } from '@/components/example/accordion-dyn
 export { default as AccordionDemo  } from '@/components/example/accordion-demo';
 export { default as ButtonDemo  } from '@/components/example/button-demo';
 export { default as ButtonColors  } from '@/components/example/button-colors';
+export { default as DropdownDemo  } from '@/components/example/dropdown-demo';
