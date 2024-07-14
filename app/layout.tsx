@@ -28,19 +28,19 @@ storyblokInit({
 });
 
 export const metadata: Metadata = {
-  title: "PixelBlockUI - Next.js & Tailwind CSS UI Components.",
+  title: "PixelBlockUI - UI Components.",
   description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects.",
   icons: {
     icon: "/FaviconIcon.png", // /public path
   },
   openGraph: {
-    title: "PixelBlockUI - Next.js and Tailwind CSS UI Components.",
+    title: "PixelBlockUI - UI Components.",
     description: "Explore PixelBlockUI's extensive collection of Next.js and Tailwind CSS UI components designed to enhance your web projects.",
     url: "https://pixelblockui.com/", // Replace with your actual URL
     type: "website",
     images: [
       {
-        url: "/android-chrome-512x512.png", // Replace with your actual image path
+        url: "/FaviconIcon.png", // Replace with your actual image path
         width: 1200,
         height: 630,
         alt: "PixelBlockUI",
