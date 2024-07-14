@@ -19,6 +19,7 @@ import Table from "./storyblok/Table";
 import ContactForm from "./storyblok/ContactForm";
 import ContactSection from "./storyblok/ContactSection";
 import PriviewComponent from "./storyblok/PriviewComponent";
+import Section from "./storyblok/Section";
 const components = {
   feature: Feature,
   grid: Grid,
@@ -36,6 +37,7 @@ const components = {
   PriviewComponent: PriviewComponent,
   ContactSection: ContactSection,
   ContactForm: ContactForm,
+  Section: Section,
 };
 
 /** 2. Initialize it as usual */

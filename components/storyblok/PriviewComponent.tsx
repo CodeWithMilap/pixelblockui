@@ -12,6 +12,8 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "../ui/resi
 import { CheckCheckIcon } from "lucide-react";
 import Link from "next/link";
 import Hero1 from '../PixelBlock/Blocks/Heor1'
+import Feature1 from "../PixelBlock/Blocks/FeatureBlock1";
+import Feature2 from "../PixelBlock/Blocks/FeatureBlock2";
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 const Priview = ({ blok }: any) => {
@@ -29,7 +31,7 @@ const Priview = ({ blok }: any) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const scope = { Button, InputField, Link, toggleMobileMenu, isMobileMenuOpen, setIsMobileMenuOpen, Hero1 };
+  const scope = { Button, InputField, Link, toggleMobileMenu, isMobileMenuOpen, setIsMobileMenuOpen, Hero1 , Feature1, Feature2};
   const [copied, setCopied] = useState(false);
 
   const code = blok?.code;
