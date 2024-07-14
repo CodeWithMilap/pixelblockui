@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/FaviconIcon.png", // Replace with your actual image path
+        url: "/og-image.png", // Replace with your actual image path
         width: 1200,
         height: 630,
         alt: "PixelBlockUI",
