@@ -99,11 +99,6 @@ Here's a basic example of how to use the Dropdown component in a React applicati
             onSelect={handleSelect}
             searchPlaceholder="Search options..."
             selectedOptions={selectedOptions}
-            renderOption={(option) => (
-                <div className={`p-2 ${option.disabled ? 'text-gray-400' : ''}`}>
-                    {option.label}
-                </div>
-            )}
         />
           <div className="mt-4">
             Selected: {selectedOptions.map(option => options.find(opt => opt.value === option)?.label).join(', ')}
@@ -164,7 +159,6 @@ Here's a basic example of how to use the Dropdown component in a React applicati
             withSearch={true}
             placeholder="Select options"
             onSelect={handleSelect}
-            multiple={true}
             searchPlaceholder="Search options..."
             selectedOptions={selectedOptions}
             renderOption={(option) => (

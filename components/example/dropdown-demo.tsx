@@ -22,11 +22,6 @@ const DropdownDemo = () => {
             onSelect={handleSelect}
             searchPlaceholder="Search options..."
             selectedOptions={selectedOptions}
-            renderOption={(option) => (
-                <div className={`p-2 ${option.disabled ? 'text-gray-400' : ''}`}>
-                    {option.label}
-                </div>
-            )}
         />
     )
 }
