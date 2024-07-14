@@ -75,10 +75,10 @@ const Button: React.FC<ButtonProps> = ({
       buttonClassName += " h-10 px-4 text-sm font-medium";
       break;
     case "md":
-      buttonClassName += "  h-10 px-6 text-sm md:text-base font-medium";
+      buttonClassName += "  h-10 px-4 text-sm md:text-base font-medium";
       break;
     case "lg":
-      buttonClassName += " h-12 px-8 text-base font-medium";
+      buttonClassName += " h-12 px-4 text-base font-medium";
       break;
     default:
       break;
