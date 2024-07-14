@@ -5,24 +5,71 @@ description: Detailed documentation for the Accordion and AccordionItem componen
 
 The `Accordion` component provides a flexible and interactive way to display collapsible content sections. It consists of the `Accordion` container and `AccordionItem` elements.
 
-## Props
+<br/>
 
-### Accordion Props
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Accordion>
+            <AccordionItem title="Accordion Item 1">
+              Content for accordion item 1 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 2">
+              Content for accordion item 2 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 3">
+              Content for accordion item 3 goes here.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+      import React from 'react';
+      import { Accordion, AccordionItem } from './Accordion';
 
-The `Accordion` component itself doesn't take any specific props other than the standard `children` prop to nest `AccordionItem` components.
+      const App = () => (
+        <div className="p-4">
+          <Accordion>
+            <AccordionItem title="Accordion Item 1">
+              Content for accordion item 1 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 2">
+              Content for accordion item 2 goes here.
+            </AccordionItem>
+            <AccordionItem title="Accordion Item 3">
+              Content for accordion item 3 goes here.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      );
 
-| Prop      | Type        | Description                        |
-|-----------|-------------|------------------------------------|
-| `children`| `ReactNode` | Nested `AccordionItem` components. |
+      export default App;
+      ```
+  </TabsContent>
+</Tabs>
 
-### AccordionItem Props
 
-The `AccordionItem` component accepts the following props:
+## Installation
 
-| Prop       | Type        | Description                                     |
-|------------|-------------|-------------------------------------------------|
-| `title`    | `string`    | The title of the accordion item.                |
-| `children` | `ReactNode` | The content to be displayed within the item.    |
+You can install the Accordion component using the PixelBlock CLI tool.
+
+```bash
+npx @pixelblock-cli Accordion
+```
+
 
 ## Usage
 
@@ -82,8 +129,6 @@ The `AccordionItem` component accepts the following props:
   </TabsContent>
 </Tabs>
 
-## Detailed Example
-
 ### Interactive Accordion with Dynamic Content
 
 You can also create an interactive accordion with dynamic content and state management.
@@ -136,6 +181,26 @@ You can also create an interactive accordion with dynamic content and state mana
         ```
   </TabsContent>
 </Tabs>
+
+
+## Props
+
+### Accordion Props
+
+The `Accordion` component itself doesn't take any specific props other than the standard `children` prop to nest `AccordionItem` components.
+
+| Prop      | Type        | Description                        |
+|-----------|-------------|------------------------------------|
+| `children`| `ReactNode` | Nested `AccordionItem` components. |
+
+### AccordionItem Props
+
+The `AccordionItem` component accepts the following props:
+
+| Prop       | Type        | Description                                     |
+|------------|-------------|-------------------------------------------------|
+| `title`    | `string`    | The title of the accordion item.                |
+| `children` | `ReactNode` | The content to be displayed within the item.    |
 
 
 ## Conclusion
