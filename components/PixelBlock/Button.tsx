@@ -41,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   let buttonClassName =
-    "inline-flex  gap-2  whitespace-nowrap items-center justify-center rounded-md  transition-all relative overflow-hidden duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50";
+    "inline-flex  gap-2  whitespace-nowrap items-center disabled:opacity-50 justify-center rounded-md  transition-all relative overflow-hidden duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50";
 
   // Handle color prop
   switch (color) {
