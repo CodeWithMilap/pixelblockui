@@ -83,31 +83,6 @@ const HeroSection = ({ blok }: any) => {
                     Link
                   </Button>
                 </div>
-                <Alert
-                  type="success"
-                  title="Success!"
-                  description="This is a success alert."
-                  icon={<span className="text-green-500">✔️</span>}
-                  onClose={() => console.log()}
-                />
-                <Alert
-                  type="error"
-                  title="Error!"
-                  description="This is an error alert."
-                  icon={<span className="text-red-500">❌</span>}
-                />
-                <Alert
-                  type="warning"
-                  title="Warning!"
-                  description="This is a warning alert."
-                  icon={<span className="text-yellow-500">⚠️</span>}
-                />
-                <Alert
-                  type="info"
-                  title="Info"
-                  description="This is an info alert."
-                  icon={<span className="text-blue-500">ℹ️</span>}
-                />
               </div>
             </div>
 
