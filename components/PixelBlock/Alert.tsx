@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 
 type AlertProps = {
@@ -5,7 +6,7 @@ type AlertProps = {
   title: string;
   description: string;
   icon?: React.ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
 };
 
 const Alert: React.FC<AlertProps> = ({ type, title, description, icon, onClose }) => {
@@ -32,18 +33,18 @@ const Alert: React.FC<AlertProps> = ({ type, title, description, icon, onClose }
 
   return (
     <div className={`${baseStyle} ${typeStyle}`} role="alert">
-      {icon && <div className="mr-3">{icon}</div>}
-      <div className=''>
+      {icon && <div className="mr-2 w-6 h-6 flex items-center justify-center">{icon}</div>}
+      <div className='flex-1'>
         <strong className="font-bold">{title}</strong>
         <span className="block">{description}</span>
       </div>
-      {/* <button
+      <button
         type="button"
-        className="absolute top-0 bottom-0 right-0 px-4 py-3"
+        className="px-2"
         onClick={onClose}
       >
         <span className="text-2xl">&times;</span>
-      </button> */}
+      </button>
     </div>
   );
 };

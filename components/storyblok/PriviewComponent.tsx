@@ -31,7 +31,7 @@ const Priview = ({ blok }: any) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const scope = { Button, InputField, Link, toggleMobileMenu, isMobileMenuOpen, setIsMobileMenuOpen, Hero1 , Feature1, Feature2};
+  const scope = { Button, InputField, Link, toggleMobileMenu, isMobileMenuOpen, setIsMobileMenuOpen, Hero1 , Feature1, Feature2 };
   const [copied, setCopied] = useState(false);
 
   const code = blok?.code;

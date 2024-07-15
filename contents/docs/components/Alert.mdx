@@ -1,0 +1,210 @@
+---
+title: Alert
+description: Detailed documentation for the Alert component in the PixelBlockUI library.
+---
+
+The `Alert` component is used to display important messages to the user. It supports various types of alerts such as success, error, warning, and info, each with a corresponding icon and color scheme.
+
+<br/>
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Alert
+            type="success"
+            title="Success Alert"
+            description="This is a success alert — check it out!"
+            icon={<span className="text-green-500">✔️</span>}
+          />
+          <Alert
+            type="error"
+            title="Error Alert"
+            description="This is an error alert — check it out!"
+            icon={<span className="text-red-500">❌</span>}
+          />
+          <Alert
+            type="warning"
+            title="Warning Alert"
+            description="This is a warning alert — check it out!"
+            icon={<span className="text-yellow-500">⚠️</span>}
+          />
+          <Alert
+            type="info"
+            title="Info Alert"
+            description="This is an info alert — check it out!"
+            icon={<span className="text-blue-500">ℹ️</span>}
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import React from 'react';
+    import Alert from './Alert';
+
+    const App = () => (
+      <div className="p-4">
+        <Alert
+            type="success"
+            title="Success Alert"
+            description="This is a success alert — check it out!"
+            icon={<span className="text-green-500">✔️</span>}
+        />
+        <Alert
+            type="error"
+            title="Error Alert"
+            description="This is an error alert — check it out!"
+            icon={<span className="text-red-500">❌</span>}
+        />
+        <Alert
+            type="warning"
+            title="Warning Alert"
+            description="This is a warning alert — check it out!"
+            icon={<span className="text-yellow-500">⚠️</span>}
+        />
+        <Alert
+            type="info"
+            title="Info Alert"
+            description="This is an info alert — check it out!"
+            icon={<span className="text-blue-500">ℹ️</span>}
+        />
+      </div>
+    );
+
+    export default App;
+    ```
+  </TabsContent>
+</Tabs>
+
+## Installation
+
+You can install the Alert component using the PixelBlock CLI tool.
+
+```bash
+npx pixelblock-cli add Alert
+```
+
+## Usage
+
+### Basic Usage
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Alert
+            type="success"
+            title="Success Alert"
+            description="This is a success alert — check it out!"
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import React from 'react';
+    import Alert from './Alert';
+
+    const App = () => (
+      <div className="p-4">
+        <Alert
+          type="success"
+          title="Success Alert"
+          description="This is a success alert — check it out!"
+        />
+      </div>
+    );
+
+    export default App;
+    ```
+  </TabsContent>
+</Tabs>
+
+### Alert with Custom Icon
+
+You can customize the icon for each alert type by passing a React node as the `icon` prop.
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Alert
+            type="info"
+            title="Custom Icon Alert"
+            description="This is an alert with a custom icon."
+            icon={<IconComponent />}
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import React from 'react';
+    import Alert from './Alert';
+    import { ReactComponent as IconComponent } from './custom-icon.svg';
+
+    const App = () => (
+      <div className="p-4">
+        <Alert
+          type="info"
+          title="Custom Icon Alert"
+          description="This is an alert with a custom icon."
+          icon={<IconComponent />}
+        />
+      </div>
+    );
+
+    export default App;
+    ```
+  </TabsContent>
+</Tabs>
+
+## Props
+
+### Alert Props
+
+The `Alert` component accepts the following props:
+
+| Prop        | Type             | Description                                             |
+|-------------|------------------|---------------------------------------------------------|
+| `type`      | `'success' \| 'error' \| 'warning' \| 'info'` | The type of alert to display.                |
+| `title`     | `string`         | The title of the alert.                                 |
+| `description` | `string`       | The description or message of the alert.                |
+| `icon`      | `React.ReactNode`| Optional icon to display in the alert.                  |
+| `onClose`   | `() => void`     | Optional callback function to handle close action.      |
+
+## Conclusion
+
+The `Alert` component is a versatile and customizable way to display important messages to users. With support for different alert types and custom icons, it can be easily integrated into any React or Next.js project.
+
+For more information and detailed usage instructions, refer to the [PixelBlockUI Documentation](/docs/getting-started/installation).

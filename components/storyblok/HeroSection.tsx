@@ -8,9 +8,10 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import AnimatedSvg from "@/utils/Icons";
 import Dropdown from "../PixelBlock/Dropdown";
+import Alert from "../PixelBlock/Alert";
 
 const HeroSection = ({ blok }: any) => {
- 
+
   return (
     <>
       <section className="w-full py-14 lg:py-28">
@@ -82,9 +83,34 @@ const HeroSection = ({ blok }: any) => {
                     Link
                   </Button>
                 </div>
+                <Alert
+                  type="success"
+                  title="Success!"
+                  description="This is a success alert."
+                  icon={<span className="text-green-500">✔️</span>}
+                  onClose={() => console.log()}
+                />
+                <Alert
+                  type="error"
+                  title="Error!"
+                  description="This is an error alert."
+                  icon={<span className="text-red-500">❌</span>}
+                />
+                <Alert
+                  type="warning"
+                  title="Warning!"
+                  description="This is a warning alert."
+                  icon={<span className="text-yellow-500">⚠️</span>}
+                />
+                <Alert
+                  type="info"
+                  title="Info"
+                  description="This is an info alert."
+                  icon={<span className="text-blue-500">ℹ️</span>}
+                />
               </div>
             </div>
-           
+
             <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 text-card-foreground shadow-sm h-full w-full">
               <div className="flex flex-col space-y-1.5 p-6">
                 <h2 className="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">

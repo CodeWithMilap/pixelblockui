@@ -44,11 +44,11 @@ export const ROUTES = [
         href: "/accordian",
         disabled: false,
       },
-      // {
-      //   title: "Alert Dialog",
-      //   href: "/alert-dialog",
-      //   disabled: true,
-      // },
+      {
+        title: "Alert",
+        href: "/alert",
+        disabled: false,
+      },
       // {
       //   title: "Breadcrumb",
       //   href: "/breadcrumb",
