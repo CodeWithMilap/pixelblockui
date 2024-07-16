@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import AnimatedSvg from "@/utils/Icons";
 import Dropdown from "../PixelBlock/Dropdown";
-import Alert from "../PixelBlock/Alert";
 
 const HeroSection = ({ blok }: any) => {
 

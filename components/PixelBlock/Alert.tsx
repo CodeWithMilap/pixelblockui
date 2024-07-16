@@ -35,7 +35,7 @@ const Alert: React.FC<AlertProps> = ({ type, title, description, icon, onClose }
     <div className={`${baseStyle} ${typeStyle}`} role="alert">
       {icon && <div className="mr-2 w-6 h-6 flex items-center justify-center">{icon}</div>}
       <div className='flex-1'>
-        <strong className="font-bold">{title}</strong>
+        <strong className="font-bold dark:text-current">{title}</strong>
         <span className="block">{description}</span>
       </div>
       <button

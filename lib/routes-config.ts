@@ -46,7 +46,7 @@ export const ROUTES = [
       },
       {
         title: "Alert",
-        href: "/alert",
+        href: "/alerts",
         disabled: false,
       },
       // {
