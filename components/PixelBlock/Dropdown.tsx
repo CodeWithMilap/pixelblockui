@@ -101,7 +101,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className="relative w-64" ref={dropdownRef}>
       <button
-        className="bg-white border border-gray-300 rounded-md px-5 py-2 flex justify-between items-center cursor-pointer w-full text-md"
+        className="bg-white border border-gray-300 dark:bg-transparent rounded-md px-5 py-2 flex justify-between items-center cursor-pointer w-full text-md"
         onClick={toggleDropdown}
       >
         <span>{selected.length > 0 ? selected.map(sel => options.find(opt => opt.value === sel)?.label).join(', ') : placeholder}</span>
@@ -117,13 +117,13 @@ const Dropdown: React.FC<DropdownProps> = ({
       </button>
 
       {isOpen && (
-        <div className="z-10  bg-white rounded-lg shadow w-full dark:bg-gray-700">
+        <div className="z-10  bg-white rounded-lg shadow w-full dark:bg-zinc-700 overflow-hidden">
           {withSearch && (
             <div className='p-3'>
               <label htmlFor="input-group-search" className="sr-only">Search</label>
               <div className="relative">
                 <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                   </svg>
                 </div>
@@ -136,7 +136,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             {filteredOptions.map((option, index) => (
               <div
                 key={index}
-                className={` hover:bg-gray-100 px-3 ${option.disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                className={` hover:bg-gray-100 hover:dark:bg-slate-900 px-3 ${option.disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                 onClick={() => !option.disabled && handleSelect(option.value)}
               >
                 {renderOption ? renderOption(option) : renderOptionDefault(option)}
