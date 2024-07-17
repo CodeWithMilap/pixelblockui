@@ -49,6 +49,11 @@ export const ROUTES = [
         href: "/alerts",
         disabled: false,
       },
+      {
+        title: "Avatar",
+        href: "/avatar",
+        disabled: false,
+      },
       // {
       //   title: "Breadcrumb",
       //   href: "/breadcrumb",

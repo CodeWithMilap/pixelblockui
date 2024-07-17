@@ -5,6 +5,9 @@
     "button-colors": "ButtonColors",
     "dropdown-demo": "DropdownDemo",
     "dropdown-demo2": "DropdownDemo2",
+    "avatar-basic": "AvatarBasic",
+    "avatar-border": "AvatarBorder",
+    "avatar-sizes": "AvatarSizes",
     "modal-demo": "ModalDemo"
   }
   

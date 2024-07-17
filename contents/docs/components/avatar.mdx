@@ -1,0 +1,381 @@
+---
+title: Avatar
+description: Detailed documentation for the Avatar component in the PixelBlockUI library.
+---
+
+## Overview
+
+The `Avatar` component displays an image or fallback content with customizable size, border, color, and radius.
+
+## Installation
+
+You can install the Avatar component using the PixelBlock CLI tool.
+
+```bash
+npx pixelblock-cli add Avatar
+```
+
+## Props
+
+### Avatar Props
+
+The `Avatar` component accepts the following props:
+
+| Prop         | Type              | Default Value | Description                                                  |
+|--------------|-------------------|---------------|--------------------------------------------------------------|
+| `src`        | `string`          |               | The URL of the image to display.                              |
+| `alt`        | `string`          |               | Alternate text for the image.                                 |
+| `fallback`   | `string`          |               | Fallback content displayed when `src` is not provided.        |
+| `size`       | `'sm' \| 'md' \| 'lg'` | `'md'`        | Size of the avatar.                                           |
+| `isBordered` | `boolean`         | `false`       | Whether to display a border around the avatar.                |
+| `color`      | `'default' \| 'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'default'`    | Background color of the avatar.                                |
+| `radius`     | `'none' \| 'sm' \| 'md' \| 'lg' \| 'full'` | `'full'`       | Border radius of the avatar.                                   |
+| `className`  | `string`          |               | Additional CSS classes to apply to the avatar container.      |
+
+## Usage Examples
+
+### Basic Usage
+
+Display a basic avatar with an image:
+
+<Tabs defaultValue="basic">
+  <TabsList className="">
+    <TabsTrigger value="basic">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Basic</div>
+    </TabsTrigger>
+    <TabsTrigger value="basic-code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="basic">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto gap-4">
+        <div className="p-4">
+          <Preview
+            name="avatar-basic"
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="basic-code">
+      ```jsx
+        import React from 'react';
+        import { Avatar } from '../PixelBlock/Avatar';
+
+        const AvatarBasic = () => (
+            <div className="flex gap-4 items-center w-full">
+                <Avatar
+                    alt="User Avatar"
+                    fallback="MD"
+                    size="md"
+                    radius="full"
+                />
+                <Avatar
+                    src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+                    alt="User Avatar"
+                    fallback="MD"
+                    size="md"
+                    radius="full"
+                />
+            </div>
+        );
+
+        export default AvatarBasic;
+      ```
+  </TabsContent>
+</Tabs>
+
+### Avatar with Border
+
+Display an avatar with a border:
+
+<Tabs defaultValue="border">
+  <TabsList className="">
+    <TabsTrigger value="border">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />With Border</div>
+    </TabsTrigger>
+    <TabsTrigger value="border-code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="border">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-cols-5 gap-4">
+        <div className="p-4">
+          <Preview
+            name="avatar-border"
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="border-code">
+      ```jsx
+        import React from 'react';
+        import { Avatar } from '../PixelBlock/Avatar';
+
+        const AvatarBorder = () => (
+            <div className="flex gap-4 items-center w-full">
+                <Avatar
+                    alt="User Avatar"
+                    fallback="U"
+                    size="md"
+                    isBordered
+                    color="default"
+                    radius="full"
+                />
+                <Avatar
+                    src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+                    alt="User Avatar"
+                    fallback="MD"
+                    isBordered
+                    size="md"
+                    radius="full"
+                />
+            </div>
+        );
+
+        export default AvatarBorder;
+      ```
+  </TabsContent>
+</Tabs>
+
+### Avatar with Different Sizes
+
+Display avatars with different sizes:
+
+<Tabs defaultValue="sizes">
+  <TabsList className="">
+    <TabsTrigger value="sizes">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Sizes</div>
+    </TabsTrigger>
+    <TabsTrigger value="sizes-code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="sizes">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto ">
+        <div className="p-4">
+          <Preview
+            name="avatar-sizes"
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="sizes-code">
+      ```jsx
+        import React from 'react';
+        import { Avatar } from '../PixelBlock/Avatar';
+
+        const AvatarSizes = () => (
+            <div className="flex gap-4 items-center w-full">
+                <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" className="w-6 h-6 text-tiny" />
+                <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" size="sm" />
+                <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="md" />
+                <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" size="lg" />
+                <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" className="w-20 h-20 text-large" />
+            </div>
+        );
+
+        export default AvatarSizes;
+      ```
+  </TabsContent>
+</Tabs>
+
+### Avatar with Different Colors
+
+Display avatars with different background colors:
+
+<Tabs defaultValue="colors">
+  <TabsList className="">
+    <TabsTrigger value="colors">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Colors</div>
+    </TabsTrigger>
+    <TabsTrigger value="colors-code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="colors">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-cols-5 gap-4">
+        <div className="p-4">
+          <Preview
+            name="avatar-colors"
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="colors-code">
+      ```jsx
+        import React from 'react';
+        import { Avatar } from './Avatar';
+
+        const App = () => (
+          <div className="p-4 space-y-4">
+            <Avatar
+              src="https://example.com/avatar.jpg"
+              alt="User Avatar"
+              fallback="U"
+              size="md"
+              isBordered={false}
+              color="primary"
+              radius="full"
+              className="my-avatar"
+            />
+            <Avatar
+              src="https://example.com/avatar.jpg"
+              alt="User Avatar"
+              fallback="U"
+              size="md"
+              isBordered={false}
+              color="success"
+              radius="full"
+              className="my-avatar"
+            />
+            <Avatar
+              src="https://example.com/avatar.jpg"
+              alt="User Avatar"
+              fallback="U"
+              size="md"
+              isBordered={false}
+              color="danger"
+              radius="full"
+              className="my-avatar"
+            />
+          </div>
+        );
+
+        export default App;
+      ```
+  </TabsContent>
+</Tabs>
+
+### Avatar with Custom Radius
+
+Display avatars with custom border radius:
+
+<Tabs defaultValue="radius">
+  <TabsList className="">
+   
+
+ <TabsTrigger value="radius">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Radius</div>
+    </TabsTrigger>
+    <TabsTrigger value="radius-code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="radius">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-cols-5 gap-4">
+        <div className="p-4">
+          <Preview
+            name="avatar-radius"
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="radius-code">
+      ```jsx
+        import React from 'react';
+        import { Avatar } from './Avatar';
+
+        const App = () => (
+          <div className="p-4 space-y-4">
+            <Avatar
+              src="https://example.com/avatar.jpg"
+              alt="User Avatar"
+              fallback="U"
+              size="md"
+              isBordered={false}
+              color="default"
+              radius="none"
+              className="my-avatar"
+            />
+            <Avatar
+              src="https://example.com/avatar.jpg"
+              alt="User Avatar"
+              fallback="U"
+              size="md"
+              isBordered={false}
+              color="default"
+              radius="sm"
+              className="my-avatar"
+            />
+            <Avatar
+              src="https://example.com/avatar.jpg"
+              alt="User Avatar"
+              fallback="U"
+              size="md"
+              isBordered={false}
+              color="default"
+              radius="lg"
+              className="my-avatar"
+            />
+          </div>
+        );
+
+        export default App;
+      ```
+  </TabsContent>
+</Tabs>
+
+### Avatar with Fallback Content
+
+Display avatars with fallback content:
+
+<Tabs defaultValue="fallback">
+  <TabsList className="">
+    <TabsTrigger value="fallback">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Fallback Content</div>
+    </TabsTrigger>
+    <TabsTrigger value="fallback-code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="fallback">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-cols-5 gap-4">
+        <div className="p-4">
+          <Preview
+            name="avatar-fallback"
+          />
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="fallback-code">
+      ```jsx
+        import React from 'react';
+        import { Avatar } from './Avatar';
+
+        const App = () => (
+          <div className="p-4">
+            <Avatar
+              src=""
+              alt="User Avatar"
+              fallback="U"
+              size="md"
+              isBordered={false}
+              color="default"
+              radius="full"
+              className="my-avatar"
+            />
+          </div>
+        );
+
+        export default App;
+      ```
+  </TabsContent>
+</Tabs>
+
+## Conclusion
+
+The `Avatar` component provides flexibility in displaying user avatars with various configurations. By utilizing Tailwind CSS classes and props, it seamlessly integrates into your React or Next.js projects.
+
+For more information and detailed usage instructions, refer to the [PixelBlockUI Documentation](/docs/getting-started/installation).

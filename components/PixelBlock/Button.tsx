@@ -66,6 +66,8 @@ const Button: React.FC<ButtonProps> = ({
         " bg-red-600 text-white hover:bg-red-700 border-red-600";
       break;
     default:
+      buttonClassName +=
+      " bg-blue-600 text-white hover:bg-blue-700 border-blue-600";
       break;
   }
 
@@ -129,7 +131,7 @@ const Button: React.FC<ButtonProps> = ({
           outlineColorClass = "border-red-700 text-red-700 hover:text-white";
           break;
         default:
-          outlineColorClass = "border-gray-400";
+          outlineColorClass = "border-gray-400 hover:bg-gray-400 hover:text-black";
       }
       buttonClassName += ` ${outlineColorClass} bg-transparent  border-2`;
       break;

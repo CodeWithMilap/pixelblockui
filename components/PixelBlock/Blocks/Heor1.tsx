@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import Button from '../Button';
 
 const Banner1 = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -114,35 +115,19 @@ const Banner1 = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className='bg-white'>
+      <div className=''>
         <div className='relative isolate px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl py-32'>
             <div className='text-center'>
-              <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
+              <h1 className='text-4xl font-bold tracking-tight text-gray-900 dark:text-zinc-50 sm:text-6xl'>
                 PixelBlockUI Builder for Beautiful Landings
               </h1>
-              <p className='mt-6 text-lg leading-8 text-gray-600'>
+              <p className='mt-6 text-lg leading-8 '>
                 We ve done it carefully and simply. Combined with the ingredients makes for beautiful landings. It is definitely the tool you need to speed up your design process.
               </p>
               <div className='mt-10 flex items-center justify-center gap-x-6'>
-                <Link
-                  href='#'
-                  className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                >
-                  Get started
-                </Link>
-                <Link
-                  href='#'
-                  className='group flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900'
-                >
-                  Learn more{' '}
-                  <span
-                    aria-hidden='true'
-                    className='relative inline-flex translate-x-0 transition duration-300 group-hover:translate-x-2'
-                  >
-                    →
-                  </span>
-                </Link>
+                <Button>Get started</Button>
+                <Button variant='outline'>Learn more</Button>
               </div>
             </div>
           </div>

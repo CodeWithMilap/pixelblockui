@@ -93,15 +93,15 @@ const Dropdown: React.FC<DropdownProps> = ({
   }, []);
 
   const renderOptionDefault = (option: { value: string; label: string; disabled?: boolean }) => (
-    <div className={`p-2 text-sm ${option.disabled ? 'text-gray-400 cursor-not-allowed' : 'cursor-pointer'}`}>
+    <div className={`py-2 text-sm ${option.disabled ? 'text-gray-400 cursor-not-allowed' : 'cursor-pointer'}`}>
       {option.label}
     </div>
   );
 
   return (
-    <div className="relative w-64" ref={dropdownRef}>
+    <div className="relative w-64 border border-gray-300 rounded-md overflow-hidden" ref={dropdownRef}>
       <button
-        className="bg-white border border-gray-300 dark:bg-transparent rounded-md px-5 py-2 flex justify-between items-center cursor-pointer w-full text-md"
+        className="bg-white dark:bg-transparent px-3 py-2 flex justify-between items-center cursor-pointer w-full text-md"
         onClick={toggleDropdown}
       >
         <span>{selected.length > 0 ? selected.map(sel => options.find(opt => opt.value === sel)?.label).join(', ') : placeholder}</span>
@@ -117,7 +117,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       </button>
 
       {isOpen && (
-        <div className="z-10  bg-white rounded-lg shadow w-full dark:bg-zinc-700 overflow-hidden">
+        <div className="z-10 border-t border-gray-300  bg-white w-full  dark:bg-zinc-700 overflow-hidden">
           {withSearch && (
             <div className='p-3'>
               <label htmlFor="input-group-search" className="sr-only">Search</label>
@@ -136,7 +136,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             {filteredOptions.map((option, index) => (
               <div
                 key={index}
-                className={` hover:bg-gray-100 hover:dark:bg-slate-900 px-3 ${option.disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                className={` hover:bg-blue-50 hover:dark:bg-slate-900 px-3 ${option.disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                 onClick={() => !option.disabled && handleSelect(option.value)}
               >
                 {renderOption ? renderOption(option) : renderOptionDefault(option)}
