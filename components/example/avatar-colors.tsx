@@ -4,8 +4,7 @@ import { Avatar } from '../PixelBlock/Avatar';
 const AvatarColors = () => (
     <div className="flex gap-4 items-center w-full">
             <Avatar
-                alt="User Avatar"
-                fallback="U"
+                name="User Avatar"
                 size="md"
                 isBordered={false}
                 color="primary"
@@ -13,8 +12,7 @@ const AvatarColors = () => (
                 className="my-avatar"
             />
             <Avatar
-                alt="User Avatar"
-                fallback="U"
+                name="User Avatar"
                 size="md"
                 isBordered={false}
                 color="success"
@@ -22,7 +20,7 @@ const AvatarColors = () => (
                 className="my-avatar"
             />
             <Avatar
-                fallback="U"
+                name="User Avatar"
                 size="md"
                 isBordered={false}
                 color="danger"

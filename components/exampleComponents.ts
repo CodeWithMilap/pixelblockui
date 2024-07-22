@@ -9,3 +9,4 @@ export { default as AvatarBasic  } from '@/components/example/avatar-basic';
 export { default as AvatarBorder  } from '@/components/example/avatar-border';
 export { default as AvatarSizes  } from '@/components/example/avatar-sizes';
 export { default as AvatarColors  } from '@/components/example/avatar-colors';
+export { default as AvatarRadius  } from '@/components/example/avatar-radius';

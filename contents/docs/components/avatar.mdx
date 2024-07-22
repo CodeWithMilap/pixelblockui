@@ -15,31 +15,14 @@ You can install the Avatar component using the PixelBlock CLI tool.
 npx pixelblock-cli add Avatar
 ```
 
-## Props
-
-### Avatar Props
-
-The `Avatar` component accepts the following props:
-
-| Prop         | Type              | Default Value | Description                                                  |
-|--------------|-------------------|---------------|--------------------------------------------------------------|
-| `src`        | `string`          |               | The URL of the image to display.                              |
-| `alt`        | `string`          |               | Alternate text for the image.                                 |
-| `fallback`   | `string`          |               | Fallback content displayed when `src` is not provided.        |
-| `size`       | `'sm' \| 'md' \| 'lg'` | `'md'`        | Size of the avatar.                                           |
-| `isBordered` | `boolean`         | `false`       | Whether to display a border around the avatar.                |
-| `color`      | `'default' \| 'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'default'`    | Background color of the avatar.                                |
-| `radius`     | `'none' \| 'sm' \| 'md' \| 'lg' \| 'full'` | `'full'`       | Border radius of the avatar.                                   |
-| `className`  | `string`          |               | Additional CSS classes to apply to the avatar container.      |
-
-## Usage Examples
+## Usage
 
 ### Basic Usage
 
 Display a basic avatar with an image:
 
 <Tabs defaultValue="basic">
-  <TabsList className="">
+  <TabsList>
     <TabsTrigger value="basic">
       <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Basic</div>
     </TabsTrigger>
@@ -66,15 +49,13 @@ Display a basic avatar with an image:
         const AvatarBasic = () => (
             <div className="flex gap-4 items-center w-full">
                 <Avatar
-                    alt="User Avatar"
-                    fallback="MD"
+                    name="User Avatar"
                     size="md"
                     radius="full"
                 />
                 <Avatar
                     src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-                    alt="User Avatar"
-                    fallback="MD"
+                    name="User Avatar"
                     size="md"
                     radius="full"
                 />
@@ -91,7 +72,7 @@ Display a basic avatar with an image:
 Display an avatar with a border:
 
 <Tabs defaultValue="border">
-  <TabsList className="">
+  <TabsList>
     <TabsTrigger value="border">
       <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />With Border</div>
     </TabsTrigger>
@@ -101,7 +82,7 @@ Display an avatar with a border:
   </TabsList>
   <TabsContent value="border">
     <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
-      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-cols-5 gap-4">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto gap-4">
         <div className="p-4">
           <Preview
             name="avatar-border"
@@ -118,8 +99,7 @@ Display an avatar with a border:
         const AvatarBorder = () => (
             <div className="flex gap-4 items-center w-full">
                 <Avatar
-                    alt="User Avatar"
-                    fallback="U"
+                    name="User"
                     size="md"
                     isBordered
                     color="default"
@@ -127,8 +107,7 @@ Display an avatar with a border:
                 />
                 <Avatar
                     src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-                    alt="User Avatar"
-                    fallback="MD"
+                    name="User Avatar"
                     isBordered
                     size="md"
                     radius="full"
@@ -146,7 +125,7 @@ Display an avatar with a border:
 Display avatars with different sizes:
 
 <Tabs defaultValue="sizes">
-  <TabsList className="">
+  <TabsList>
     <TabsTrigger value="sizes">
       <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Sizes</div>
     </TabsTrigger>
@@ -156,7 +135,7 @@ Display avatars with different sizes:
   </TabsList>
   <TabsContent value="sizes">
     <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
-      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto ">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto">
         <div className="p-4">
           <Preview
             name="avatar-sizes"
@@ -190,7 +169,7 @@ Display avatars with different sizes:
 Display avatars with different background colors:
 
 <Tabs defaultValue="colors">
-  <TabsList className="">
+  <TabsList>
     <TabsTrigger value="colors">
       <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Colors</div>
     </TabsTrigger>
@@ -218,8 +197,7 @@ Display avatars with different background colors:
           <div className="p-4 space-y-4">
             <Avatar
               src="https://example.com/avatar.jpg"
-              alt="User Avatar"
-              fallback="U"
+              name="User"
               size="md"
               isBordered={false}
               color="primary"
@@ -228,8 +206,7 @@ Display avatars with different background colors:
             />
             <Avatar
               src="https://example.com/avatar.jpg"
-              alt="User Avatar"
-              fallback="U"
+              name="User"
               size="md"
               isBordered={false}
               color="success"
@@ -238,8 +215,7 @@ Display avatars with different background colors:
             />
             <Avatar
               src="https://example.com/avatar.jpg"
-              alt="User Avatar"
-              fallback="U"
+              name="User"
               size="md"
               isBordered={false}
               color="danger"
@@ -249,7 +225,9 @@ Display avatars with different background colors:
           </div>
         );
 
-        export default App;
+        export default App
+
+;
       ```
   </TabsContent>
 </Tabs>
@@ -259,10 +237,8 @@ Display avatars with different background colors:
 Display avatars with custom border radius:
 
 <Tabs defaultValue="radius">
-  <TabsList className="">
-   
-
- <TabsTrigger value="radius">
+  <TabsList>
+    <TabsTrigger value="radius">
       <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Radius</div>
     </TabsTrigger>
     <TabsTrigger value="radius-code">
@@ -271,7 +247,7 @@ Display avatars with custom border radius:
   </TabsList>
   <TabsContent value="radius">
     <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
-      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto  gap-4">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto gap-4">
         <div className="p-4">
           <Preview
             name="avatar-radius"
@@ -289,8 +265,7 @@ Display avatars with custom border radius:
           <div className="p-4 space-y-4">
             <Avatar
               src="https://example.com/avatar.jpg"
-              alt="User Avatar"
-              fallback="U"
+              name="User"
               size="md"
               isBordered={false}
               color="default"
@@ -299,8 +274,7 @@ Display avatars with custom border radius:
             />
             <Avatar
               src="https://example.com/avatar.jpg"
-              alt="User Avatar"
-              fallback="U"
+              name="User"
               size="md"
               isBordered={false}
               color="default"
@@ -309,8 +283,7 @@ Display avatars with custom border radius:
             />
             <Avatar
               src="https://example.com/avatar.jpg"
-              alt="User Avatar"
-              fallback="U"
+              name="User"
               size="md"
               isBordered={false}
               color="default"
@@ -325,54 +298,23 @@ Display avatars with custom border radius:
   </TabsContent>
 </Tabs>
 
-### Avatar with Fallback Content
 
-Display avatars with fallback content:
+## Props
 
-<Tabs defaultValue="fallback">
-  <TabsList className="">
-    <TabsTrigger value="fallback">
-      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Fallback Content</div>
-    </TabsTrigger>
-    <TabsTrigger value="fallback-code">
-      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
-    </TabsTrigger>
-  </TabsList>
-  <TabsContent value="fallback">
-    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
-      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto gap-4">
-        <div className="p-4">
-          <Preview
-            name="avatar-fallback"
-          />
-        </div>
-      </div>
-    </div>
-  </TabsContent>
-  <TabsContent value="fallback-code">
-      ```jsx
-        import React from 'react';
-        import { Avatar } from './Avatar';
+### Avatar Props
 
-        const App = () => (
-          <div className="p-4">
-            <Avatar
-              src=""
-              alt="User Avatar"
-              fallback="U"
-              size="md"
-              isBordered={false}
-              color="default"
-              radius="full"
-              className="my-avatar"
-            />
-          </div>
-        );
+The `Avatar` component accepts the following props:
 
-        export default App;
-      ```
-  </TabsContent>
-</Tabs>
+| Prop         | Type              | Default Value | Description                                                  |
+|--------------|-------------------|---------------|--------------------------------------------------------------|
+| `src`        | `string`          |               | The URL of the image to display.                              |
+| `name`       | `string`          |               | Name to generate initials for fallback content when `src` is not provided. |
+| `size`       | `'sm' \| 'md' \| 'lg'` | `'md'`        | Size of the avatar.                                           |
+| `isBordered` | `boolean`         | `false`       | Whether to display a border around the avatar.                |
+| `color`      | `'default' \| 'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'default'`    | Background color of the avatar.                                |
+| `radius`     | `'none' \| 'sm' \| 'md' \| 'lg' \| 'full'` | `'full'`       | Border radius of the avatar.                                   |
+| `className`  | `string`          |               | Additional CSS classes to apply to the avatar container.      |
+
 
 ## Conclusion
 

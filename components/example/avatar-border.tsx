@@ -4,8 +4,7 @@ import { Avatar } from '../PixelBlock/Avatar';
 const AvatarBorder = () => (
     <div className="flex gap-4 items-center w-full">
         <Avatar
-            alt="User Avatar"
-            fallback="U"
+            name="User Avatar"
             size="md"
             isBordered
             color="default"
@@ -13,8 +12,7 @@ const AvatarBorder = () => (
         />
         <Avatar
             src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-            alt="User Avatar"
-            fallback="MD"
+            name="User Avatar"
             isBordered
             size="md"
             radius="full"
