@@ -11,6 +11,7 @@ import StoryblokProvider from "../components/StoryblokProvider";
 import Header from "@/components/Header/Header";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 const arimo = Arimo({
@@ -74,6 +75,7 @@ export default async function RootLayout({
   return (
     <StoryblokProvider>
       <html lang="en" suppressHydrationWarning>
+        <GoogleAnalytics />
         <body
           className={`${inter.className} ${arimo.className}  text-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 flex flex-col min-h-screen`}
         >
