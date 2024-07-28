@@ -318,7 +318,7 @@ export function CodeIcon(props: any) {
 export function LightIcon(props: any) {
   return (
     <svg
-      className="size-4 flex-shrink-0"
+      className="size-4 flex-shrink-0 stroke-black"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"

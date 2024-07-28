@@ -85,7 +85,7 @@ const Navbar = ({ blok }: any) => {
                   />
                 ))}
                 <div className="hidden md:flex">
-                <DarkLightModeSwitch />
+                  <DarkLightModeSwitch />
                 </div>
               </div>
             </div>

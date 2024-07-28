@@ -96,7 +96,7 @@ const HeroSection = ({ blok }: any) => {
                 </p>
               </div>
               <div className="p-6">
-                <div className="flex  gap-2 flex-wrap">
+                <div className="flex flex-col  gap-2 flex-wrap">
                   <form className="space-y-4">
                     <InputField
                       id="name"
