@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Container from "../Container";
 import { BlocksIcon } from "../Icons";
@@ -8,18 +7,18 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import AnimatedSvg from "@/utils/Icons";
 import Dropdown from "../PixelBlock/Dropdown";
+import ColorGenerator from "../ColorGenerator";
 
 const HeroSection = ({ blok }: any) => {
-
   return (
     <>
       <section className="w-full py-14 lg:py-28">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_400px]">
+          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_420px]">
             <div className="flex flex-col justify-center space-y-8">
               <div className="space-y-4 max-w-xl">
                 <h1 className="text-3xl font-bold tracking-tighter dark:text-zinc-50 sm:text-5xl xl:text-6xl/none">
-                  <span className="text-pxPrimary">PixelBlockUI</span>{" "}
+                  <span className="text-primary-500">PixelBlockUI</span>{" "}
                   Beautifully Designed UI Components.
                 </h1>
                 <p className="max-w-[600px]  md:text-xl">
@@ -30,7 +29,9 @@ const HeroSection = ({ blok }: any) => {
               <div className="grid grid-cols-2 md:grid-cols-2 max-w-sm gap-4 ">
                 <Button color="primary" size="lg">
                   {" "}
-                  <Link href="/docs/getting-started/introduction">Get Started</Link>
+                  <Link href="/docs/getting-started/introduction">
+                    Get Started
+                  </Link>
                 </Button>
 
                 {/* <Button variant="outline" color="primary">
@@ -38,8 +39,12 @@ const HeroSection = ({ blok }: any) => {
                 </Button> */}
               </div>
             </div>
-            <div className=" hidden justify-end lg:flex">
-              <AnimatedSvg className="dark:text-zinc-50" />
+            <div className="  justify-end lg:flex">
+              <div
+                className={` p-8 rounded-2xl shadow-xl transition-colors duration-300 w-full`}
+              >
+                <ColorGenerator />
+              </div>
             </div>
           </div>
         </Container>

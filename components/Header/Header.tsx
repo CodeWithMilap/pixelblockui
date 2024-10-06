@@ -5,12 +5,20 @@ import { BlocksIcon } from "../Icons";
 import Container from "../Container";
 import DarkLightModeSwitch from "../DarkLightModeSwitch";
 import { StoryblokComponent } from "@storyblok/react";
+import { IconColor } from "@/utils/Icons";
+import { Button } from "../ui/button";
+import ColorGenerator from "../ColorGenerator";
 
 const Navbar = ({ blok }: any) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State for sidebar
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
@@ -87,11 +95,37 @@ const Navbar = ({ blok }: any) => {
                 <div className="hidden md:flex">
                   <DarkLightModeSwitch />
                 </div>
+                {/* <div>
+                  <Button
+                    variant="link"
+                    className="px-2"
+                    onClick={toggleSidebar}
+                  >
+                    <IconColor className="h-5 w-5" />
+                  </Button>
+                </div> */}
               </div>
             </div>
           </div>
         </Container>
       </nav>
+
+      {/* Sidebar Drawer */}
+      <div
+        className={`fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300 ${
+          isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={toggleSidebar}
+      />
+      <div
+        className={`fixed right-0 top-0 z-50 w-96 h-full bg-white dark:bg-zinc-800 transform transition-transform duration-300 ${
+          isSidebarOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="p-10">
+          <ColorGenerator />
+        </div>
+      </div>
     </>
   );
 };

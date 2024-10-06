@@ -24,7 +24,7 @@ interface InputFieldProps
   color?: Color;
   radius?: Radius;
   label?: string;
-  type?: "input" | "textarea" | "number" | "password" | "email";
+  type?: "text" | "textarea" | "number" | "password" | "email";
 }
 
 const InputField: React.FC<InputFieldProps> = ({

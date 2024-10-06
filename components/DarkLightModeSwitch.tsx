@@ -3,6 +3,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import { DarkIcon, LightIcon } from "./Icons";
 import Button from "./PixelBlock/Button";
+import { Moon, Sun } from "lucide-react";
 
 const DarkLightModeSwitch: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -12,11 +13,13 @@ const DarkLightModeSwitch: React.FC = () => {
   };
 
   return (
-    <Button
-      variant="link"
-      onClick={() => toggleTheme()}
-      icon={theme === "dark" ? <DarkIcon /> : <LightIcon />}
-    />
+    <Button variant="ghost"  onClick={toggleTheme}>
+      {theme === "light" ? (
+        <Moon className="h-5 w-5" />
+      ) : (
+        <Sun className="h-5 w-5" />
+      )}
+    </Button>
   );
 };
 

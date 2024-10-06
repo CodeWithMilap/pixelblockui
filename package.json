@@ -19,6 +19,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@storyblok/react": "^3.0.10",
     "@tailwindcss/container-queries": "^0.1.1",
+    "chroma-js": "^3.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "local-ssl-proxy": "^2.0.5",
@@ -27,6 +28,7 @@
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
+    "react-colorful": "^5.6.1",
     "react-dom": "^18.3.1",
     "react-live": "^4.1.6",
     "react-resizable-panels": "^2.0.19",
@@ -42,6 +44,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
+    "@types/chroma-js": "^2.4.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
