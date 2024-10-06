@@ -23,7 +23,7 @@ const AvatarColors = () => (
                 name="User Avatar"
                 size="md"
                 isBordered={false}
-                color="danger"
+                color="error"
                 radius="full"
                 className="my-avatar"
             />

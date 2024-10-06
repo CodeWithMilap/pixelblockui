@@ -8,7 +8,7 @@ const ButtonColors = () => {
             <Button color="secondary">Secondary</Button>
             <Button color="success">Success</Button>
             <Button color="warning">Warning</Button>
-            <Button color="danger">Danger</Button>
+            <Button color="error">Danger</Button>
         </div>
     )
 }
