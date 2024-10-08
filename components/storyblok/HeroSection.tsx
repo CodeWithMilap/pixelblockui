@@ -40,11 +40,8 @@ const HeroSection = ({ blok }: any) => {
               </div>
             </div>
             <div className="  justify-end lg:flex">
-              <div
-                className={` p-8 rounded-2xl shadow-xl transition-colors duration-300 w-full`}
-              >
+              
                 <ColorGenerator />
-              </div>
             </div>
           </div>
         </Container>
