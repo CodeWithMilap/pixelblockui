@@ -29,13 +29,13 @@ storyblokInit({
 });
 
 export const metadata: Metadata = {
-  title: "PixelBlockUI - Tailwind CSS & React Component CLI Tool for Easy Integration",
+  title: "PixelBlockUI - Tailwind CSS & React Component CLI Tool",
   description: "Streamline your development process with PixelBlockUI. Our CLI tool offers seamless integration of Tailwind CSS and React components into your projects, making UI design effortless and efficient.",
   icons: {
     icon: "/FaviconIcon.png", // /public path
   },
   openGraph: {
-    title: "PixelBlockUI - Tailwind CSS & React Component CLI Tool for Easy Integration",
+    title: "PixelBlockUI - Tailwind CSS & React Component CLI Tool",
     description: "Streamline your development process with PixelBlockUI. Our CLI tool offers seamless integration of Tailwind CSS and React components into your projects, making UI design effortless and efficient.",
     url: "https://pixelblockui.com/", // Replace with your actual URL
     type: "website",
@@ -49,19 +49,6 @@ export const metadata: Metadata = {
     ],
     siteName: "PixelBlockUI",
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   site: "@yourtwitterhandle", // Replace with your Twitter handle
-  //   creator: "@yourtwitterhandle", // Replace with your Twitter handle
-  //   title: "PixelBlockUI - Next.js and Tailwind CSS UI Components",
-  //   description: "Streamline your development process with PixelBlockUI. Our CLI tool offers seamless integration of Tailwind CSS and React components into your projects, making UI design effortless and efficient.",
-  //   images: [
-  //     {
-  //       url: "/twitter-image.png", // Replace with your actual image path
-  //       alt: "PixelBlockUI",
-  //     },
-  //   ],
-  // },
 };
 
 
