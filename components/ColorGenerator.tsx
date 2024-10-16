@@ -76,7 +76,7 @@ const ColorGenerator = () => {
   const ColorSwatch = ({ type, color }: { type: ColorType; color: string }) => (
     <div className="flex items-center space-x-2 w-full">
       <div
-        className="min-w-6 min-h-6 rounded-full cursor-pointer"
+        className="min-w-8 min-h-8 rounded-md cursor-pointer border"
         style={{ backgroundColor: color }}
         onClick={() => setActiveColor(type)} // Set the active color when clicking the swatch
       />
