@@ -63,6 +63,10 @@ export const ROUTES = [
         title: "Button",
         href: "/button",
       },
+      {
+        title: "Cards",
+        href: "/cards",
+      },
       // {
       //   title: "Context Menu",
       //   href: "/context-menu",

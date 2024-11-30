@@ -1,0 +1,178 @@
+---
+title: Cards
+component: true
+description: A flexible card component for displaying content such as titles, descriptions, tags, authors, and more.
+---
+
+The **Cards** component provides an adaptable layout with various configurations, including optional icons, authors, tags, and alignment.
+
+## Installation
+
+```bash
+npx pixelblock-cli add Cards
+```
+
+This will copy the `Cards.tsx` file from the PixelBlock templates to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── Cards.tsx
+└── ...
+```
+
+---
+
+## Usage
+
+After installing the **Cards** component, you can use it in your Next.js or React application.
+
+### Example: Simple Card
+
+```jsx
+import React from "react";
+import Cards from "./components/PixelBlock/Cards";
+
+const App = () => (
+  <div>
+    <Cards
+      blok={{
+        date: "22 June 2020",
+        title: "Sed ut perspiciatis unde omnis at vero blanditils",
+        description:
+          "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+        tags: ["Proxy", "VPN"],
+      }}
+    />
+  </div>
+);
+
+export default App;
+```
+
+---
+
+## Props
+
+### Cards Props
+
+| Prop       | Type                            | Default     | Description                                    |
+| ---------- | ------------------------------- | ----------- | ---------------------------------------------- |
+| `blok`     | `BlokProps`                     | `{}`        | Object containing the card's content and data. |
+| `variant`  | `"center"`, `"left"`, `"right"` | `"left"`    | Text alignment and layout direction.           |
+| `shadow`   | `"sm"`, `"md"`, `"lg"`          | `"md"`      | Shadow intensity for the card.                 |
+| `radius`   | `"sm"`, `"md"`, `"lg"`          | `"md"`      | Border radius for the card.                    |
+| `children` | `ReactNode`                     | `undefined` | Custom content to be rendered inside the card. |
+
+### BlokProps
+
+| Prop           | Type                             | Default     | Description                                |
+| -------------- | -------------------------------- | ----------- | ------------------------------------------ |
+| `icon`         | `ReactNode`                      | `undefined` | An optional icon to display on the card.   |
+| `title`        | `string`                         | `undefined` | The title of the card.                     |
+| `description`  | `string`                         | `undefined` | The main description text for the card.    |
+| `date`         | `string`                         | `undefined` | A date string to display on the card.      |
+| `image`        | `string`                         | `undefined` | URL for an image to display on the card.   |
+| `readMoreLink` | `string`                         | `undefined` | A link for additional content or details.  |
+| `tags`         | `string[]`                       | `undefined` | Array of tags to display as labels.        |
+| `author`       | `{ name: string, role: string }` | `undefined` | An object containing author name and role. |
+
+---
+
+## Examples
+
+### Card with Static Data
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 not-prose">
+      <Cards
+        blok={{
+          date: "22 June 2020",
+          title: "Sed ut perspiciatis unde omnis at vero blanditils",
+          description:
+            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+          tags: ["Proxy", "VPN"],
+        }}
+      />
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import Cards from "./components/PixelBlock/Cards";
+
+    <Cards
+      blok={{
+        date: "22 June 2020",
+        title: "Sed ut perspiciatis unde omnis at vero blanditils",
+        description:
+          "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+        tags: ["Proxy", "VPN"],
+      }}
+    />;
+    ```
+
+  </TabsContent>
+</Tabs>
+
+---
+
+### Multiple Cards Example
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 grid gap-6 md:grid-cols-2 lg:grid-cols-2 not-prose">
+      {[...Array(2)].map((_, index) => (
+        <Cards
+          key={index}
+          blok={{
+            date: "22 June 2020",
+            title: `Card Title ${index + 1}`,
+            description:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
+            tags: ["Tag1", "Tag2"],
+            image: "https://placehold.co/600x400/png",
+          }}
+        />
+      ))}
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    const cardData = [
+      {
+        date: "22 June 2020",
+        title: "Card Title 1",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        tags: ["Tag1", "Tag2"],
+        image: "/path/to/image1.jpg",
+      },
+      // Add more card data as needed
+    ];
+
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {cardData.map((card, index) => (
+        <Cards key={index} blok={card} />
+      ))}
+    </div>;
+    ```
+
+  </TabsContent>
+</Tabs>

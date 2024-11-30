@@ -18,6 +18,7 @@ import Preview from "@/components/Preview";
 import { IconComponent, IconProfile, LoadingIcon } from "@/utils/Icons";
 import Dropdown from "@/components/PixelBlock/Dropdown";
 import Alert from "@/components/PixelBlock/Alert";
+import Cards from "@/components/PixelBlock/Cards";
 
 type MdxFrontmatter = {
   title: string;
@@ -41,7 +42,8 @@ const components = {
   LoadingIcon,
   IconProfile,
   Dropdown,
-  Alert
+  Alert,
+  Cards
 };
 
 function getContentPath(slug: string) {
