@@ -146,6 +146,10 @@ export const ROUTES = [
       //   href: "/resizable",
       //   disabled: true,
       // },
+      {
+        title: "Section",
+        href: "/section",
+      },
       // {
       //   title: "Scroll Area",
       //   href: "/scroll-area",

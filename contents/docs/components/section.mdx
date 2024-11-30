@@ -1,0 +1,71 @@
+---
+title: Section
+component: true
+description: A wrapper component that provides a consistent layout and styling for sections of content.
+---
+
+The `Section` component provides a flexible layout container for sections of your page. It ensures that content is centered and responsive while allowing for custom styling through the `className` prop.
+
+## Installation
+
+```bash
+npx pixelblock-cli add Section
+```
+
+This will copy the `Section.tsx` file from the PixelBlock templates to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── Section.tsx
+└── ...
+```
+
+## Usage
+
+After installing the `Section` component, you can use it to wrap sections of your page.
+
+### Basic Example
+
+Here's a basic example of how to use the `Section` component in a React application:
+
+```jsx
+import React from "react";
+import Section from "./components/PixelBlock/Section";
+
+const App = () => (
+  <Section className="bg-gray-100 py-8">
+    <h1 className="text-2xl font-bold text-center">Welcome to Our Website</h1>
+    <p className="text-lg text-center">This is a custom section with content.</p>
+  </Section>
+);
+
+export default App;
+```
+
+## Props
+
+| Prop      | Type       | Default Value | Description                                                                       |
+| --------- | ---------- | ------------- | --------------------------------------------------------------------------------- |
+| className | `string`   | `""`          | Additional custom CSS classes to apply to the `section` element.                  |
+| children  | `ReactNode`| -             | The content to be displayed inside the `Section`. This can be any valid React children. |
+
+## Customization
+
+The `Section` component can be customized using the `className` prop. You can use Tailwind's utility classes to adjust the layout, padding, background, and other styles.
+
+### Example with Custom Background and Padding
+
+```jsx
+<Section className="bg-blue-100 py-16">
+  <h1 className="text-3xl font-bold text-center">Custom Section</h1>
+  <p className="text-lg text-center">This section has a custom background color and padding.</p>
+</Section>
+```
+
+In this example, the `bg-blue-100` class gives the section a light blue background, and the `py-16` adds more padding to the top and bottom of the section.
+
+### Responsive Layout
+
+By default, the `Section` component ensures that your content is centered and responsive, using Tailwind's `max-w-screen-xl mx-auto` classes.
