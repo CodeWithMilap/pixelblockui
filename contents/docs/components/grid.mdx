@@ -1,0 +1,237 @@
+---
+title: Grid
+component: true
+description: A responsive grid component with customizable columns, gaps, and alignment.
+---
+
+The `Grid` component provides a flexible and customizable grid layout system. It supports defining the number of columns, gap spacing, and alignment properties for both items and content.
+
+## Installation
+
+```bash
+npx pixelblock-cli add Grid
+```
+
+This will copy the `Grid.tsx` file from the PixelBlock templates to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── Grid.tsx
+└── ...
+```
+
+## Usage
+
+After installing the Grid component, you can use it in your React application.
+
+### Basic Example
+
+Here's a basic example of how to use the Grid component in a React application:
+
+```jsx
+import React from "react";
+import Grid from "./components/PixelBlock/Grid";
+
+const App = () => (
+  <Grid columns={3} gap={4} alignItems="center" justifyItems="center">
+    <div className="bg-blue-500 text-white p-4">Item 1</div>
+    <div className="bg-blue-500 text-white p-4">Item 2</div>
+    <div className="bg-blue-500 text-white p-4">Item 3</div>
+  </Grid>
+);
+
+export default App;
+```
+
+## Props
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center">
+        <EyeIcon className="mr-2 h-4 w-4" />
+        Preview
+      </div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center">
+        <CodeIcon className="mr-2 h-4 w-4" />
+        Code
+      </div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Grid columns={3} gap={4} alignItems="center" justifyItems="center">
+        <div className="bg-blue-500 text-white p-4">Item 1</div>
+        <div className="bg-blue-500 text-white p-4">Item 2</div>
+        <div className="bg-blue-500 text-white p-4">Item 3</div>
+      </Grid>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    <div className="text-sm text-gray-800 dark:text-gray-200">
+      ```jsx
+      <Grid columns={3} gap={4} alignItems="center" justifyItems="center">
+        <div className="bg-blue-500 text-white p-4">Item 1</div>
+        <div className="bg-blue-500 text-white p-4">Item 2</div>
+        <div className="bg-blue-500 text-white p-4">Item 3</div>
+      </Grid>
+      ```
+    </div>
+  </TabsContent>
+</Tabs>
+
+## Columns
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Grid columns={4} gap={6}>
+        <div className="bg-gray-500 text-white p-4">Item 1</div>
+        <div className="bg-gray-500 text-white p-4">Item 2</div>
+        <div className="bg-gray-500 text-white p-4">Item 3</div>
+        <div className="bg-gray-500 text-white p-4">Item 4</div>
+      </Grid>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    <div className="text-sm text-gray-800 dark:text-gray-200">
+      ```jsx
+      <Grid columns={4} gap={6}>
+        <div className="bg-gray-500 text-white p-4">Item 1</div>
+        <div className="bg-gray-500 text-white p-4">Item 2</div>
+        <div className="bg-gray-500 text-white p-4">Item 3</div>
+        <div className="bg-gray-500 text-white p-4">Item 4</div>
+      </Grid>
+      ```
+    </div>
+  </TabsContent>
+</Tabs>
+
+## Gap
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center">
+        <EyeIcon className="mr-2 h-4 w-4" />
+        Preview
+      </div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center">
+        <CodeIcon className="mr-2 h-4 w-4" />
+        Code
+      </div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Grid columns={3} gap={8}>
+        <div className="bg-red-500 text-white p-4">Item 1</div>
+        <div className="bg-red-500 text-white p-4">Item 2</div>
+        <div className="bg-red-500 text-white p-4">Item 3</div>
+      </Grid>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    <div className="text-sm text-gray-800 dark:text-gray-200">
+      ```jsx
+      <Grid columns={3} gap={8}>
+        <div className="bg-red-500 text-white p-4">Item 1</div>
+        <div className="bg-red-500 text-white p-4">Item 2</div>
+        <div className="bg-red-500 text-white p-4">Item 3</div>
+      </Grid>
+      ```
+    </div>
+  </TabsContent>
+</Tabs>
+
+## Align Items
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center">
+        <EyeIcon className="mr-2 h-4 w-4" />
+        Preview
+      </div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center">
+        <CodeIcon className="mr-2 h-4 w-4" />
+        Code
+      </div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Grid columns={3} gap={4} alignItems="center">
+        <div className="bg-green-500 text-white p-4">Item 1</div>
+        <div className="bg-green-500 text-white p-4">Item 2</div>
+        <div className="bg-green-500 text-white p-4">Item 3</div>
+      </Grid>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    <div className="text-sm text-gray-800 dark:text-gray-200">
+      ```jsx
+      <Grid columns={3} gap={4} alignItems="center">
+        <div className="bg-green-500 text-white p-4">Item 1</div>
+        <div className="bg-green-500 text-white p-4">Item 2</div>
+        <div className="bg-green-500 text-white p-4">Item 3</div>
+      </Grid>
+      ```
+    </div>
+  </TabsContent>
+</Tabs>
+
+## Justify Items
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark
+
+:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Grid columns={3} gap={4} justifyItems="center">
+        <div className="bg-purple-500 text-white p-4">Item 1</div>
+        <div className="bg-purple-500 text-white p-4">Item 2</div>
+        <div className="bg-purple-500 text-white p-4">Item 3</div>
+      </Grid>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    <div className="text-sm text-gray-800 dark:text-gray-200">
+      ```jsx
+      <Grid columns={3} gap={4} justifyItems="center">
+        <div className="bg-purple-500 text-white p-4">Item 1</div>
+        <div className="bg-purple-500 text-white p-4">Item 2</div>
+        <div className="bg-purple-500 text-white p-4">Item 3</div>
+      </Grid>
+      ```
+    </div>
+  </TabsContent>
+</Tabs>
+
+## Conclusion
+
+The `Grid` component provides an easy-to-use, flexible layout system for managing grid-based designs with full customization over columns, gaps, and alignment. Adjust the properties to fit your layout needs and create responsive designs with ease.

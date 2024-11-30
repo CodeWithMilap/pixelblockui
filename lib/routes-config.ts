@@ -107,6 +107,10 @@ export const ROUTES = [
         href: "/input",
         // disabled: true,
       },
+      {
+        title: "Grid",
+        href: "/grid",
+      },
       // {
       //   title: "Input OTP",
       //   href: "/input-otp",
