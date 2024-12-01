@@ -20,7 +20,7 @@ const MarqueeImageScroller = ({
       aria-label="Scrolling image gallery"
       className="w-full overflow-hidden"
     >
-      <div className="flex flex-col items-end gap-2 md:flex-row md:items-center md:gap-6 relative  before:content-[''] before:absolute before:top-0 before:left-0 before:w-[100px] before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:content-[''] after:absolute after:top-0 after:right-0 after:w-[100px] after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
+      <div className="relative flex flex-col items-end gap-2 md:flex-row md:items-center md:gap-6">
         <div
           className="relative flex w-full select-none overflow-hidden"
           role="region"
