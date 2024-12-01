@@ -43,6 +43,7 @@ const App = () => (
         description:
           "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
         tags: ["Proxy", "VPN"],
+        readMoreLink: "/blog/sed-ut-perspiciatis-unde-omnis", // Added Read More link
       }}
     />
   </div>
@@ -60,7 +61,7 @@ export default App;
 | Prop       | Type                            | Default     | Description                                    |
 | ---------- | ------------------------------- | ----------- | ---------------------------------------------- |
 | `blok`     | `BlokProps`                     | `{}`        | Object containing the card's content and data. |
-| `variant`  | `"center"`, `"left"`, `"right"` | `"left"`    | Text alignment and layout direction.           |
+| `variant`  | `"center"`, `"left"`, `"right"`  | `"left"`    | Text alignment and layout direction.           |
 | `shadow`   | `"sm"`, `"md"`, `"lg"`          | `"md"`      | Shadow intensity for the card.                 |
 | `radius`   | `"sm"`, `"md"`, `"lg"`          | `"md"`      | Border radius for the card.                    |
 | `children` | `ReactNode`                     | `undefined` | Custom content to be rendered inside the card. |
@@ -102,6 +103,7 @@ export default App;
           description:
             "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
           tags: ["Proxy", "VPN"],
+          readMoreLink: "/blog/sed-ut-perspiciatis-unde-omnis", // Added Read More link
         }}
       />
     </div>
@@ -117,16 +119,18 @@ export default App;
         description:
           "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
         tags: ["Proxy", "VPN"],
+        readMoreLink: "/blog/sed-ut-perspiciatis-unde-omnis", // Added Read More link
       }}
     />;
     ```
-
   </TabsContent>
 </Tabs>
 
 ---
 
-### Multiple Cards Example
+### Card with Author and Title (Testimonial/Quote)
+
+In this example, the card focuses on presenting a testimonial or quote from an author, without an image or read-more link.
 
 <Tabs defaultValue="preview">
   <TabsList>
@@ -138,41 +142,157 @@ export default App;
     </TabsTrigger>
   </TabsList>
   <TabsContent value="preview">
-    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 grid gap-6 md:grid-cols-2 lg:grid-cols-2 not-prose">
-      {[...Array(2)].map((_, index) => (
-        <Cards
-          key={index}
-          blok={{
-            date: "22 June 2020",
-            title: `Card Title ${index + 1}`,
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
-            tags: ["Tag1", "Tag2"],
-            image: "https://placehold.co/600x400/png",
-          }}
-        />
-      ))}
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 not-prose">
+      <Cards
+        blok={{
+          date: "22 June 2020",
+          description:
+            "Web development has evolved rapidly over the last decade. Learn about the latest trends and technologies.",
+          author: {
+            name: "John Doe",
+            role: "Senior Developer",
+          },
+        }}
+      />
     </div>
   </TabsContent>
   <TabsContent value="code">
     ```jsx
-    const cardData = [
-      {
+    import Cards from "./components/PixelBlock/Cards";
+
+    <Cards
+      blok={{
         date: "22 June 2020",
-        title: "Card Title 1",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        tags: ["Tag1", "Tag2"],
-        image: "/path/to/image1.jpg",
-      },
-      // Add more card data as needed
-    ];
-
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {cardData.map((card, index) => (
-        <Cards key={index} blok={card} />
-      ))}
-    </div>;
+        description:
+          "Web development has evolved rapidly over the last decade. Learn about the latest trends and technologies.",
+        author: {
+          name: "John Doe",
+          role: "Senior Developer",
+        },
+      }}
+    />;
     ```
+  </TabsContent>
+</Tabs>
 
+---
+
+### Card with Image and Tags
+
+This example demonstrates a card with an image and tags displayed at the bottom of the card.
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 not-prose">
+      <Cards
+        blok={{
+          date: "22 June 2020",
+          title: "Modern Web Design Trends",
+          description:
+            "Explore the top web design trends of 2020, including user experience best practices and the rise of dark mode.",
+          image: "https://placehold.co/600x400/png",
+          readMoreLink: "#", // Added Read More link
+        }}
+      />
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import Cards from "./components/PixelBlock/Cards";
+
+    <Cards
+      blok={{
+        date: "22 June 2020",
+        title: "Modern Web Design Trends",
+        description:
+          "Explore the top web design trends of 2020, including user experience best practices and the rise of dark mode.",
+        image: "https://placehold.co/600x400/png",
+          readMoreLink: "#", // Added Read More link
+      }}
+    />;
+    ```
+  </TabsContent>
+</Tabs>
+
+---
+
+### Multiple Cards Example
+
+This example shows how to render
+
+ multiple cards, allowing for easy display of content in grids or lists.
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center"><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center"><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+      <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 not-prose">
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+      <Cards
+        blok={{
+          date: "22 June 2020",
+          title: "Future of AI in Web Development",
+          description:
+            "AI is reshaping the web development landscape. Find out how AI tools are improving workflows and optimizing designs.",
+          readMoreLink: "#", // Added Read More link
+          image: "https://placehold.co/600x400/png",
+        }}
+      />
+      <Cards
+        blok={{
+          date: "22 June 2020",
+          title: "Sustainable Web Practices",
+          description:
+            "Learn how developers can contribute to sustainability by adopting eco-friendly web practices and optimizing performance.",
+          readMoreLink: "#", // Added Read More link
+          image: "https://placehold.co/600x400/png",
+        }}
+      />
+    
+    </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import Cards from "./components/PixelBlock/Cards";
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Cards
+        blok={{
+          date: "22 June 2020",
+          title: "Future of AI in Web Development",
+          description:
+            "AI is reshaping the web development landscape. Find out how AI tools are improving workflows and optimizing designs.",
+          readMoreLink: "#", // Added Read More link
+          image: "https://placehold.co/600x400/png",
+        }}
+      />
+      <Cards
+        blok={{
+          date: "22 June 2020",
+          title: "Sustainable Web Practices",
+          description:
+            "Learn how developers can contribute to sustainability by adopting eco-friendly web practices and optimizing performance.",
+          readMoreLink: "#", // Added Read More link
+          image: "https://placehold.co/600x400/png",
+        }}
+      />
+    </div>
+    ```
   </TabsContent>
 </Tabs>
