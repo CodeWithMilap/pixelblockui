@@ -1,5 +1,3 @@
-// components/Cards.tsx
-
 import Image from "next/image";
 import React, { ReactNode } from "react";
 
@@ -40,28 +38,28 @@ const Cards: React.FC<CardsProps> = ({
     variant === "center"
       ? "text-center items-center"
       : variant === "right"
-      ? "text-right items-end"
-      : " ";
+        ? "text-right items-end"
+        : " ";
 
   // Determine shadow classes
   const shadowClasses =
     shadow === "sm"
       ? "shadow-Card1"
       : shadow === "lg"
-      ? "shadow-Card3"
-      : "shadow-Card2"; // default to "md" shadow
+        ? "shadow-Card3"
+        : "shadow-Card2"; // default to "md" shadow
 
   // Determine radius classes
   const radiusClasses =
     radius === "sm"
       ? "rounded-sm"
       : radius === "lg"
-      ? "rounded-lg"
-      : "rounded-md"; // default to "md" radius
+        ? "rounded-lg"
+        : "rounded-md"; // default to "md" radius
 
   return (
     <article
-      className={`bg-white w-full grid relative border border-primary-500/5 ${alignmentClasses} ${shadowClasses} ${radiusClasses}`}
+      className={`bg-white dark:bg-gray-800 w-full grid relative border border-primary-500/5 dark:border-primary-500/10 ${alignmentClasses} ${shadowClasses} ${radiusClasses}`}
       role="group"
     >
       {image && !author && (
@@ -76,7 +74,7 @@ const Cards: React.FC<CardsProps> = ({
         </div>
       )}
       <div
-        className={` flex flex-col gap-4 grow ${
+        className={`flex flex-col gap-4 grow ${
           image && !author ? "p-7" : "px-9 py-11"
         } ${alignmentClasses}`}
       >
@@ -99,20 +97,26 @@ const Cards: React.FC<CardsProps> = ({
             )}
           </>
         )}
-        {date && <div className="text-sm">{date}</div>}
+        {date && (
+          <div className="text-sm text-gray-600 dark:text-gray-300">{date}</div>
+        )}
         {title && (
-          <h2 className="font-manrope text-2xl font-bold text-black line-clamp-2">
+          <h2 className="font-manrope text-2xl font-bold text-black dark:text-white line-clamp-2">
             {title}
           </h2>
         )}
-        {description && <p className="line-clamp-4 grow">{description}</p>}
+        {description && (
+          <p className="line-clamp-4 grow text-gray-700 dark:text-gray-400">
+            {description}
+          </p>
+        )}
         {/* Render tags if available */}
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-2">
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="border-2 border-primary-500/10 text-primary-500 hover:bg-primary-500/10 px-4 py-1 rounded-md text-sm font-medium"
+                className="border-2 border-primary-500/10 dark:border-primary-500/20 text-primary-500 hover:bg-primary-500/10 dark:text-primary-400 hover:dark:bg-primary-500/20 px-4 py-1 rounded-md text-sm font-medium"
               >
                 {tag}
               </span>
@@ -123,7 +127,7 @@ const Cards: React.FC<CardsProps> = ({
         {readMoreLink && (
           <a
             href={readMoreLink}
-            className="text-primary-500 hover:underline font-semibold"
+            className="text-primary-500 hover:underline font-semibold dark:text-primary-400"
             aria-label="Read more"
           >
             Read More
@@ -132,8 +136,8 @@ const Cards: React.FC<CardsProps> = ({
 
         {/* Render author section if author data exists */}
         {author && (
-          <div className="font-manrope mt-4">
-            <div className="text-black font-bold">{author.name}</div>
+          <div className="font-manrope mt-4 text-black dark:text-white">
+            <div className="font-bold">{author.name}</div>
             <span className="">{author.role}</span>
           </div>
         )}

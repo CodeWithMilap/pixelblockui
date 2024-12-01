@@ -23,6 +23,16 @@ const config: Config = {
           800: "var(--color-primary-800)",
           900: "var(--color-primary-900)",
           950: "var(--color-primary-950)",
+          5000: "rgba(var(--color-primary-500), 0.05)", // Custom color with opacity 5%
+          50010: "rgba(var(--color-primary-500), 0.10)", // Custom color with opacity 10%
+          50020: "rgba(var(--color-primary-500), 0.20)", // Custom color with opacity 20%
+          50030: "rgba(var(--color-primary-500), 0.30)", // Custom color with opacity 30%
+          50040: "rgba(var(--color-primary-500), 0.40)", // Custom color with opacity 40%
+          50050: "rgba(var(--color-primary-500), 0.50)", // Custom color with opacity 50%
+          50060: "rgba(var(--color-primary-500), 0.60)", // Custom color with opacity 60%
+          50070: "rgba(var(--color-primary-500), 0.70)", // Custom color with opacity 70%
+          50080: "rgba(var(--color-primary-500), 0.80)", // Custom color with opacity 80%
+          50090: "rgba(var(--color-primary-500), 0.90)", // Custom color with opacity 90%
         },
         secondary: {
           50: "var(--color-secondary-50)",
