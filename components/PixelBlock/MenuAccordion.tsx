@@ -35,7 +35,7 @@ const MenuAccordion: React.FC<MenuAccordionProps> = ({ navItems }) => {
   };
 
   const baseLinkClasses =
-    "inline-block py-1 hover:text-primary-500 hover:underline";
+    "inline-block py-1 hover:text-primary-500 hover:underline dark:text-gray-300 dark:hover:text-primary-500";
   const activeClasses = "active:text-primary-900 active:underline";
   const focusClasses = "focus:text-primary focus:outline focus:outline-1";
 
@@ -53,7 +53,7 @@ const MenuAccordion: React.FC<MenuAccordionProps> = ({ navItems }) => {
                   onClick={() => toggleSubmenu(index)}
                   aria-expanded={openSubmenus[index]}
                   aria-controls={`submenu-${index}`}
-                  className={`flex w-full items-center justify-between gap-x-1 py-3 text-left text-base font-semibold  ${
+                  className={`flex w-full items-center justify-between gap-x-1 py-3 text-left text-base font-semibold dark:text-gray-300  ${
                     openSubmenus[index]
                       ? ""
                       : "border-b border-primary-50/25 lg:border-0"
@@ -108,7 +108,7 @@ const MenuAccordion: React.FC<MenuAccordionProps> = ({ navItems }) => {
                 href={`${navItem.titleLink?.linktype === "url" ? "" : "/"}${
                   navItem.titleLink?.cached_url
                 }`}
-                className="block py-2 font-medium hover:text-primary-500"
+                className="block py-2 font-medium hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500"
               >
                 {navItem.title}
               </a>
