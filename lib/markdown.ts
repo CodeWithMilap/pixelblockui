@@ -20,6 +20,8 @@ import Dropdown from "@/components/PixelBlock/Dropdown";
 import Alert from "@/components/PixelBlock/Alert";
 import Cards from "@/components/PixelBlock/Cards";
 import Grid from "@/components/PixelBlock/Grid";
+import MenuAccordion from "@/components/PixelBlock/MenuAccordion";
+import MarqueeImageScroller from "@/components/PixelBlock/MarqueeImageScroller";
 
 type MdxFrontmatter = {
   title: string;
@@ -45,7 +47,9 @@ const components = {
   Dropdown,
   Alert,
   Cards,
-  Grid
+  Grid,
+  MenuAccordion,
+  MarqueeImageScroller
 };
 
 function getContentPath(slug: string) {

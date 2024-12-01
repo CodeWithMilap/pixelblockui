@@ -1,0 +1,147 @@
+---
+title: MarqueeImageScroller  
+component: true  
+description: A responsive, scrolling image gallery for showcasing items dynamically.  
+
+---
+
+The `MarqueeImageScroller` component provides a horizontally scrolling image gallery with a marquee effect. It's responsive, customizable, and perfect for showcasing product images, logos, or other visual content.
+
+## Installation
+
+```bash
+npx pixelblock-cli add MarqueeImageScroller
+```
+
+This will copy the `MarqueeImageScroller.tsx` file to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── MarqueeImageScroller.tsx
+└── ...
+```
+
+## Usage
+
+After installing the `MarqueeImageScroller` component, you can use it in your Next.js project.
+
+### Basic Example
+
+```tsx
+import React from "react";
+import MarqueeImageScroller from "./components/PixelBlock/MarqueeImageScroller";
+
+const images = [
+  { id: "1", filename: "https://via.placeholder.com/300x144.png?text=Image+1", alt: "Image 1" },
+  { id: "2", filename: "https://via.placeholder.com/300x144.png?text=Image+2", alt: "Image 2" },
+  { id: "3", filename: "https://via.placeholder.com/300x144.png?text=Image+3", alt: "Image 3" },
+  { id: "4", filename: "https://via.placeholder.com/300x144.png?text=Image+4", alt: "Image 4" },
+];
+
+const App = () => (
+  <div>
+    <MarqueeImageScroller images={images} speed={50} />
+  </div>
+);
+
+export default App;
+```
+
+## Examples
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <MarqueeImageScroller
+        images={[
+          { id: "1", filename: "https://via.placeholder.com/300x144.png?text=Image+1", alt: "Image 1" },
+          { id: "2", filename: "https://via.placeholder.com/300x144.png?text=Image+2", alt: "Image 2" },
+          { id: "3", filename: "https://via.placeholder.com/300x144.png?text=Image+3", alt: "Image 3" },
+          { id: "4", filename: "https://via.placeholder.com/300x144.png?text=Image+4", alt: "Image 4" },
+        ]}
+        speed={30}
+      />
+    </div>
+  </TabsContent>
+
+  <TabsContent value="code">
+    ```tsx
+    import React from "react";
+    import MarqueeImageScroller from "./components/PixelBlock/MarqueeImageScroller";
+
+    const images = [
+      { id: "1", filename: "https://via.placeholder.com/300x144.png?text=Image+1", alt: "Image 1" },
+      { id: "2", filename: "https://via.placeholder.com/300x144.png?text=Image+2", alt: "Image 2" },
+      { id: "3", filename: "https://via.placeholder.com/300x144.png?text=Image+3", alt: "Image 3" },
+      { id: "4", filename: "https://via.placeholder.com/300x144.png?text=Image+4", alt: "Image 4" },
+    ];
+
+    const App = () => (
+      <div>
+        <MarqueeImageScroller images={images} speed={30} />
+      </div>
+    );
+
+    export default App;
+    ```
+  </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop     | Type      | Default | Description                                           |
+|----------|-----------|---------|-------------------------------------------------------|
+| `images` | `Array`   | `[]`    | An array of image objects with `id`, `filename`, and `alt`. |
+| `speed`  | `number`  | `50`    | Controls the scrolling speed (lower is faster).      |
+
+## Styling and Accessibility
+
+The component is built with accessibility in mind:
+
+- The marquee is marked with `aria-label` for screen readers.
+- Gradient overlays on the edges improve visual appeal while ensuring clear transitions.
+
+## Customization
+
+### Speed
+
+You can customize the scrolling speed using the `speed` prop. For example:
+
+```tsx
+<MarqueeImageScroller images={images} speed={30} />
+```
+
+### Images
+
+Pass an array of image objects with `id`, `filename`, and `alt` attributes:
+
+```tsx
+const images = [
+  { id: "1", filename: "https://via.placeholder.com/300x144.png?text=Image+1", alt: "Image 1" },
+  { id: "2", filename: "https://via.placeholder.com/300x144.png?text=Image+2", alt: "Image 2" },
+  { id: "3", filename: "https://via.placeholder.com/300x144.png?text=Image+3", alt: "Image 3" },
+  { id: "4", filename: "https://via.placeholder.com/300x144.png?text=Image+4", alt: "Image 4" },
+];
+```
+
+### CSS Animations
+
+The component uses the following keyframe animation for the marquee effect:
+
+```css
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+```

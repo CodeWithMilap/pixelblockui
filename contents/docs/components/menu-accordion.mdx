@@ -1,0 +1,184 @@
+---
+title: MenuAccordion  
+component: true  
+description: Creates a responsive, accessible navigation menu with collapsible submenus for mobile and a straightforward layout for desktop.
+---
+
+---
+The **MenuAccordion** component provides a mobile-first, collapsible navigation menu for your React applications. It supports dynamic, multi-level navigation with smooth animations for menu transitions and is designed to be both accessible and fully customizable.
+
+## Installation
+
+To install the **MenuAccordion** component, run the following command:
+
+```bash
+npx pixelblock-cli add MenuAccordion
+```
+
+This will copy the `MenuAccordion.tsx` file from the PixelBlock templates to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── MenuAccordion.tsx
+└── ...
+```
+
+---
+
+## Usage
+
+After installing the **MenuAccordion** component, you can use it in your React application.
+
+### Basic Example
+
+Here's a basic example of how to use the **MenuAccordion** component in a React application:
+
+```tsx
+import React from "react";
+import MenuAccordion from "./components/PixelBlock/MenuAccordion";
+
+const navItems = [
+  {
+    title: "Home",
+    titleLink: { cached_url: "home", linktype: "story" },
+  },
+  {
+    title: "Products",
+    navLinks: [
+      {
+        linkLabel: "Item 1",
+        link: { cached_url: "products/item1", linktype: "story" },
+      },
+      {
+        linkLabel: "Item 2",
+        link: { cached_url: "products/item2", linktype: "story" },
+      },
+    ],
+  },
+  {
+    title: "About Us",
+    titleLink: { cached_url: "about-us", linktype: "story" },
+  },
+  {
+    title: "Contact",
+    titleLink: { cached_url: "contact", linktype: "story" },
+  },
+];
+
+const App = () => (
+  <div>
+    <MenuAccordion navItems={navItems} />
+  </div>
+);
+
+export default App;
+```
+
+---
+
+## Variants
+
+### Basic Navigation
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 not-prose">
+      <MenuAccordion
+        navItems={[ 
+          { title: "Home", titleLink: { cached_url: "/", linktype: "story" } }, 
+          {
+            title: "Services",
+            navLinks: [
+              {
+                linkLabel: "Web Development",
+                link: { cached_url: "services/web-development", linktype: "story" },
+              },
+              {
+                linkLabel: "SEO",
+                link: { cached_url: "services/seo", linktype: "story" },
+              },
+            ],
+          },
+          {
+            title: "About Us",
+            navLinks: [
+              {
+                linkLabel: "Web Development",
+                link: { cached_url: "services/web-development", linktype: "story" },
+              },
+              {
+                linkLabel: "SEO",
+                link: { cached_url: "services/seo", linktype: "story" },
+              },
+            ],
+          },
+        ]}
+      />
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```tsx
+    <MenuAccordion
+      navItems={[ 
+        { title: "Home", titleLink: { cached_url: "/", linktype: "story" } },
+        {
+          title: "Services",
+          navLinks: [
+            {
+              linkLabel: "Web Development",
+              link: { cached_url: "services/web-development", linktype: "story" },
+            },
+            {
+              linkLabel: "SEO",
+              link: { cached_url: "services/seo", linktype: "story" },
+            },
+          ],
+        },
+        {
+          title: "About Us",
+          navLinks: [
+            {
+              linkLabel: "Web Development",
+              link: { cached_url: "services/web-development", linktype: "story" },
+            },
+            {
+              linkLabel: "SEO",
+              link: { cached_url: "services/seo", linktype: "story" },
+            },
+          ],
+        },
+      ]}
+    />
+    ```
+  </TabsContent>
+</Tabs>
+
+---
+
+## Props
+
+| Prop       | Type        | Required | Description                                                    |
+| ---------- | ----------- | -------- | -------------------------------------------------------------- |
+| `navItems` | `NavItem[]` | Yes      | Array of navigation items. Each item contains title and links. |
+
+### `NavItem` Shape
+
+| Key         | Type                       | Required | Description                                  |
+| ----------- | -------------------------- | -------- | -------------------------------------------- |
+| `title`     | `string`                   | Yes      | Main title for the navigation item.          |
+| `navLinks`  | `NavLink[]`                | No       | Array of sub-links.                          |
+| `titleLink` | `{ cached_url, linktype }` | No       | Optional link for the main navigation title. |
+
+---
+
+## Notes
+
+- Mobile-friendly with collapsible menus.
+- Accessible with ARIA roles and attributes.
+- Fully customizable with Tailwind CSS classes.

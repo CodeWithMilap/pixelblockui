@@ -147,6 +147,14 @@ export const ROUTES = [
       //   disabled: true,
       // },
       {
+        title: "Menu Accordion",
+        href: "/menu-accordion",
+      },
+      {
+        title: "Marquee Image Scroller",
+        href: "/marquee-image-scroller",
+      },
+      {
         title: "Section",
         href: "/section",
       },
