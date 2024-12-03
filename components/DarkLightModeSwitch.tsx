@@ -13,7 +13,7 @@ const DarkLightModeSwitch: React.FC = () => {
   };
 
   return (
-    <Button variant="ghost"  onClick={toggleTheme}>
+    <Button variant="link"  onClick={toggleTheme}>
       {theme === "light" ? (
         <Moon className="h-5 w-5" />
       ) : (
