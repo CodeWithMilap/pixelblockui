@@ -102,8 +102,7 @@ export default App;
           title: "Sed ut perspiciatis unde omnis at vero blanditils",
           description:
             "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
-          tags: ["Proxy", "VPN"],
-          readMoreLink: "/blog/sed-ut-perspiciatis-unde-omnis", // Added Read More link
+          readMoreLink: "#", // Added Read More link
         }}
       />
     </div>
@@ -130,8 +129,6 @@ export default App;
 
 ### Card with Author and Title (Testimonial/Quote)
 
-In this example, the card focuses on presenting a testimonial or quote from an author, without an image or read-more link.
-
 <Tabs defaultValue="preview">
   <TabsList>
     <TabsTrigger value="preview">
@@ -145,9 +142,7 @@ In this example, the card focuses on presenting a testimonial or quote from an a
     <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 not-prose">
       <Cards
         blok={{
-          date: "22 June 2020",
-          description:
-            "Web development has evolved rapidly over the last decade. Learn about the latest trends and technologies.",
+          title: "Web development has evolved rapidly over the last decade. Learn about the latest trends and technologies.",
           author: {
             name: "John Doe",
             role: "Senior Developer",
@@ -177,9 +172,7 @@ In this example, the card focuses on presenting a testimonial or quote from an a
 
 ---
 
-### Card with Image and Tags
-
-This example demonstrates a card with an image and tags displayed at the bottom of the card.
+### Card with Tags
 
 <Tabs defaultValue="preview">
   <TabsList>
@@ -192,32 +185,54 @@ This example demonstrates a card with an image and tags displayed at the bottom 
   </TabsList>
   <TabsContent value="preview">
     <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 not-prose">
-      <Cards
-        blok={{
-          date: "22 June 2020",
-          title: "Modern Web Design Trends",
-          description:
-            "Explore the top web design trends of 2020, including user experience best practices and the rise of dark mode.",
-          image: "https://placehold.co/600x400/png",
-          readMoreLink: "#", // Added Read More link
-        }}
-      />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+        <Cards
+          blok={{
+            date: "22 June 2020",
+            title: "Sed ut perspiciatis unde omnis at vero blanditils",
+            description:
+              "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+            tags: ["Proxy", "VPN"],
+
+          }}
+        />
+         <Cards
+          blok={{
+            date: "22 June 2020",
+            title: "Sed ut perspiciatis unde omnis at vero blanditils",
+            description:
+              "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+            tags: ["Proxy", "VPN"],
+
+          }}
+        />
+      </div>
     </div>
   </TabsContent>
   <TabsContent value="code">
     ```jsx
-    import Cards from "./components/PixelBlock/Cards";
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+        <Cards
+          blok={{
+            date: "22 June 2020",
+            title: "Sed ut perspiciatis unde omnis at vero blanditils",
+            description:
+              "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+            tags: ["Proxy", "VPN"],
 
-    <Cards
-      blok={{
-        date: "22 June 2020",
-        title: "Modern Web Design Trends",
-        description:
-          "Explore the top web design trends of 2020, including user experience best practices and the rise of dark mode.",
-        image: "https://placehold.co/600x400/png",
-          readMoreLink: "#", // Added Read More link
-      }}
-    />;
+          }}
+        />
+         <Cards
+          blok={{
+            date: "22 June 2020",
+            title: "Sed ut perspiciatis unde omnis at vero blanditils",
+            description:
+              "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+            tags: ["Proxy", "VPN"],
+
+          }}
+        />
+      </div>
     ```
   </TabsContent>
 </Tabs>
@@ -225,10 +240,6 @@ This example demonstrates a card with an image and tags displayed at the bottom 
 ---
 
 ### Multiple Cards Example
-
-This example shows how to render
-
- multiple cards, allowing for easy display of content in grids or lists.
 
 <Tabs defaultValue="preview">
   <TabsList>
