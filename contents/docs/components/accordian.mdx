@@ -70,7 +70,6 @@ npx pixelblock-cli add Accordion
 
       export default App;
       ```
-
   </TabsContent>
 </Tabs>
 
@@ -141,24 +140,146 @@ You can also create an interactive accordion with dynamic content and state mana
 
 ---
 
+### Single-Open Mode
+
+When `singleOpen` is enabled, only one item can be open at a time. Opening a new item will automatically close the previously open item.
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Accordion singleOpen={true}>
+            <AccordionItem title="Item 1">
+              This item is in single-open mode. When you open this item, the other items will close.
+            </AccordionItem>
+            <AccordionItem title="Item 2">
+              You can only open one item at a time in this mode.
+            </AccordionItem>
+            <AccordionItem title="Item 3">
+              The other items will be closed automatically when a new one is opened.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+      import React from 'react';
+      import { Accordion, AccordionItem } from './Accordion';
+
+      const App = () => (
+        <div className="p-4">
+          <Accordion singleOpen={true}>
+            <AccordionItem title="Item 1">
+              This item is in single-open mode. When you open this item, the other items will close.
+            </AccordionItem>
+            <AccordionItem title="Item 2">
+              You can only open one item at a time in this mode.
+            </AccordionItem>
+            <AccordionItem title="Item 3">
+              The other items will be closed automatically when a new one is opened.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      );
+
+      export default App;
+      ```
+  </TabsContent>
+</Tabs>
+
+---
+
+### Multi-Open Mode
+
+When `singleOpen` is set to `false` (or not provided), multiple items can be opened at the same time. Each item can be toggled independently.
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="max-w-full py-4 px-2 w-full h-full overflow-x-auto grid grid-col-5 gap-4">
+        <div className="p-4">
+          <Accordion singleOpen={false}>
+            <AccordionItem title="Item 1">
+              This item is in multi-open mode. You can open multiple items at once.
+            </AccordionItem>
+            <AccordionItem title="Item 2">
+              Each item can be opened independently without closing others.
+            </AccordionItem>
+            <AccordionItem title="Item 3">
+              All items can be expanded simultaneously.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+      ```jsx
+      import React from 'react';
+      import { Accordion, AccordionItem } from './Accordion';
+
+      const App = () => (
+        <div className="p-4">
+          <Accordion singleOpen={false}>
+            <AccordionItem title="Item 1">
+              This item is in multi-open mode. You can open multiple items at once.
+            </AccordionItem>
+            <AccordionItem title="Item 2">
+              Each item can be opened independently without closing others.
+            </AccordionItem>
+            <AccordionItem title="Item 3">
+              All items can be expanded simultaneously.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      );
+
+      export default App;
+      ```
+  </TabsContent>
+</Tabs>
+
+---
+
 ## Props
 
 ### Accordion Props
 
-The `Accordion` component itself doesn't take any specific props other than the standard `children` prop to nest `AccordionItem` components.
-
-| Prop       | Type        | Description                        |
-| ---------- | ----------- | ---------------------------------- |
-| `children` | `ReactNode` | Nested `AccordionItem` components. |
+| Prop         | Type          | Default | Description                                                                 |
+| ------------ | ------------- | ------- | --------------------------------------------------------------------------- |
+| `children`   | `ReactNode`   |         | Nested `AccordionItem` components.                                         |
+| `singleOpen` | `boolean`     | `true`  | Determines if only one item can be open at a time.                         |
 
 ### AccordionItem Props
 
-The `AccordionItem` component accepts the following props:
+| Prop       | Type        | Default | Description                                  |
+| ---------- | ----------- | ------- | -------------------------------------------- |
+| `title`    | `string`    |         | The title of the accordion item.             |
+| `children` | `ReactNode` |         | The content to be displayed within the item. |
+| `isOpen`   | `boolean`   | `false` | Controls the open/close state programmatically. |
+| `onToggle` | `function`  |         | Callback for toggling the open/close state.   |
+| `openIcon` | `ReactNode` |         | Custom icon to display when the item is closed. |
+| `closeIcon`| `ReactNode` |         | Custom icon to display when the item is open. |
 
-| Prop       | Type        | Description                                  |
-| ---------- | ----------- | -------------------------------------------- |
-| `title`    | `string`    | The title of the accordion item.             |
-| `children` | `ReactNode` | The content to be displayed within the item. |
 ---
 
 ## Conclusion
