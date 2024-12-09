@@ -22,6 +22,7 @@ import Cards from "@/components/PixelBlock/Cards";
 import Grid from "@/components/PixelBlock/Grid";
 import MenuAccordion from "@/components/PixelBlock/MenuAccordion";
 import MarqueeImageScroller from "@/components/PixelBlock/MarqueeImageScroller";
+import { Avatar } from "@/components/PixelBlock/Avatar";
 
 type MdxFrontmatter = {
   title: string;
@@ -49,7 +50,8 @@ const components = {
   Cards,
   Grid,
   MenuAccordion,
-  MarqueeImageScroller
+  MarqueeImageScroller,
+  Avatar
 };
 
 function getContentPath(slug: string) {
