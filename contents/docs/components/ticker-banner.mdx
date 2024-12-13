@@ -1,0 +1,134 @@
+---
+title: TickerBanner
+component: true
+description: Displays a scrolling ticker banner for news or announcements.
+---
+
+The `TickerBanner` component provides a scrolling marquee for displaying news, announcements, or any text content in a continuous loop. It supports customization of animation duration and styles.
+
+## Installation
+
+```bash
+npx pixelblock-cli add TickerBanner
+```
+
+This will copy the `TickerBanner.tsx` file from the PixelBlock templates to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── TickerBanner.tsx
+└── ...
+```
+
+## Usage
+
+After installing the `TickerBanner` component, you can use it in your React application.
+
+### Basic Example
+
+Here's a basic example of how to use the `TickerBanner` component in a React application:
+
+```jsx
+import React from "react";
+import TickerBanner from "./components/PixelBlock/TickerBanner";
+
+const App = () => (
+  <div>
+    <TickerBanner news="Breaking News: React is awesome!" />
+  </div>
+);
+
+export default App;
+```
+
+## Variants
+
+### Default
+The default ticker banner comes with a blue background and white text.
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center">
+        <EyeIcon className="mr-2 h-4 w-4" />
+        Preview
+      </div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center">
+        <CodeIcon className="mr-2 h-4 w-4" />
+        Code
+      </div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+        <TickerBanner
+          news="Breaking News: Tailwind CSS simplifies styling!"  
+          className="bg-green-600 text-black"
+          animationDuration={8}
+        />
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    <TickerBanner
+      news="Breaking News: Tailwind CSS simplifies styling!"
+      className="bg-green-600 text-black"
+      animationDuration={8}
+    />
+    ```
+  </TabsContent>
+</Tabs>
+
+### Custom Styled
+You can customize the background and text colors using the `className` prop.
+
+```jsx
+<TickerBanner news="Custom Styled News" className="bg-green-600 text-black" />
+```
+
+### Custom Animation Speed
+Change the scrolling speed using the `animationDuration` prop.
+
+```jsx
+<TickerBanner news="Faster News" animationDuration={8} />
+```
+
+## Customization
+
+### Animation Duration
+
+You can adjust the animation duration using the `animationDuration` prop, which is now a number representing the duration in seconds.
+
+```jsx
+<TickerBanner news="Custom Duration News" animationDuration={10} />
+```
+
+### Custom Styles
+
+You can apply custom styles using the `className` prop. For example, you can change the background color or text styles.
+
+```jsx
+<TickerBanner news="Custom Styled News" className="bg-red-500 text-black" />
+```
+
+### Dynamic Content
+
+You can pass dynamic content to the `news` prop to display changing announcements.
+
+```jsx
+const newsItems = ["News Item 1", "News Item 2", "News Item 3"];
+
+<TickerBanner news={newsItems.join(" | ")} />
+```
+
+## Props
+
+| Prop                | Type     | Default       | Description                                           |
+| ------------------- | -------- | ------------- | ----------------------------------------------------- |
+| `news`              | `string` |               | The text content to display in the ticker.            |
+| `className`         | `string` | `bg-blue-500` | Custom CSS classes for styling the ticker banner.     |
+| `animationDuration` | `number` | `15`          | Duration of the scrolling animation (in seconds).     |

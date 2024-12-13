@@ -163,11 +163,10 @@ export const ROUTES = [
       //   href: "/scroll-area",
       //   disabled: true,
       // },
-      // {
-      //   title: "Toast",
-      //   href: "/toast",
-      //   disabled: true,
-      // },
+      {
+        title: "Ticker Banner",
+        href: "/ticker-banner",
+      },
     ],
   },
 ];
