@@ -8,12 +8,25 @@ import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { render } from "storyblok-rich-text-react-renderer";
 import { CodeIcon, CopyIcon, EyeIcon } from "../Icons";
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "../ui/resizable";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "../ui/resizable";
 import { CheckCheckIcon } from "lucide-react";
 import Link from "next/link";
-import Hero1 from '../PixelBlock/Blocks/Heor1'
+import Hero1 from "../PixelBlock/Blocks/Heor1";
 import Feature1 from "../PixelBlock/Blocks/FeatureBlock1";
 import Feature2 from "../PixelBlock/Blocks/FeatureBlock2";
+import Section from "../PixelBlock/Section";
+import Grid from "../PixelBlock/Grid";
+import Title from "../PixelBlock/Title";
+import Image from "next/image";
+import HeroImage from "../../public/001_illustration.png";
+import { PlayCircle } from "lucide-react";
+import Cards from "../PixelBlock/Cards";
+import { featureCards } from "../PixelBlock/Blocks/FeatureBlock3";
+
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 const Priview = ({ blok }: any) => {
@@ -21,7 +34,7 @@ const Priview = ({ blok }: any) => {
     borderRadius: "0.2rem",
     backgroundColor: "#1e293b",
     padding: "20px",
-    margin: '0px',
+    margin: "0px",
     zoom: "1.3",
   };
 
@@ -31,12 +44,28 @@ const Priview = ({ blok }: any) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const scope = { Button, InputField, Link, toggleMobileMenu, isMobileMenuOpen, setIsMobileMenuOpen, Hero1 , Feature1, Feature2 };
+  const scope = {
+    Button,
+    InputField,
+    Link,
+    toggleMobileMenu,
+    isMobileMenuOpen,
+    setIsMobileMenuOpen,
+    Hero1,
+    Feature1,
+    Feature2,
+    Section,
+    Grid,
+    Title,
+    Image,
+    HeroImage,
+    PlayCircle,
+    featureCards,
+    Cards,
+  };
   const [copied, setCopied] = useState(false);
 
   const code = blok?.code;
-  console.log(blok);
-
 
   const copyCodeToClipboard = () => {
     navigator.clipboard
@@ -53,7 +82,7 @@ const Priview = ({ blok }: any) => {
 
   return (
     <section className="py-5">
-      <Tabs defaultValue="preview" className="" >
+      <Tabs defaultValue="preview" className="">
         {/* Tabs List */}
         <div className="flex justify-between items-center ">
           <h3 className="!text-2xl !m-0 !font-bold">{blok?.title}</h3>
@@ -68,7 +97,6 @@ const Priview = ({ blok }: any) => {
               <CodeIcon className="mr-2 h-4 w-4" />
               Code
             </TabsTrigger>
-
           </TabsList>
         </div>
 
@@ -101,7 +129,7 @@ const Priview = ({ blok }: any) => {
           {/* <LiveEditor /> */}
           <div className="relative ">
             <Button
-              variant="ghost"
+              variant="link"
               className="text-white absolute top-4 right-4"
               onClick={copyCodeToClipboard}
             >
@@ -120,7 +148,6 @@ const Priview = ({ blok }: any) => {
               language="javascript"
               style={vscDarkPlus}
             >
-
               {render(blok?.priview_code)}
             </SyntaxHighlighter>
           </div>

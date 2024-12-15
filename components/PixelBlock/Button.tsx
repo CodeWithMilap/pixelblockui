@@ -199,11 +199,11 @@ const Button: React.FC<ButtonProps> = ({
       break;
   }
 
-  const combinedClasses = cn(buttonClassName);
+  const combinedClasses = cn(buttonClassName , className);
 
   return (
     <button
-      className={`${combinedClasses}  ${className}`}
+      className={`${combinedClasses}`}
       onClick={onClick}
       {...props}
     >
