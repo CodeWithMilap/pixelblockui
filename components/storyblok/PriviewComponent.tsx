@@ -26,6 +26,8 @@ import HeroImage from "../../public/001_illustration.png";
 import { PlayCircle } from "lucide-react";
 import Cards from "../PixelBlock/Cards";
 import { featureCards } from "../PixelBlock/Blocks/FeatureBlock3";
+import Logo from "../Logo";
+import MenuLink from "../PixelBlock/MenuLink";
 
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
@@ -39,9 +41,14 @@ const Priview = ({ blok }: any) => {
   };
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   const scope = {
@@ -62,6 +69,10 @@ const Priview = ({ blok }: any) => {
     PlayCircle,
     featureCards,
     Cards,
+    Logo,
+    toggleMenu,
+    isOpen,
+    MenuLink
   };
   const [copied, setCopied] = useState(false);
 
