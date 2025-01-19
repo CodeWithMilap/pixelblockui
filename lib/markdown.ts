@@ -25,6 +25,7 @@ import MarqueeImageScroller from "@/components/PixelBlock/MarqueeImageScroller";
 import { Avatar } from "@/components/PixelBlock/Avatar";
 import TickerBanner from "@/components/PixelBlock/TickerBanner";
 import Logo from "@/components/Logo";
+import Title from "@/components/PixelBlock/Title";
 
 type MdxFrontmatter = {
   title: string;
@@ -55,7 +56,8 @@ const components = {
   MarqueeImageScroller,
   Avatar,
   TickerBanner,
-  Logo
+  Logo,
+  Title
 };
 
 function getContentPath(slug: string) {

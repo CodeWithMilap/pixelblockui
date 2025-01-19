@@ -167,6 +167,10 @@ export const ROUTES = [
         title: "Ticker Banner",
         href: "/ticker-banner",
       },
+      {
+        title: "Title",
+        href: "/title",
+      },
     ],
   },
 ];

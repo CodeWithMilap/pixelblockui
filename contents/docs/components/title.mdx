@@ -1,0 +1,186 @@
+---
+title: Title
+component: true
+description: A flexible and accessible title component that supports different heading levels, styling options, and content structure.
+---
+
+The Title component is a highly customizable heading component that ensures accessibility and SEO best practices while providing flexible styling options.
+
+## Installation
+
+```bash
+npx pixelblock-cli add Title
+```
+
+This will copy the `Title.tsx` file to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── Title.tsx
+└── ...
+```
+
+## Usage
+
+After installing the Title component, you can use it in your React application.
+
+### Basic Example
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Title 
+        title="Welcome to Our Website"
+        content="Explore our amazing features and services."
+      />
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import Title from "./components/PixelBlock/Title";
+
+    function App() {
+      return (
+        <Title 
+          title="Welcome to Our Website"
+          content="Explore our amazing features and services."
+        />
+      );
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Font Weights
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="flex flex-col gap-4">
+        <Title title="Small Weight" fontWeight="sm" />
+        <Title title="Medium Weight" fontWeight="md" />
+        <Title title="Large Weight" fontWeight="lg" />
+        <Title title="Extra Large Weight" fontWeight="xl" />
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    <Title title="Small Weight" fontWeight="sm" />
+    <Title title="Medium Weight" fontWeight="md" />
+    <Title title="Large Weight" fontWeight="lg" />
+    <Title title="Extra Large Weight" fontWeight="xl" />
+    ```
+  </TabsContent>
+</Tabs>
+
+### Custom Element Types
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <div className="flex flex-col gap-4">
+        <Title title="H1 Heading" as="h1" />
+        <Title title="H3 Heading" as="h3" />
+        <Title title="Custom Div" as="div" ariaLevel={2} />
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    <Title title="H1 Heading" as="h1" />
+    <Title title="H3 Heading" as="h3" />
+    <Title title="Custom Div" as="div" ariaLevel={2} />
+    ```
+  </TabsContent>
+</Tabs>
+
+### Custom Font Size and Content
+
+<Tabs defaultValue="preview">
+  <TabsList className="">
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Title 
+        title="Custom Size Title"
+        content="With supporting content below"
+        fontSize="lg:text-[3.5rem] text-4xl"
+      />
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    <Title 
+      title="Custom Size Title"
+      content="With supporting content below"
+      fontSize="lg:text-[3.5rem] text-4xl"
+    />
+    ```
+  </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop       | Type                           | Default                    | Description                                                |
+|------------|--------------------------------|----------------------------|------------------------------------------------------------|
+| title      | ReactNode                      | -                         | The main title content (supports strings and JSX)           |
+| content    | string                         | -                         | Optional supporting content below the title                 |
+| className  | string                         | ""                        | Additional CSS classes to apply to the wrapper              |
+| as         | ElementType                    | "h2"                      | HTML element or component to render the title as            |
+| fontSize   | string                         | "lg:text-[2.85rem] text-3xl" | Custom font size using Tailwind classes                    |
+| fontWeight | "sm" \| "md" \| "lg" \| "xl"  | "lg"                      | Predefined font weight options                              |
+| ariaLevel  | number                         | -                         | Sets aria-level for non-heading elements                    |
+
+## Accessibility Features
+
+- Automatically handles `role="heading"` and `aria-level` attributes
+- Provides development warnings for SEO and accessibility best practices
+- Supports ARIA live regions for dynamic content updates
+- Maintains heading hierarchy with proper HTML elements
+
+## Development Considerations
+
+1. The component includes development warnings for:
+   - Usage of `<h1>` tags to ensure proper page structure
+   - Non-heading tags with aria-level attributes
+
+2. Color handling:
+   - Automatically detects text color based on className
+   - Supports dark mode through Tailwind classes
+
+3. Responsive design:
+   - Uses different font sizes for mobile and desktop
+   - Maintains proper line height across screen sizes
