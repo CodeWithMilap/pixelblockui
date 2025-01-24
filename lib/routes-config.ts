@@ -171,6 +171,10 @@ export const ROUTES = [
         title: "Title",
         href: "/title",
       },
+      {
+        title: "Tabs",
+        href: "/tabs",
+      },
     ],
   },
 ];

@@ -57,7 +57,7 @@ const components = {
   Avatar,
   TickerBanner,
   Logo,
-  Title
+  Title,
 };
 
 function getContentPath(slug: string) {

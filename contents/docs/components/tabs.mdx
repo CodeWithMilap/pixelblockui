@@ -1,0 +1,202 @@
+---
+title: Tabs
+component: true
+description: A fully accessible and customizable tabs component with multiple variants and styles.
+---
+
+The Tabs component provides an accessible way to switch between different views within the same context, supporting various styles and customizations.
+
+## Installation
+
+```bash
+npx pixelblock-cli add Tabs
+```
+
+This will copy the `Tabs` component files to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── Tabs.tsx
+└── ...
+```
+
+## Usage
+
+### Basic Example
+
+```jsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/PixelBlock/Tabs";
+
+function App() {
+  return (
+    <Tabs defaultValue="account">
+      <TabsList>
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="password">Password</TabsTrigger>
+        <TabsTrigger value="settings">Settings</TabsTrigger>
+      </TabsList>
+      <TabsContent value="account">Account settings here.</TabsContent>
+      <TabsContent value="password">Change your password here.</TabsContent>
+      <TabsContent value="settings">Other settings here.</TabsContent>
+    </Tabs>
+  );
+}
+```
+
+### Variants
+
+The Tabs component supports two variants: `solid` and `underline`.
+
+```jsx
+// Solid Variant
+<Tabs defaultValue="tab1" variant="solid">
+  <TabsList>
+    <TabsTrigger value="tab1">Solid Tab 1</TabsTrigger>
+    <TabsTrigger value="tab2">Solid Tab 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Content 1</TabsContent>
+  <TabsContent value="tab2">Content 2</TabsContent>
+</Tabs>
+
+// Underline Variant
+<Tabs defaultValue="tab1" variant="underline">
+  <TabsList>
+    <TabsTrigger value="tab1">Underline Tab 1</TabsTrigger>
+    <TabsTrigger value="tab2">Underline Tab 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Content 1</TabsContent>
+  <TabsContent value="tab2">Content 2</TabsContent>
+</Tabs>
+```
+
+### Radius Options
+
+The component supports different border radius options: `full`, `lg`, `md`, and `sm`.
+
+```jsx
+<Tabs defaultValue="tab1" variant="solid" radius="full">
+  <TabsList>
+    <TabsTrigger value="tab1">Rounded Tab</TabsTrigger>
+    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Content 1</TabsContent>
+  <TabsContent value="tab2">Content 2</TabsContent>
+</Tabs>
+```
+
+### Disabled State
+
+```jsx
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1">Enabled Tab</TabsTrigger>
+    <TabsTrigger value="tab2" disabled>Disabled Tab</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Content 1</TabsContent>
+  <TabsContent value="tab2">Content 2</TabsContent>
+</Tabs>
+```
+
+## Component API
+
+### Tabs
+
+| Prop         | Type                                  | Default      | Description                               |
+|--------------|---------------------------------------|--------------|-------------------------------------------|
+| defaultValue | string                               | -            | The initial active tab value              |
+| className    | string                               | ""           | Additional CSS classes                    |
+| variant      | "solid" \| "underline"               | "underline"  | The visual style variant                 |
+| radius       | "full" \| "lg" \| "md" \| "sm"      | "sm"         | Border radius size                       |
+| children     | React.ReactNode                      | -            | Tab components                           |
+
+### TabsList
+
+| Prop         | Type                                  | Default      | Description                               |
+|--------------|---------------------------------------|--------------|-------------------------------------------|
+| className    | string                               | ""           | Additional CSS classes                    |
+| children     | React.ReactNode                      | -            | TabsTrigger components                   |
+
+### TabsTrigger
+
+| Prop         | Type                                  | Default      | Description                               |
+|--------------|---------------------------------------|--------------|-------------------------------------------|
+| value        | string                               | -            | Unique identifier for the tab             |
+| className    | string                               | ""           | Additional CSS classes                    |
+| disabled     | boolean                              | false        | Whether the tab is disabled               |
+| children     | React.ReactNode                      | -            | Tab content                              |
+
+### TabsContent
+
+| Prop         | Type                                  | Default      | Description                               |
+|--------------|---------------------------------------|--------------|-------------------------------------------|
+| value        | string                               | -            | Matching identifier for the tab           |
+| className    | string                               | ""           | Additional CSS classes                    |
+| children     | React.ReactNode                      | -            | Tab panel content                        |
+
+## Accessibility Features
+
+The component implements the following accessibility features:
+
+1. WAI-ARIA Roles:
+   - `tablist` for the container
+   - `tab` for triggers
+   - `tabpanel` for content
+
+2. Keyboard Navigation:
+   - Tab navigation between tab triggers
+   - Focus management within tab panels
+   - Arrow key navigation between tabs
+
+3. ARIA Attributes:
+   - `aria-selected` for active state
+   - `aria-controls` for panel association
+   - `aria-orientation` for layout direction
+   - `aria-disabled` for disabled states
+
+## Styling Customization
+
+### Custom Classes
+
+```jsx
+<Tabs defaultValue="tab1" className="custom-tabs">
+  <TabsList className="custom-list">
+    <TabsTrigger value="tab1" className="custom-trigger">
+      Custom Tab
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1" className="custom-content">
+    Custom styled content
+  </TabsContent>
+</Tabs>
+```
+
+### Dark Mode Support
+
+The component automatically handles dark mode through Tailwind CSS classes:
+
+```jsx
+// Dark mode styles are automatically applied when dark mode is enabled
+<Tabs defaultValue="tab1">
+  <TabsList className="dark:bg-gray-800">
+    <TabsTrigger value="tab1">Dark Mode Tab</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Dark mode content</TabsContent>
+</Tabs>
+```
+
+## Best Practices
+
+1. Unique Values:
+   - Ensure each tab has a unique `value` prop
+   - Match TabsTrigger and TabsContent values
+
+2. Performance:
+   - Only the active tab's content is rendered
+   - Use lazy loading for heavy content
+
+3. Accessibility:
+   - Provide meaningful labels for tabs
+   - Maintain logical tab order
+   - Include proper ARIA attributes
