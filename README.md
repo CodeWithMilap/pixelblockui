@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PixelBlockUI CLI
 
-## Getting Started
+**PixelBlockUI CLI** is a powerful command-line tool designed to simplify the integration of prebuilt, customizable UI components into React and Next.js projects. With PixelBlockUI, developers can save time, maintain design consistency, and focus on building great user experiences.
 
-First, run the development server:
+## Why PixelBlockUI CLI?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+PixelBlockUI CLI empowers developers to:
+- **Quickly add pre-designed UI components** to projects with a single command.
+- **Customize components easily** while adhering to modern design principles.
+- Leverage **TailwindCSS** for styling and utilities without the hassle of manual configuration.
+- Stay productive with **auto-managed dependencies**, including essential libraries like `clsx` and `tailwind-merge`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Component Library:** Access a rich set of prebuilt components, including buttons, modals, dropdowns, and more.
+- **TailwindCSS Integration:** All components are styled with TailwindCSS, ensuring seamless theming and responsiveness.
+- **Easy to Use:** Add components using simple commands like `pixelblock-cli add <component>`.
+- **Customizable:** Modify components to fit your project needs without starting from scratch.
+- **Global or Local Usage:** Install globally for reuse across multiple projects or locally for project-specific needs.
+- **Flexible Execution:** Run the tool directly via `npx` if you prefer not to install it.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## What Can You Build?
 
-## Learn More
+With PixelBlockUI, you can rapidly create:
+- Modern, responsive web apps.
+- Consistent UIs for admin dashboards, portfolios, and e-commerce platforms.
+- Custom interfaces while maintaining the flexibility to tweak designs.
 
-To learn more about Next.js, take a look at the following resources:
+## Get Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ready to supercharge your development workflow? Follow the detailed [installation guide](https://pixelblockui.com/docs) and start integrating PixelBlockUI components today!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+© 2025 PixelBlockUI. All Rights Reserved.
