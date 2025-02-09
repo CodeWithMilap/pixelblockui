@@ -151,6 +151,10 @@ export const ROUTES = [
         href: "/menu-accordion",
       },
       {
+        title: "Modal",
+        href: "/modal",
+      },
+      {
         title: "Marquee Image Scroller",
         href: "/marquee-image-scroller",
       },

@@ -1,0 +1,61 @@
+---
+title: "Modal Component"
+description: "A reusable and accessible modal component in React with customizable props."
+---
+
+The `Modal` component is a reusable, accessible, and customizable modal dialog for React applications.
+
+## Props
+
+| Prop                 | Type                     | Default  | Description |
+|----------------------|------------------------|----------|-------------|
+| `isOpen`            | `boolean`               | `false`  | Controls modal visibility. |
+| `onClose`           | `() => void`            | `-`      | Callback for closing the modal. |
+| `title`             | `string`                | `-`      | The title of the modal. |
+| `children`          | `React.ReactNode`       | `-`      | The content inside the modal. |
+| `closeOnOutsideClick` | `boolean`             | `true`   | Determines if clicking outside should close the modal. |
+| `closeOnEsc`        | `boolean`               | `true`   | Determines if pressing Escape should close the modal. |
+| `showCloseButton`   | `boolean`               | `true`   | Determines if a close button should be displayed. |
+| `buttons`           | `React.ReactNode[]`     | `[]`     | Allows adding multiple custom action buttons. |
+| `className`         | `string`                | `""`     | Custom styles for the modal container. |
+| `overlayClassName`  | `string`                | `""`     | Custom styles for the overlay background. |
+
+## Usage Example
+
+```tsx
+import React, { useState } from "react";
+import Modal from "./Modal";
+
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      <Modal 
+        isOpen={isOpen} 
+        onClose={() => setIsOpen(false)} 
+        title="Example Modal"
+        buttons={[<button onClick={() => setIsOpen(false)}>Close</button>]}
+      >
+        <p>This is a simple modal example.</p>
+      </Modal>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Accessibility Features
+
+- The modal is focusable and returns focus to the last active element when closed.
+- The `Escape` key closes the modal when `closeOnEsc` is enabled.
+- Clicking outside the modal closes it when `closeOnOutsideClick` is enabled.
+- Uses `aria-modal` and `aria-labelledby` for screen reader compatibility.
+
+## Improvements & Considerations
+
+- Consider trapping focus inside the modal to enhance keyboard navigation.
+- Add `aria-describedby` for better screen reader support.
+- Optimize event listeners for performance improvements.
