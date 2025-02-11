@@ -26,6 +26,7 @@ import { Avatar } from "@/components/PixelBlock/Avatar";
 import TickerBanner from "@/components/PixelBlock/TickerBanner";
 import Logo from "@/components/Logo";
 import Title from "@/components/PixelBlock/Title";
+import Tooltip from "@/components/PixelBlock/Tootltip";
 
 type MdxFrontmatter = {
   title: string;
@@ -58,6 +59,7 @@ const components = {
   TickerBanner,
   Logo,
   Title,
+  Tooltip,
 };
 
 function getContentPath(slug: string) {

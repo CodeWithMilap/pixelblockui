@@ -1,0 +1,131 @@
+---
+title: Tooltip
+component: true
+description: A lightweight and customizable tooltip component that provides additional information on hover.
+---
+
+The Tooltip component is a flexible and accessible way to display contextual information when users hover over an element.
+
+## Installation
+
+```bash
+npx pixelblock-cli add Tooltip
+```
+
+This will copy the `Tooltip.tsx` file to your project's `components/PixelBlock` directory.
+
+```
+your-project/
+├── components/
+│   └── PixelBlock/
+│       └── Tooltip.tsx
+└── ...
+```
+
+## Usage
+
+After installing the Tooltip component, you can use it in your React application.
+
+### Basic Example
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2">
+      <Tooltip content="This is a tooltip">
+        <button className="px-4 py-2 bg-blue-500 text-white rounded">Hover me</button>
+      </Tooltip>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    import Tooltip from "./components/PixelBlock/Tooltip";
+
+    function App() {
+      return (
+        <Tooltip content="This is a tooltip">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded">Hover me</button>
+        </Tooltip>
+      );
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Custom Positions
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">
+      <div className="flex items-center "><EyeIcon className="mr-2 h-4 w-4" />Preview</div>
+    </TabsTrigger>
+    <TabsTrigger value="code">
+      <div className="flex items-center "><CodeIcon className="mr-2 h-4 w-4" />Code</div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div className="bg-white dark:bg-zinc-900/10 rounded-lg border dark:border-white/10 shadow-sm h-full w-full py-4 px-2 flex justify-between gap-4">
+      <Tooltip content="Tooltip on top" defaultPosition="top">
+        <button className="px-4 py-2 bg-gray-500 text-white rounded">Top</button>
+      </Tooltip>
+      <Tooltip content="Tooltip on right" defaultPosition="right">
+        <button className="px-4 py-2 bg-gray-500 text-white rounded">Right</button>
+      </Tooltip>
+      <Tooltip content="Tooltip on bottom" defaultPosition="bottom">
+        <button className="px-4 py-2 bg-gray-500 text-white rounded">Bottom</button>
+      </Tooltip>
+      <Tooltip content="Tooltip on left" defaultPosition="left">
+        <button className="px-4 py-2 bg-gray-500 text-white rounded">Left</button>
+      </Tooltip>
+    </div>
+  </TabsContent>
+  <TabsContent value="code">
+    ```jsx
+    <Tooltip content="Tooltip on top" defaultPosition="top">
+      <button className="px-4 py-2 bg-gray-500 text-white rounded">Top</button>
+    </Tooltip>
+    <Tooltip content="Tooltip on right" defaultPosition="right">
+      <button className="px-4 py-2 bg-gray-500 text-white rounded">Right</button>
+    </Tooltip>
+    <Tooltip content="Tooltip on bottom" defaultPosition="bottom">
+      <button className="px-4 py-2 bg-gray-500 text-white rounded">Bottom</button>
+    </Tooltip>
+    <Tooltip content="Tooltip on left" defaultPosition="left">
+      <button className="px-4 py-2 bg-gray-500 text-white rounded">Left</button>
+    </Tooltip>
+    ```
+  </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop             | Type                              | Default  | Description                                      |
+|-----------------|---------------------------------|----------|--------------------------------------------------|
+| children        | ReactNode                        | -        | The element that triggers the tooltip.           |
+| content         | ReactNode                        | -        | The tooltip content.                             |
+| delay          | number                           | 0        | Delay in milliseconds before showing tooltip.    |
+| defaultPosition | "top" \| "bottom" \| "left" \| "right" | "top"    | The default position of the tooltip.            |
+| bgClass        | string                           | "bg-black text-white" | Custom classes for tooltip background. |
+| arrowClass     | string                           | "bg-black" | Custom classes for the tooltip arrow.           |
+
+## Accessibility Features
+
+- Ensures proper ARIA attributes for better screen reader support.
+- Provides keyboard accessibility for users who navigate with a keyboard.
+- Tooltip dismisses when clicking outside or pressing `Esc`.
+
+## Development Considerations
+
+1. The tooltip dynamically positions itself based on the available screen space.
+2. Users can customize the appearance using `bgClass` and `arrowClass` props.
+3. Supports various positions (`top`, `bottom`, `left`, `right`) to suit different UI needs.
+
+This tooltip component is an easy way to enhance user interactions by providing additional contextual information in an accessible manner.
+
